@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<!--	Authors: Justin Fairbourn and Scott Ensign -->
+<!--	Created at Utah State University with support from the Chemistry department. -->
+	<meta charset="utf-8">
+	<title>H2O Ice Lesson</title>
+	<link href="lesson_page.css" rel="stylesheet" type="text/css">
+  <script src="../../jsmol/JSmol.min.js"></script>
+  <script>
+    let info = {
+      color: "#FFFFFF", 
+      height: 500,      
+      width: 500,
+      j2sPath: "../../jsmol/j2s",
+      debug: false
+    };
+  </script>
+</head>
+
+<body>
+	<header>
+    <button id="restartButton"></button>
+		<div id="name" class="app">
+			Molecular Geometry: Trigonal Planar
+    </div>
+    <button id="refreshButton"></button>
+	</header>
+		
+	<section class="molecule">
+    <button id="backButton" disabled></button>
+
+    <div id="window" class="app">
+      <script type="text/javascript">
+        Jmol.getApplet("main", info);
+      </script>
+    </div>
+
+    <button id="nextButton"></button>
+  </section>
+
+  <footer id="description" class="app">
+  </footer>
+
+  <div>
+    <select name="configurationSelect" id="configurationSelect" onchange="lesson.switchInstructions(parseInt(this.value))">
+      <option value="1">Trigonal Planar (E0)</option>
+      <option value="2">Bent</option>
+      <option value="3">Trigonal Planar (E1)</option>
+    </select>
+  </div>
+
+  <div id="consoleDiv" hidden="true">
+    <input type="text" id="console" size="80">
+    <button id="scriptButton">run</button>
+  </div>
+
+  <script src="instruction.js"></script>
+  <script src="lesson.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

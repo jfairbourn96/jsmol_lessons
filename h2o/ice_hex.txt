@@ -1,0 +1,40 @@
+01: Water molecules in ice are arranged in an ordered crystalline lattice called "hexagonal ice".
+    load ../PDB/h2o-ice-hex.pdb;; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;
+02: The ordered arrangement of water can be visualized by rotating the assembly of water molecules.
+    moveto 3.0 { -462 -771 439 102.85} 100.0 0.0 0.0 {1.1279998 0.0 0.0} 16.976467;
+    moveto 2.5 { -661 -365 656 136.67} 100.0 0.0 0.0  {1.1279998 0.0 0.0} 16.976467;
+    moveto 2.0 { -1 5 1000 120.44} 100.0 0.0 0.0 {1.1279998 0.0 0.0} 16.976467 {0 0 0} 0 0 0 3.0 0.0 0.0
+03: A unit giving rise to the name "hexagonal ice" is highlighted in yellow.
+    draw hex1 DIAMETER 18 COLOR yellow (atomno=115) (atomno=118); 
+        draw hex2 DIAMETER 18 COLOR yellow (atomno=145) (atomno=118); 
+        draw hex3 DIAMETER 18 COLOR yellow (atomno=145) (atomno=148); 
+        draw hex4 DIAMETER 18 COLOR yellow (atomno=247) (atomno=148); 
+        draw hex5 DIAMETER 18 COLOR yellow (atomno=247) (atomno=250); 
+        draw hex6 DIAMETER 18 COLOR yellow (atomno=115) (atomno=250);
+    moveto 2.0 { -1 5 1000 120.44} 231.31 0.0 0.0 {1.1279998 0.0 0.0} 16.976467;
+    draw OFF;
+04: Each water molecule in ice is hydrogen bonded to 4 other water molecules.
+    moveto 1.0 { 625 385 679 143.29} 75.62 0.0 0.0 {1.1279998 0.0 0.0} 16.976467;
+    moveto 1.0 { 584 367 724 149.67} 265.9 16.91 -7.23 {1.1279998 0.0 0.0} 16.976467;
+    hide {*}; 
+        display {atomno=[328,329,330,415,416,417,427,428,429,430,431,432,448,449,450]};
+    moveto 1.0 { 571 253 781 162.53} 231.22 16.82 -22.41 {1.1279998 0.0 0.0} 16.976467;
+    draw hbond1 DIAMETER 12 COLOR yellow (atomno=415) (atomno=431);
+        draw hbond2 DIAMETER 12 COLOR yellow (atomno=330) (atomno=430);
+        draw hbond3 DIAMETER 12 COLOR yellow (atomno=430) (atomno=449);
+        draw hbond4 DIAMETER 12 COLOR yellow (atomno=427) (atomno=432);
+    measure (atomno=427) (atomno=432);
+        measure (atomno=430) (atomno=449);
+        measure (atomno=431) (atomno=415);
+        measure (atomno=430) (atomno=330);
+05: The oxygen atoms of the four water molecules surrounding a central water form a tetrahedral unit.
+    draw tet1 DIAMETER 10 COLOR blue (atomno=415) (atomno=328);
+        draw tet2 DIAMETER 10 COLOR blue (atomno=415) (atomno=448);
+        draw tet3 DIAMETER 10 COLOR blue (atomno=427) (atomno=448);
+        draw tet4 DIAMETER 10 COLOR blue (atomno=427) (atomno=415);
+        draw tet5 DIAMETER 10 COLOR blue (atomno=427) (atomno=328);
+        draw tet6 DIAMETER 10 COLOR blue (atomno=448) (atomno=328);
+06: Hydrogen bonding to additional water molecules forms an ordered structure, with the tetrahedral units formed by O atoms indicated.
+    hide {*}; 
+        display {atomno=[328,329,330,343,344,345,346,347,348,349,350,351,364,365,366,415,416,417,427,428,429,430,431,432,448,449,450]};
+    moveto 1.0 { -171 -232 957 120.4} 231.22 31.49 27.44 {1.1279998 0.0 0.0} 16.976467;
