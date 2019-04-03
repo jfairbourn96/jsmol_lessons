@@ -11,3 +11,10 @@ First clone this repo. Then, make sure you have the most recent version of JSmol
        ├───jsmol/
        ├───jsmol_lessons/ (this repo)
 ```
+
+## Creating new lessons
+To create a new lesson: 
+    1. Copy the template directory 
+    2. Rename it to the name of the molecule (or group of molecules) for which you are creating the lesson
+    3. Add your specific molecule (pdb/mol file) to the directory
+    4. Follow the TODOs in the files
