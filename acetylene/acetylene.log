@@ -1,0 +1,208 @@
+-------------------------------------------------------------------------
+
+  .g8"""bgd       db      `7MMM.     ,MMF'`7MM"""YMM   .M"""bgd  .M"""bgd
+.dP'     `M      ;MM:       MMMb    dPMM    MM    `7  ,MI    "Y ,MI    "Y
+dM'       `     ,V^MML      M YM   ,M MM    MM   d    `MMb.     `MMb.
+MM             ,M  `MM      M  Mb  M' MM    MMmmMM      `YMMNq.   `YMMNq.
+MM.    `7MMF'  A     MA     M  YM.P'  MM    MM   Y  , .     `MM .     `MM
+`Mb.     MM   A'     VML    M  `YM'   MM    MM     ,M Mb     dM Mb     dM
+  `"bmmm!GO .YAN.   .KEES!.JML. `'  .JMML..JMMmmmmMMM P"Ybmmd"  P"Ybmmd"
+
+-------------------------------------------------------------------------
+
+                       GAMESS for Microsoft Windows
+                    http://www.msg.ameslab.gov/gamess
+
+GAMESS References:
+
+"General Atomic and Molecular Electronic Structure System" 
+M.W.Schmidt, K.K.Baldridge, J.A.Boatz, S.T.Elbert, M.S.Gordon,
+J.H.Jensen, S.Koseki, N.Matsunaga, K.A.Nguyen, S.Su, T.L.Windus, M.Dupuis,
+J.A.Montgomery J. Comput. Chem., 14, 1347-1363(1993).
+
+"Advances in electronic structure theory: GAMESS a decade later" 
+M.S.Gordon, M.W.Schmidt pp. 1167-1189, in 
+"Theory and Applications of Computational Chemistry: the first forty years" 
+C.E.Dykstra, G.Frenking, K.S.Kim, G.E.Scuseria (editors),
+Elsevier, Amsterdam, 2005.
+=========================================================================
+
+Contents of rungms.gms file:
+
+GAMESSDIR=C:\Users\Public\gamess-64
+AUXDATADIR=C:\Users\Public\gamess-64\auxdata
+RESTARTDIR=C:\Users\Public\gamess-64\restart
+SCRATCHDIR=C:\Users\Public\gamess-64\scratch
+
+=========================================================================
+
+Job Properties
+
+Input Filename               : acetylene.inp
+GAMESS Version               : gamess.2018-R1-pgi-mkl.exe
+Compute Processes Requested  : 1
+Compute Processes Per Node   : 0 (0 = running locally)
+Nodes Required               : 1
+
+=========================================================================
+
+------------------------ GAMESS EXECUTION SCRIPT ------------------------
+This job is running on host ASHBRINGER under operating system
+Microsoft Windows [Version 10.0.17134.648] at Tue 04/09/2019 - 20:01:06.48
+Available scratch disk at beginning of the job is 70,728,683,520 bytes
+
+ERICFMT=C:\Users\Public\gamess-64\auxdata\ericfmt.dat
+MCPPATH=C:\Users\Public\gamess-64\auxdata\MCP
+EXTBAS=/dev/null
+NUCBAS=/dev/null
+MAKEFP=C:\Users\Public\gamess-64\restart\acetylene.efp
+GAMMA=C:\Users\Public\gamess-64\restart\acetylene.gamma
+TRAJECT=C:\Users\Public\gamess-64\restart\acetylene.trj
+RESTART=C:\Users\Public\gamess-64\restart\acetylene.rst
+QMWAVE=C:\Users\Public\gamess-64\restart\acetylene.qmw
+MDDIP=C:\Users\Public\gamess-64\restart\acetylene.dip
+OPTHES1=C:\Users\Public\gamess-64\restart\acetylene.hs1
+OPTHES2=C:\Users\Public\gamess-64\restart\acetylene.hs2
+XYZ=C:\Users\Public\gamess-64\scratch\acetylene.xyz
+INPUT=C:\Users\Public\gamess-64\scratch\acetylene.F05
+PUNCH=C:\Users\Public\gamess-64\restart\acetylene.dat
+AOINTS=C:\Users\Public\gamess-64\scratch\acetylene.F08
+MOINTS=C:\Users\Public\gamess-64\scratch\acetylene.F09
+DICTNRY=C:\Users\Public\gamess-64\scratch\acetylene.F10
+DRTFILE=C:\Users\Public\gamess-64\scratch\acetylene.F11
+CIVECTR=C:\Users\Public\gamess-64\scratch\acetylene.F12
+CASINTS=C:\Users\Public\gamess-64\scratch\acetylene.F13
+CIINTS=C:\Users\Public\gamess-64\scratch\acetylene.F14
+WORK15=C:\Users\Public\gamess-64\scratch\acetylene.F15
+WORK16=C:\Users\Public\gamess-64\scratch\acetylene.F16
+CSFSAVE=C:\Users\Public\gamess-64\scratch\acetylene.F17
+FOCKDER=C:\Users\Public\gamess-64\scratch\acetylene.F18
+WORK19=C:\Users\Public\gamess-64\scratch\acetylene.F19
+DASORT=C:\Users\Public\gamess-64\scratch\acetylene.F20
+DIABDAT=C:\Users\Public\gamess-64\scratch\acetylene.F21
+DFTINTS=C:\Users\Public\gamess-64\scratch\acetylene.F21
+DFTGRID=C:\Users\Public\gamess-64\scratch\acetylene.F22
+JKFILE=C:\Users\Public\gamess-64\scratch\acetylene.F23
+ORDINT=C:\Users\Public\gamess-64\scratch\acetylene.F24
+EFPIND=C:\Users\Public\gamess-64\scratch\acetylene.F25
+PCMDATA=C:\Users\Public\gamess-64\scratch\acetylene.F26
+PCMINTS=C:\Users\Public\gamess-64\scratch\acetylene.F27
+SVPWRK1=C:\Users\Public\gamess-64\scratch\acetylene.F26
+SVPWRK2=C:\Users\Public\gamess-64\scratch\acetylene.F27
+COSCAV=C:\Users\Public\gamess-64\scratch\acetylene.F26
+COSDATA=C:\Users\Public\gamess-64\restart\acetylene.cosmo
+COSPOT=C:\Users\Public\gamess-64\restart\acetylene.pot
+MLTPL=C:\Users\Public\gamess-64\scratch\acetylene.F28
+MLTPLT=C:\Users\Public\gamess-64\scratch\acetylene.F29
+DAFL30=C:\Users\Public\gamess-64\scratch\acetylene.F30
+SOINTX=C:\Users\Public\gamess-64\scratch\acetylene.F31
+SOINTY=C:\Users\Public\gamess-64\scratch\acetylene.F32
+SOINTZ=C:\Users\Public\gamess-64\scratch\acetylene.F33
+SORESC=C:\Users\Public\gamess-64\scratch\acetylene.F34
+GCILIST=C:\Users\Public\gamess-64\scratch\acetylene.F37
+HESSIAN=C:\Users\Public\gamess-64\scratch\acetylene.F38
+QMMMTEI=C:\Users\Public\gamess-64\scratch\acetylene.F39
+SOCCDAT=C:\Users\Public\gamess-64\scratch\acetylene.F40
+AABB41=C:\Users\Public\gamess-64\scratch\acetylene.F41
+BBAA42=C:\Users\Public\gamess-64\scratch\acetylene.F42
+BBBB43=C:\Users\Public\gamess-64\scratch\acetylene.F43
+REMD=C:\Users\Public\gamess-64\scratch\acetylene.F44
+UNV=C:\Users\Public\gamess-64\scratch\acetylene.F45
+UNPV=C:\Users\Public\gamess-64\scratch\acetylene.F46
+MCQD50=C:\Users\Public\gamess-64\scratch\acetylene.F50
+MCQD51=C:\Users\Public\gamess-64\scratch\acetylene.F51
+MCQD52=C:\Users\Public\gamess-64\scratch\acetylene.F52
+MCQD53=C:\Users\Public\gamess-64\scratch\acetylene.F53
+MCQD54=C:\Users\Public\gamess-64\scratch\acetylene.F54
+MCQD55=C:\Users\Public\gamess-64\scratch\acetylene.F55
+MCQD56=C:\Users\Public\gamess-64\scratch\acetylene.F56
+MCQD57=C:\Users\Public\gamess-64\scratch\acetylene.F57
+MCQD58=C:\Users\Public\gamess-64\scratch\acetylene.F58
+MCQD59=C:\Users\Public\gamess-64\scratch\acetylene.F59
+MCQD60=C:\Users\Public\gamess-64\scratch\acetylene.F60
+MCQD61=C:\Users\Public\gamess-64\scratch\acetylene.F61
+MCQD62=C:\Users\Public\gamess-64\scratch\acetylene.F62
+MCQD63=C:\Users\Public\gamess-64\scratch\acetylene.F63
+MCQD64=C:\Users\Public\gamess-64\scratch\acetylene.F64
+NMRINT1=C:\Users\Public\gamess-64\scratch\acetylene.F61
+NMRINT2=C:\Users\Public\gamess-64\scratch\acetylene.F62
+NMRINT3=C:\Users\Public\gamess-64\scratch\acetylene.F63
+NMRINT4=C:\Users\Public\gamess-64\scratch\acetylene.F64
+NMRINT5=C:\Users\Public\gamess-64\scratch\acetylene.F65
+NMRINT6=C:\Users\Public\gamess-64\scratch\acetylene.F66
+DCPHFH2=C:\Users\Public\gamess-64\scratch\acetylene.F67
+DCPHF21=C:\Users\Public\gamess-64\scratch\acetylene.F68
+ELNUINT=C:\Users\Public\gamess-64\scratch\acetylene.F67
+NUNUINT=C:\Users\Public\gamess-64\scratch\acetylene.F68
+GVVPT=C:\Users\Public\gamess-64\scratch\acetylene.F69
+NUMOCAS=C:\Users\Public\gamess-64\scratch\acetylene.F70
+NUELCAS=C:\Users\Public\gamess-64\scratch\acetylene.F72
+RIVMAT=C:\Users\Public\gamess-64\scratch\acetylene.F51
+RIT2A=C:\Users\Public\gamess-64\scratch\acetylene.F52
+RIT3A=C:\Users\Public\gamess-64\scratch\acetylene.F53
+RIT2B=C:\Users\Public\gamess-64\scratch\acetylene.F54
+RIT3B=C:\Users\Public\gamess-64\scratch\acetylene.F55
+DEN2P1=C:\Users\Public\gamess-64\scratch\acetylene.F70
+DEN2P2=C:\Users\Public\gamess-64\scratch\acetylene.F71
+DEN2P3=C:\Users\Public\gamess-64\scratch\acetylene.F72
+DEN2P4=C:\Users\Public\gamess-64\scratch\acetylene.F73
+DEN2NM=C:\Users\Public\gamess-64\scratch\acetylene.F74
+DEN2OPT=C:\Users\Public\gamess-64\scratch\acetylene.F75
+GMCREF=C:\Users\Public\gamess-64\scratch\acetylene.F70
+GMCO2R=C:\Users\Public\gamess-64\scratch\acetylene.F71
+GMCROC=C:\Users\Public\gamess-64\scratch\acetylene.F72
+GMCOOC=C:\Users\Public\gamess-64\scratch\acetylene.F73
+GMCCC0=C:\Users\Public\gamess-64\scratch\acetylene.F74
+GMCHMA=C:\Users\Public\gamess-64\scratch\acetylene.F75
+GMCEI1=C:\Users\Public\gamess-64\scratch\acetylene.F76
+GMCEI2=C:\Users\Public\gamess-64\scratch\acetylene.F77
+GMCEOB=C:\Users\Public\gamess-64\scratch\acetylene.F78
+GMCEDT=C:\Users\Public\gamess-64\scratch\acetylene.F79
+GMCERF=C:\Users\Public\gamess-64\scratch\acetylene.F80
+GMCHCR=C:\Users\Public\gamess-64\scratch\acetylene.F81
+GMCGJK=C:\Users\Public\gamess-64\scratch\acetylene.F82
+GMCGAI=C:\Users\Public\gamess-64\scratch\acetylene.F83
+GMCGEO=C:\Users\Public\gamess-64\scratch\acetylene.F84
+GMCTE1=C:\Users\Public\gamess-64\scratch\acetylene.F85
+GMCTE2=C:\Users\Public\gamess-64\scratch\acetylene.F86
+GMCHEF=C:\Users\Public\gamess-64\scratch\acetylene.F87
+GMCMOL=C:\Users\Public\gamess-64\scratch\acetylene.F88
+GMCMOS=C:\Users\Public\gamess-64\scratch\acetylene.F89
+GMCWGT=C:\Users\Public\gamess-64\scratch\acetylene.F90
+GMCRM2=C:\Users\Public\gamess-64\scratch\acetylene.F91
+GMCRM1=C:\Users\Public\gamess-64\scratch\acetylene.F92
+GMCR00=C:\Users\Public\gamess-64\scratch\acetylene.F93
+GMCRP1=C:\Users\Public\gamess-64\scratch\acetylene.F94
+GMCRP2=C:\Users\Public\gamess-64\scratch\acetylene.F95
+GMCVEF=C:\Users\Public\gamess-64\scratch\acetylene.F96
+GMCDIN=C:\Users\Public\gamess-64\scratch\acetylene.F97
+GMC2SZ=C:\Users\Public\gamess-64\scratch\acetylene.F98
+GMCCCS=C:\Users\Public\gamess-64\scratch\acetylene.F99
+DCSUB=C:\Users\Public\gamess-64\scratch\acetylene.F250
+DCVEC=C:\Users\Public\gamess-64\scratch\acetylene.F251
+DCEIG=C:\Users\Public\gamess-64\scratch\acetylene.F252
+DCDM=C:\Users\Public\gamess-64\scratch\acetylene.F253
+DCDMO=C:\Users\Public\gamess-64\scratch\acetylene.F254
+DCQ=C:\Users\Public\gamess-64\scratch\acetylene.F255
+DCW=C:\Users\Public\gamess-64\scratch\acetylene.F256
+DCEDM=C:\Users\Public\gamess-64\scratch\acetylene.F257
+LHYPWRK=C:\Users\Public\gamess-64\scratch\acetylene.F297
+LHYPWK2=C:\Users\Public\gamess-64\scratch\acetylene.F298
+BONDDPF=C:\Users\Public\gamess-64\scratch\acetylene.F299
+VB2000PATH=C:\Users\Public\gamess-64\vb2000
+GMSJOBNAME=acetylene
+CIMFILE=C:\Users\Public\gamess-64\restart\acetylene.cim
+CIMDMN=C:\Users\Public\gamess-64\restart\acetylene.dmn
+CIMDCT=C:\Users\Public\gamess-64\scratch\acetylene.Fcdt
+CIMAOI=C:\Users\Public\gamess-64\scratch\acetylene.Fcao
+CIMMOI=C:\Users\Public\gamess-64\scratch\acetylene.Fcmo
+CASINO=C:\Users\Public\gamess-64\restart\acetylene.casino
+
+=========================================================================
+
+Searching for restart files from a previous acetylene run.
+
+Found old PUNCH   : C:\Users\Public\gamess-64\restart\acetylene.dat
+
+Please save, rename, or erase the file(s) (shown above) and re-run the job submission.
+Now exiting.
