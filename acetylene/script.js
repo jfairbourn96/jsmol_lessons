@@ -26,26 +26,42 @@ lesson.addInstruction(
 );
 
 lesson.addInstruction(
-  `The two carbons contain two sp<sup>2</sup> and two lone pairs each.`,
-  `select @1, @2; lcaoCartoon COLOR TRANSLUCENT blue; lcaoCartoon SCALE 0.9; lcaoCartoon CREATE sp2a; lcaoCartoon CREATE sp2b;` +
+  `The two carbons contain two sp orbitals (in blue) and two lone pairs (in yellow) each.`,
+  `select @1, @2; lcaoCartoon COLOR TRANSLUCENT blue; lcaoCartoon SCALE 0.9; lcaoCartoon CREATE spa; lcaoCartoon CREATE spb;` +
   `lcaoCartoon COLOR TRANSLUCENT yellow; lcaoCartoon SCALE 1.2; lcaoCartoon CREATE px; lcaoCartoon CREATE py;` +
-  `set spinX 0; set spinY 10; set spinZ 0; spin on;` +
+  `set spinX 0; set spinY 10; set spinZ 10; spin on;` +
   `moveto 1.0 { 55 995 82 41.4} 100.0 0.0 0.0 {0.600155 0.0 0.0} 2.8659549 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 );
 
 lesson.addInstruction(
-  `Now it's spinning in multiple directions AND showing a surface`,
-  `set spinX 20; set spinY -10; set spinZ -10; spin on; isosurface vdw; isosurface translucent;`
+  `The sp orbitals of the carbons and the s orbitals of the hydrogens share electron density to form the &sigma;-bond network.`,
+  `select @1, @2; lcaoCartoon COLOR TRANSLUCENT blue; lcaoCartoon SCALE 0.9; lcaoCartoon CREATE spa; lcaoCartoon CREATE spb;` +
+  `select @3, @4; lcaoCartoon COLOR TRANSLUCENT blue; lcaoCartoon SCALE 0.9; lcaoCartoon CREATE s;` +
+  `moveto 1.0 {0 0 1 0} 100.0 0.0 0.0 {0.600155 0.0 0.0} 2.8659549 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 );
 
 lesson.addInstruction(
-  `See how executing the next instruction stops the spinning and removes the surface?`,
-  ``
+  `Meanwhile, the lone pairs of the carbons form two &pi;-bonds in two perpendicular planes, forming a triple bond. These perpendicular planes perfectly split the molecule into 4 equal portions, each with a piece of a molecular orbital.`,
+  `isosurface piBond1 on;` +
+  `isosurface piBond2 on;` +
+  `draw p1 on;` +
+  `draw p2 on;` +
+  `moveto 1.0 { 55 995 82 41.4} 100.0 0.0 0.0 {0.600155 0.0 0.0} 2.8659549 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 );
 
 lesson.addInstruction(
-  `Now you try, but with more interesting molecules!`,
-  `spin on;`
+  `This thick, compact electron density is what gives Acetylene (and other molecules with a triple bond) its bond breaking energy. This strict density also prevents molecules from rotating around a triple bond.`,
+  `isosurface piBond1 on;` +
+  `isosurface piBond2 on;` +
+  `moveto 1.0 { 55 995 82 41.4} 100.0 0.0 0.0 {0.600155 0.0 0.0} 2.8659549 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 );
+
+// fit
+// draw p1 translucent green polygon [{-1, -1, 1}, {-1, 1, -1}, {2.2, 1, -1},{2.2, -1, 1}]
+// draw p2 translucent green polygon [{-1, 1, 1}, {-1, -1, -1}, {2.2, -1, -1},{2.2, 1, 1}]
+
+// split
+// draw p1 translucent green polygon [{-1, 0, 2}, {-1, 0, -2}, {2.2, 0, -2},{2.2, 0, 2}]
+// draw p2 translucent green polygon [{-1, 2, 0}, {-1, -2, 0}, {2.2, -2, 0},{2.2, 2, 0}]
 
 lesson.execute(0);
