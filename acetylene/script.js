@@ -50,7 +50,7 @@ lesson.addInstruction(
 );
 
 lesson.addInstruction(
-  `This thick, compact electron density is what gives Acetylene (and other molecules with a triple bond) its bond breaking energy. This strict density also prevents molecules from rotating around a triple bond.`,
+  `This thick, compact electron density is what gives Acetylene (and other simple molecules with a triple bond) its low reactivity. This strict density also prevents molecules from rotating around a triple bond.`,
   `isosurface piBond1 on;` +
   `isosurface piBond2 on;` +
   `moveto 1.0 { 55 995 82 41.4} 100.0 0.0 0.0 {0.600155 0.0 0.0} 2.8659549 {0 0 0} 0 0 0 3.0 0.0 0.0;`
