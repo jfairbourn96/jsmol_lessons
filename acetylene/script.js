@@ -28,7 +28,7 @@ lesson.addInstruction(
 lesson.addInstruction(
   `The two carbons contain two sp orbitals (in blue) and two lone pairs (in yellow) each.`,
   `select @1, @2; lcaoCartoon COLOR TRANSLUCENT blue; lcaoCartoon SCALE 0.9; lcaoCartoon CREATE spa; lcaoCartoon CREATE spb;` +
-  `lcaoCartoon COLOR TRANSLUCENT yellow; lcaoCartoon SCALE 1.2; lcaoCartoon CREATE px; lcaoCartoon CREATE py;` +
+  `lcaoCartoon COLOR TRANSLUCENT yellow; lcaoCartoon SCALE 1.2; lcaoCartoon CREATE px; lcaoCartoon COLOR TRANSLUCENT orange; lcaoCartoon CREATE py;` +
   `set spinX 0; set spinY 10; set spinZ 10; spin on;` +
   `moveto 1.0 { 55 995 82 41.4} 100.0 0.0 0.0 {0.600155 0.0 0.0} 2.8659549 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 );
@@ -41,18 +41,18 @@ lesson.addInstruction(
 );
 
 lesson.addInstruction(
-  `Meanwhile, the lone pairs of the carbons form two &pi;-bonds in two perpendicular planes, forming a triple bond. These perpendicular planes perfectly split the molecule into 4 equal portions, each with a piece of a molecular orbital.`,
+  `This thick, compact electron density is what gives Acetylene (and other simple molecules with a triple bond) its low reactivity. This strict density also prevents molecules from rotating around a triple bond.`,
   `isosurface piBond1 on;` +
   `isosurface piBond2 on;` +
-  `draw p1 on;` +
-  `draw p2 on;` +
   `moveto 1.0 { 55 995 82 41.4} 100.0 0.0 0.0 {0.600155 0.0 0.0} 2.8659549 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 );
 
 lesson.addInstruction(
-  `This thick, compact electron density is what gives Acetylene (and other simple molecules with a triple bond) its low reactivity. This strict density also prevents molecules from rotating around a triple bond.`,
+  `Meanwhile, the lone pairs of the carbons form two &pi;-bonds in two perpendicular planes, forming a triple bond. Notice the orange plane perfectly bisects the orange orbital, as does the yellow plane to the yellow orbital.`,
   `isosurface piBond1 on;` +
   `isosurface piBond2 on;` +
+  `draw p1 on;` +
+  `draw p2 on;` +
   `moveto 1.0 { 55 995 82 41.4} 100.0 0.0 0.0 {0.600155 0.0 0.0} 2.8659549 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 );
 

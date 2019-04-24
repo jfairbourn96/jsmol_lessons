@@ -16,10 +16,10 @@
       j2sPath: "../../jsmol/j2s",
       // TODO: Modify the initial script to load the appropriate molecule.
       script: "load acetylene.log; select @1, @2; bondOrder 3; spacefill 30%; wireframe 0.10; spin off; frank on; background=white; antialiasDisplay=true;" +
-        'select @1, @2; isosurface piBond1 CUTOFF 0.1 COLOR TRANSLUCENT 128 [xff0000] mo 6;' +
-        'select @1, @2; isosurface piBond2 CUTOFF 0.1 COLOR TRANSLUCENT 128 [xff0000] mo 7;' + 
-        `draw p1 translucent green polygon [{-1, -1, 1}, {-1, 1, -1}, {2.2, 1, -1},{2.2, -1, 1}];` +
-        `draw p2 translucent green polygon [{-1, 1, 1}, {-1, -1, -1}, {2.2, -1, -1},{2.2, 1, 1}];`,
+        'select @1, @2; isosurface piBond2 CUTOFF 0.1 COLOR TRANSLUCENT 128 [xffff00] mo 7;' +
+        'select @1, @2; isosurface piBond1 CUTOFF 0.1 COLOR TRANSLUCENT 128 [xff9000] mo 6;' + 
+        `draw p1 translucent orange polygon [{-1, 0, 2}, {-1, 0, -2}, {2.2, 0, -2},{2.2, 0, 2}];` +
+        `draw p2 translucent yellow polygon [{-1, 2, 0}, {-1, -2, 0}, {2.2, -2, 0},{2.2, 2, 0}];`,
       debug: false
     };
   </script>
@@ -29,7 +29,7 @@
 	<header>
     <button id="restartButton"></button>
 		<div id="name" class="app">
-			Template Lesson
+			Acetylene Atomic Orbitals
     </div>
     <button id="refreshButton"></button>
 	</header>

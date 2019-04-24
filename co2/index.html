@@ -5,7 +5,7 @@
 <!--	Created at Utah State University with support from the Chemistry department. -->
 <!--  Copy this directory and complete the TODO's to make a lesson for a single molecule/set of molecules. -->
 	<meta charset="utf-8">
-	<title>Template Lesson</title>
+	<title>CO<sub>2</sub> Lesson</title>
 	<link href="lesson_page.css" rel="stylesheet" type="text/css">
   <script src="../../jsmol/JSmol.min.js"></script>
   <script>
@@ -15,9 +15,9 @@
       width: 500,
       j2sPath: "../../jsmol/j2s",
       // TODO: Modify the initial script to load the appropriate molecule.
-      script: "load co2.log; bondorder 2; spacefill 30%; wireframe 0.10; spin off; frank on; background=white; antialiasDisplay=true;" +
-        `select @1, @2; isosurface piBond1 CUTOFF 0.1 COLOR TRANSLUCENT 128 [xff0000] mo 7;` +
-        `select @1, @3; isosurface piBond2 CUTOFF 0.1 COLOR TRANSLUCENT 128 [x0000ff] mo 8;`,
+      script: "load co2-2.log; bondorder 2; spacefill 30%; wireframe 0.10; spin off; frank on; background=white; antialiasDisplay=true;" +
+        `select @1, @2; isosurface piBond1 CUTOFF 0.1 COLOR TRANSLUCENT 128 [xffff00] mo 7;` +
+        `select @1, @3; isosurface piBond2 CUTOFF 0.1 COLOR TRANSLUCENT 128 [xff9000] mo 8;`,
       debug: false
     };
   </script>
@@ -27,7 +27,7 @@
 	<header>
     <button id="restartButton"></button>
 		<div id="name" class="app">
-			Template Lesson
+			CO<sub>2</sub> Atomic Orbitals
     </div>
     <button id="refreshButton"></button>
 	</header>
