@@ -38,7 +38,7 @@ SCRATCHDIR=C:\Users\Public\gamess-64\scratch
 
 Job Properties
 
-Input Filename               : co2.inp
+Input Filename               : co2-2.inp
 GAMESS Version               : gamess.2018-R1-pgi-mkl.exe
 Compute Processes Requested  : 1
 Compute Processes Per Node   : 0 (0 = running locally)
@@ -48,159 +48,159 @@ Nodes Required               : 1
 
 ------------------------ GAMESS EXECUTION SCRIPT ------------------------
 This job is running on host ASHBRINGER under operating system
-Microsoft Windows [Version 10.0.17134.706] at Mon 04/22/2019 -  1:49:34.06
-Available scratch disk at beginning of the job is 69,053,431,808 bytes
+Microsoft Windows [Version 10.0.17134.706] at Wed 04/24/2019 - 12:31:44.47
+Available scratch disk at beginning of the job is 67,197,009,920 bytes
 
 ERICFMT=C:\Users\Public\gamess-64\auxdata\ericfmt.dat
 MCPPATH=C:\Users\Public\gamess-64\auxdata\MCP
 EXTBAS=/dev/null
 NUCBAS=/dev/null
-MAKEFP=C:\Users\Public\gamess-64\restart\co2.efp
-GAMMA=C:\Users\Public\gamess-64\restart\co2.gamma
-TRAJECT=C:\Users\Public\gamess-64\restart\co2.trj
-RESTART=C:\Users\Public\gamess-64\restart\co2.rst
-QMWAVE=C:\Users\Public\gamess-64\restart\co2.qmw
-MDDIP=C:\Users\Public\gamess-64\restart\co2.dip
-OPTHES1=C:\Users\Public\gamess-64\restart\co2.hs1
-OPTHES2=C:\Users\Public\gamess-64\restart\co2.hs2
-XYZ=C:\Users\Public\gamess-64\scratch\co2.xyz
-INPUT=C:\Users\Public\gamess-64\scratch\co2.F05
-PUNCH=C:\Users\Public\gamess-64\restart\co2.dat
-AOINTS=C:\Users\Public\gamess-64\scratch\co2.F08
-MOINTS=C:\Users\Public\gamess-64\scratch\co2.F09
-DICTNRY=C:\Users\Public\gamess-64\scratch\co2.F10
-DRTFILE=C:\Users\Public\gamess-64\scratch\co2.F11
-CIVECTR=C:\Users\Public\gamess-64\scratch\co2.F12
-CASINTS=C:\Users\Public\gamess-64\scratch\co2.F13
-CIINTS=C:\Users\Public\gamess-64\scratch\co2.F14
-WORK15=C:\Users\Public\gamess-64\scratch\co2.F15
-WORK16=C:\Users\Public\gamess-64\scratch\co2.F16
-CSFSAVE=C:\Users\Public\gamess-64\scratch\co2.F17
-FOCKDER=C:\Users\Public\gamess-64\scratch\co2.F18
-WORK19=C:\Users\Public\gamess-64\scratch\co2.F19
-DASORT=C:\Users\Public\gamess-64\scratch\co2.F20
-DIABDAT=C:\Users\Public\gamess-64\scratch\co2.F21
-DFTINTS=C:\Users\Public\gamess-64\scratch\co2.F21
-DFTGRID=C:\Users\Public\gamess-64\scratch\co2.F22
-JKFILE=C:\Users\Public\gamess-64\scratch\co2.F23
-ORDINT=C:\Users\Public\gamess-64\scratch\co2.F24
-EFPIND=C:\Users\Public\gamess-64\scratch\co2.F25
-PCMDATA=C:\Users\Public\gamess-64\scratch\co2.F26
-PCMINTS=C:\Users\Public\gamess-64\scratch\co2.F27
-SVPWRK1=C:\Users\Public\gamess-64\scratch\co2.F26
-SVPWRK2=C:\Users\Public\gamess-64\scratch\co2.F27
-COSCAV=C:\Users\Public\gamess-64\scratch\co2.F26
-COSDATA=C:\Users\Public\gamess-64\restart\co2.cosmo
-COSPOT=C:\Users\Public\gamess-64\restart\co2.pot
-MLTPL=C:\Users\Public\gamess-64\scratch\co2.F28
-MLTPLT=C:\Users\Public\gamess-64\scratch\co2.F29
-DAFL30=C:\Users\Public\gamess-64\scratch\co2.F30
-SOINTX=C:\Users\Public\gamess-64\scratch\co2.F31
-SOINTY=C:\Users\Public\gamess-64\scratch\co2.F32
-SOINTZ=C:\Users\Public\gamess-64\scratch\co2.F33
-SORESC=C:\Users\Public\gamess-64\scratch\co2.F34
-GCILIST=C:\Users\Public\gamess-64\scratch\co2.F37
-HESSIAN=C:\Users\Public\gamess-64\scratch\co2.F38
-QMMMTEI=C:\Users\Public\gamess-64\scratch\co2.F39
-SOCCDAT=C:\Users\Public\gamess-64\scratch\co2.F40
-AABB41=C:\Users\Public\gamess-64\scratch\co2.F41
-BBAA42=C:\Users\Public\gamess-64\scratch\co2.F42
-BBBB43=C:\Users\Public\gamess-64\scratch\co2.F43
-REMD=C:\Users\Public\gamess-64\scratch\co2.F44
-UNV=C:\Users\Public\gamess-64\scratch\co2.F45
-UNPV=C:\Users\Public\gamess-64\scratch\co2.F46
-MCQD50=C:\Users\Public\gamess-64\scratch\co2.F50
-MCQD51=C:\Users\Public\gamess-64\scratch\co2.F51
-MCQD52=C:\Users\Public\gamess-64\scratch\co2.F52
-MCQD53=C:\Users\Public\gamess-64\scratch\co2.F53
-MCQD54=C:\Users\Public\gamess-64\scratch\co2.F54
-MCQD55=C:\Users\Public\gamess-64\scratch\co2.F55
-MCQD56=C:\Users\Public\gamess-64\scratch\co2.F56
-MCQD57=C:\Users\Public\gamess-64\scratch\co2.F57
-MCQD58=C:\Users\Public\gamess-64\scratch\co2.F58
-MCQD59=C:\Users\Public\gamess-64\scratch\co2.F59
-MCQD60=C:\Users\Public\gamess-64\scratch\co2.F60
-MCQD61=C:\Users\Public\gamess-64\scratch\co2.F61
-MCQD62=C:\Users\Public\gamess-64\scratch\co2.F62
-MCQD63=C:\Users\Public\gamess-64\scratch\co2.F63
-MCQD64=C:\Users\Public\gamess-64\scratch\co2.F64
-NMRINT1=C:\Users\Public\gamess-64\scratch\co2.F61
-NMRINT2=C:\Users\Public\gamess-64\scratch\co2.F62
-NMRINT3=C:\Users\Public\gamess-64\scratch\co2.F63
-NMRINT4=C:\Users\Public\gamess-64\scratch\co2.F64
-NMRINT5=C:\Users\Public\gamess-64\scratch\co2.F65
-NMRINT6=C:\Users\Public\gamess-64\scratch\co2.F66
-DCPHFH2=C:\Users\Public\gamess-64\scratch\co2.F67
-DCPHF21=C:\Users\Public\gamess-64\scratch\co2.F68
-ELNUINT=C:\Users\Public\gamess-64\scratch\co2.F67
-NUNUINT=C:\Users\Public\gamess-64\scratch\co2.F68
-GVVPT=C:\Users\Public\gamess-64\scratch\co2.F69
-NUMOCAS=C:\Users\Public\gamess-64\scratch\co2.F70
-NUELCAS=C:\Users\Public\gamess-64\scratch\co2.F72
-RIVMAT=C:\Users\Public\gamess-64\scratch\co2.F51
-RIT2A=C:\Users\Public\gamess-64\scratch\co2.F52
-RIT3A=C:\Users\Public\gamess-64\scratch\co2.F53
-RIT2B=C:\Users\Public\gamess-64\scratch\co2.F54
-RIT3B=C:\Users\Public\gamess-64\scratch\co2.F55
-DEN2P1=C:\Users\Public\gamess-64\scratch\co2.F70
-DEN2P2=C:\Users\Public\gamess-64\scratch\co2.F71
-DEN2P3=C:\Users\Public\gamess-64\scratch\co2.F72
-DEN2P4=C:\Users\Public\gamess-64\scratch\co2.F73
-DEN2NM=C:\Users\Public\gamess-64\scratch\co2.F74
-DEN2OPT=C:\Users\Public\gamess-64\scratch\co2.F75
-GMCREF=C:\Users\Public\gamess-64\scratch\co2.F70
-GMCO2R=C:\Users\Public\gamess-64\scratch\co2.F71
-GMCROC=C:\Users\Public\gamess-64\scratch\co2.F72
-GMCOOC=C:\Users\Public\gamess-64\scratch\co2.F73
-GMCCC0=C:\Users\Public\gamess-64\scratch\co2.F74
-GMCHMA=C:\Users\Public\gamess-64\scratch\co2.F75
-GMCEI1=C:\Users\Public\gamess-64\scratch\co2.F76
-GMCEI2=C:\Users\Public\gamess-64\scratch\co2.F77
-GMCEOB=C:\Users\Public\gamess-64\scratch\co2.F78
-GMCEDT=C:\Users\Public\gamess-64\scratch\co2.F79
-GMCERF=C:\Users\Public\gamess-64\scratch\co2.F80
-GMCHCR=C:\Users\Public\gamess-64\scratch\co2.F81
-GMCGJK=C:\Users\Public\gamess-64\scratch\co2.F82
-GMCGAI=C:\Users\Public\gamess-64\scratch\co2.F83
-GMCGEO=C:\Users\Public\gamess-64\scratch\co2.F84
-GMCTE1=C:\Users\Public\gamess-64\scratch\co2.F85
-GMCTE2=C:\Users\Public\gamess-64\scratch\co2.F86
-GMCHEF=C:\Users\Public\gamess-64\scratch\co2.F87
-GMCMOL=C:\Users\Public\gamess-64\scratch\co2.F88
-GMCMOS=C:\Users\Public\gamess-64\scratch\co2.F89
-GMCWGT=C:\Users\Public\gamess-64\scratch\co2.F90
-GMCRM2=C:\Users\Public\gamess-64\scratch\co2.F91
-GMCRM1=C:\Users\Public\gamess-64\scratch\co2.F92
-GMCR00=C:\Users\Public\gamess-64\scratch\co2.F93
-GMCRP1=C:\Users\Public\gamess-64\scratch\co2.F94
-GMCRP2=C:\Users\Public\gamess-64\scratch\co2.F95
-GMCVEF=C:\Users\Public\gamess-64\scratch\co2.F96
-GMCDIN=C:\Users\Public\gamess-64\scratch\co2.F97
-GMC2SZ=C:\Users\Public\gamess-64\scratch\co2.F98
-GMCCCS=C:\Users\Public\gamess-64\scratch\co2.F99
-DCSUB=C:\Users\Public\gamess-64\scratch\co2.F250
-DCVEC=C:\Users\Public\gamess-64\scratch\co2.F251
-DCEIG=C:\Users\Public\gamess-64\scratch\co2.F252
-DCDM=C:\Users\Public\gamess-64\scratch\co2.F253
-DCDMO=C:\Users\Public\gamess-64\scratch\co2.F254
-DCQ=C:\Users\Public\gamess-64\scratch\co2.F255
-DCW=C:\Users\Public\gamess-64\scratch\co2.F256
-DCEDM=C:\Users\Public\gamess-64\scratch\co2.F257
-LHYPWRK=C:\Users\Public\gamess-64\scratch\co2.F297
-LHYPWK2=C:\Users\Public\gamess-64\scratch\co2.F298
-BONDDPF=C:\Users\Public\gamess-64\scratch\co2.F299
+MAKEFP=C:\Users\Public\gamess-64\restart\co2-2.efp
+GAMMA=C:\Users\Public\gamess-64\restart\co2-2.gamma
+TRAJECT=C:\Users\Public\gamess-64\restart\co2-2.trj
+RESTART=C:\Users\Public\gamess-64\restart\co2-2.rst
+QMWAVE=C:\Users\Public\gamess-64\restart\co2-2.qmw
+MDDIP=C:\Users\Public\gamess-64\restart\co2-2.dip
+OPTHES1=C:\Users\Public\gamess-64\restart\co2-2.hs1
+OPTHES2=C:\Users\Public\gamess-64\restart\co2-2.hs2
+XYZ=C:\Users\Public\gamess-64\scratch\co2-2.xyz
+INPUT=C:\Users\Public\gamess-64\scratch\co2-2.F05
+PUNCH=C:\Users\Public\gamess-64\restart\co2-2.dat
+AOINTS=C:\Users\Public\gamess-64\scratch\co2-2.F08
+MOINTS=C:\Users\Public\gamess-64\scratch\co2-2.F09
+DICTNRY=C:\Users\Public\gamess-64\scratch\co2-2.F10
+DRTFILE=C:\Users\Public\gamess-64\scratch\co2-2.F11
+CIVECTR=C:\Users\Public\gamess-64\scratch\co2-2.F12
+CASINTS=C:\Users\Public\gamess-64\scratch\co2-2.F13
+CIINTS=C:\Users\Public\gamess-64\scratch\co2-2.F14
+WORK15=C:\Users\Public\gamess-64\scratch\co2-2.F15
+WORK16=C:\Users\Public\gamess-64\scratch\co2-2.F16
+CSFSAVE=C:\Users\Public\gamess-64\scratch\co2-2.F17
+FOCKDER=C:\Users\Public\gamess-64\scratch\co2-2.F18
+WORK19=C:\Users\Public\gamess-64\scratch\co2-2.F19
+DASORT=C:\Users\Public\gamess-64\scratch\co2-2.F20
+DIABDAT=C:\Users\Public\gamess-64\scratch\co2-2.F21
+DFTINTS=C:\Users\Public\gamess-64\scratch\co2-2.F21
+DFTGRID=C:\Users\Public\gamess-64\scratch\co2-2.F22
+JKFILE=C:\Users\Public\gamess-64\scratch\co2-2.F23
+ORDINT=C:\Users\Public\gamess-64\scratch\co2-2.F24
+EFPIND=C:\Users\Public\gamess-64\scratch\co2-2.F25
+PCMDATA=C:\Users\Public\gamess-64\scratch\co2-2.F26
+PCMINTS=C:\Users\Public\gamess-64\scratch\co2-2.F27
+SVPWRK1=C:\Users\Public\gamess-64\scratch\co2-2.F26
+SVPWRK2=C:\Users\Public\gamess-64\scratch\co2-2.F27
+COSCAV=C:\Users\Public\gamess-64\scratch\co2-2.F26
+COSDATA=C:\Users\Public\gamess-64\restart\co2-2.cosmo
+COSPOT=C:\Users\Public\gamess-64\restart\co2-2.pot
+MLTPL=C:\Users\Public\gamess-64\scratch\co2-2.F28
+MLTPLT=C:\Users\Public\gamess-64\scratch\co2-2.F29
+DAFL30=C:\Users\Public\gamess-64\scratch\co2-2.F30
+SOINTX=C:\Users\Public\gamess-64\scratch\co2-2.F31
+SOINTY=C:\Users\Public\gamess-64\scratch\co2-2.F32
+SOINTZ=C:\Users\Public\gamess-64\scratch\co2-2.F33
+SORESC=C:\Users\Public\gamess-64\scratch\co2-2.F34
+GCILIST=C:\Users\Public\gamess-64\scratch\co2-2.F37
+HESSIAN=C:\Users\Public\gamess-64\scratch\co2-2.F38
+QMMMTEI=C:\Users\Public\gamess-64\scratch\co2-2.F39
+SOCCDAT=C:\Users\Public\gamess-64\scratch\co2-2.F40
+AABB41=C:\Users\Public\gamess-64\scratch\co2-2.F41
+BBAA42=C:\Users\Public\gamess-64\scratch\co2-2.F42
+BBBB43=C:\Users\Public\gamess-64\scratch\co2-2.F43
+REMD=C:\Users\Public\gamess-64\scratch\co2-2.F44
+UNV=C:\Users\Public\gamess-64\scratch\co2-2.F45
+UNPV=C:\Users\Public\gamess-64\scratch\co2-2.F46
+MCQD50=C:\Users\Public\gamess-64\scratch\co2-2.F50
+MCQD51=C:\Users\Public\gamess-64\scratch\co2-2.F51
+MCQD52=C:\Users\Public\gamess-64\scratch\co2-2.F52
+MCQD53=C:\Users\Public\gamess-64\scratch\co2-2.F53
+MCQD54=C:\Users\Public\gamess-64\scratch\co2-2.F54
+MCQD55=C:\Users\Public\gamess-64\scratch\co2-2.F55
+MCQD56=C:\Users\Public\gamess-64\scratch\co2-2.F56
+MCQD57=C:\Users\Public\gamess-64\scratch\co2-2.F57
+MCQD58=C:\Users\Public\gamess-64\scratch\co2-2.F58
+MCQD59=C:\Users\Public\gamess-64\scratch\co2-2.F59
+MCQD60=C:\Users\Public\gamess-64\scratch\co2-2.F60
+MCQD61=C:\Users\Public\gamess-64\scratch\co2-2.F61
+MCQD62=C:\Users\Public\gamess-64\scratch\co2-2.F62
+MCQD63=C:\Users\Public\gamess-64\scratch\co2-2.F63
+MCQD64=C:\Users\Public\gamess-64\scratch\co2-2.F64
+NMRINT1=C:\Users\Public\gamess-64\scratch\co2-2.F61
+NMRINT2=C:\Users\Public\gamess-64\scratch\co2-2.F62
+NMRINT3=C:\Users\Public\gamess-64\scratch\co2-2.F63
+NMRINT4=C:\Users\Public\gamess-64\scratch\co2-2.F64
+NMRINT5=C:\Users\Public\gamess-64\scratch\co2-2.F65
+NMRINT6=C:\Users\Public\gamess-64\scratch\co2-2.F66
+DCPHFH2=C:\Users\Public\gamess-64\scratch\co2-2.F67
+DCPHF21=C:\Users\Public\gamess-64\scratch\co2-2.F68
+ELNUINT=C:\Users\Public\gamess-64\scratch\co2-2.F67
+NUNUINT=C:\Users\Public\gamess-64\scratch\co2-2.F68
+GVVPT=C:\Users\Public\gamess-64\scratch\co2-2.F69
+NUMOCAS=C:\Users\Public\gamess-64\scratch\co2-2.F70
+NUELCAS=C:\Users\Public\gamess-64\scratch\co2-2.F72
+RIVMAT=C:\Users\Public\gamess-64\scratch\co2-2.F51
+RIT2A=C:\Users\Public\gamess-64\scratch\co2-2.F52
+RIT3A=C:\Users\Public\gamess-64\scratch\co2-2.F53
+RIT2B=C:\Users\Public\gamess-64\scratch\co2-2.F54
+RIT3B=C:\Users\Public\gamess-64\scratch\co2-2.F55
+DEN2P1=C:\Users\Public\gamess-64\scratch\co2-2.F70
+DEN2P2=C:\Users\Public\gamess-64\scratch\co2-2.F71
+DEN2P3=C:\Users\Public\gamess-64\scratch\co2-2.F72
+DEN2P4=C:\Users\Public\gamess-64\scratch\co2-2.F73
+DEN2NM=C:\Users\Public\gamess-64\scratch\co2-2.F74
+DEN2OPT=C:\Users\Public\gamess-64\scratch\co2-2.F75
+GMCREF=C:\Users\Public\gamess-64\scratch\co2-2.F70
+GMCO2R=C:\Users\Public\gamess-64\scratch\co2-2.F71
+GMCROC=C:\Users\Public\gamess-64\scratch\co2-2.F72
+GMCOOC=C:\Users\Public\gamess-64\scratch\co2-2.F73
+GMCCC0=C:\Users\Public\gamess-64\scratch\co2-2.F74
+GMCHMA=C:\Users\Public\gamess-64\scratch\co2-2.F75
+GMCEI1=C:\Users\Public\gamess-64\scratch\co2-2.F76
+GMCEI2=C:\Users\Public\gamess-64\scratch\co2-2.F77
+GMCEOB=C:\Users\Public\gamess-64\scratch\co2-2.F78
+GMCEDT=C:\Users\Public\gamess-64\scratch\co2-2.F79
+GMCERF=C:\Users\Public\gamess-64\scratch\co2-2.F80
+GMCHCR=C:\Users\Public\gamess-64\scratch\co2-2.F81
+GMCGJK=C:\Users\Public\gamess-64\scratch\co2-2.F82
+GMCGAI=C:\Users\Public\gamess-64\scratch\co2-2.F83
+GMCGEO=C:\Users\Public\gamess-64\scratch\co2-2.F84
+GMCTE1=C:\Users\Public\gamess-64\scratch\co2-2.F85
+GMCTE2=C:\Users\Public\gamess-64\scratch\co2-2.F86
+GMCHEF=C:\Users\Public\gamess-64\scratch\co2-2.F87
+GMCMOL=C:\Users\Public\gamess-64\scratch\co2-2.F88
+GMCMOS=C:\Users\Public\gamess-64\scratch\co2-2.F89
+GMCWGT=C:\Users\Public\gamess-64\scratch\co2-2.F90
+GMCRM2=C:\Users\Public\gamess-64\scratch\co2-2.F91
+GMCRM1=C:\Users\Public\gamess-64\scratch\co2-2.F92
+GMCR00=C:\Users\Public\gamess-64\scratch\co2-2.F93
+GMCRP1=C:\Users\Public\gamess-64\scratch\co2-2.F94
+GMCRP2=C:\Users\Public\gamess-64\scratch\co2-2.F95
+GMCVEF=C:\Users\Public\gamess-64\scratch\co2-2.F96
+GMCDIN=C:\Users\Public\gamess-64\scratch\co2-2.F97
+GMC2SZ=C:\Users\Public\gamess-64\scratch\co2-2.F98
+GMCCCS=C:\Users\Public\gamess-64\scratch\co2-2.F99
+DCSUB=C:\Users\Public\gamess-64\scratch\co2-2.F250
+DCVEC=C:\Users\Public\gamess-64\scratch\co2-2.F251
+DCEIG=C:\Users\Public\gamess-64\scratch\co2-2.F252
+DCDM=C:\Users\Public\gamess-64\scratch\co2-2.F253
+DCDMO=C:\Users\Public\gamess-64\scratch\co2-2.F254
+DCQ=C:\Users\Public\gamess-64\scratch\co2-2.F255
+DCW=C:\Users\Public\gamess-64\scratch\co2-2.F256
+DCEDM=C:\Users\Public\gamess-64\scratch\co2-2.F257
+LHYPWRK=C:\Users\Public\gamess-64\scratch\co2-2.F297
+LHYPWK2=C:\Users\Public\gamess-64\scratch\co2-2.F298
+BONDDPF=C:\Users\Public\gamess-64\scratch\co2-2.F299
 VB2000PATH=C:\Users\Public\gamess-64\vb2000
-GMSJOBNAME=co2
-CIMFILE=C:\Users\Public\gamess-64\restart\co2.cim
-CIMDMN=C:\Users\Public\gamess-64\restart\co2.dmn
-CIMDCT=C:\Users\Public\gamess-64\scratch\co2.Fcdt
-CIMAOI=C:\Users\Public\gamess-64\scratch\co2.Fcao
-CIMMOI=C:\Users\Public\gamess-64\scratch\co2.Fcmo
-CASINO=C:\Users\Public\gamess-64\restart\co2.casino
+GMSJOBNAME=co2-2
+CIMFILE=C:\Users\Public\gamess-64\restart\co2-2.cim
+CIMDMN=C:\Users\Public\gamess-64\restart\co2-2.dmn
+CIMDCT=C:\Users\Public\gamess-64\scratch\co2-2.Fcdt
+CIMAOI=C:\Users\Public\gamess-64\scratch\co2-2.Fcao
+CIMMOI=C:\Users\Public\gamess-64\scratch\co2-2.Fcmo
+CASINO=C:\Users\Public\gamess-64\restart\co2-2.casino
 
 =========================================================================
 
-Searching for restart files from a previous co2 run.
+Searching for restart files from a previous co2-2 run.
 
 None found.
 
@@ -282,7 +282,7 @@ MS-MPI will run 1 compute process(es) and 1 data server(s).
      NAGOYA UNIVERSITY: YOSHIO NISHIMOTO, STEPHAN IRLE
      MOSCOW STATE UNIVERSITY: VLADIMIR MIRONOV
 
- EXECUTION OF GAMESS BEGUN Mon Apr 22 01:49:37 2019
+ EXECUTION OF GAMESS BEGUN Wed Apr 24 12:31:47 2019
 
             ECHO OF THE FIRST FEW INPUT CARDS -
  INPUT CARD>!   File created by the GAMESS Input Deck Generator Plugin for Avogadro         
@@ -292,9 +292,9 @@ MS-MPI will run 1 compute process(es) and 1 data server(s).
  INPUT CARD> $DATA                                                                          
  INPUT CARD>Title                                                                           
  INPUT CARD>C1                                                                              
- INPUT CARD>C     6.0     1.19700    -0.00000    -0.00000                                   
- INPUT CARD>O     8.0     2.39400    -0.00000    -0.00000                                   
- INPUT CARD>O     8.0     0.00000     0.00000     0.00000                                   
+ INPUT CARD>C     6.0     0.00000     0.00000     0.00000                                   
+ INPUT CARD>O     8.0     1.19700     0.00000     0.00000                                   
+ INPUT CARD>O     8.0    -1.19700     0.00000    -0.00000                                   
  INPUT CARD> $END                                                                           
     1000000 WORDS OF MEMORY AVAILABLE
 
@@ -314,9 +314,9 @@ MS-MPI will run 1 compute process(es) and 1 data server(s).
 
  ATOM      ATOMIC                      COORDINATES (BOHR)
            CHARGE         X                   Y                   Z
- C           6.0     2.2620020073       -0.0000000000       -0.0000000000
- O           8.0     4.5240040146       -0.0000000000       -0.0000000000
- O           8.0     0.0000000000        0.0000000000        0.0000000000
+ C           6.0     0.0000000000        0.0000000000        0.0000000000
+ O           8.0     2.2620020073        0.0000000000        0.0000000000
+ O           8.0    -2.2620020073        0.0000000000       -0.0000000000
 
           INTERNUCLEAR DISTANCES (ANGS.)
           ------------------------------
@@ -519,7 +519,7 @@ MS-MPI will run 1 compute process(es) and 1 data server(s).
    6  5  0     -185.0680311099    -0.0000158981   0.000204040   0.000098342
    7  6  0     -185.0680311284    -0.0000000185   0.000040622   0.000015769
    8  7  0     -185.0680311291    -0.0000000007   0.000003358   0.000001429
-   9  8  0     -185.0680311291    -0.0000000000   0.000000243   0.000000166
+   9  8  0     -185.0680311291    -0.0000000000   0.000000242   0.000000166
 
           -----------------
           DENSITY CONVERGED
@@ -554,61 +554,61 @@ MS-MPI will run 1 compute process(es) and 1 data server(s).
                       1          2          3          4          5
                   -20.3551   -20.3548   -11.2604    -1.4258    -1.3620
                      A          A          A          A          A   
-    1  C  1  S   -0.000000   0.000580   0.993353  -0.160511  -0.000000
-    2  C  1  S   -0.000000  -0.009478   0.027360   0.351917  -0.000000
-    3  C  1  X    0.011006   0.000000  -0.000000   0.000000  -0.302920
-    4  C  1  Y   -0.000000   0.000000  -0.000000   0.000000  -0.000000
-    5  C  1  Z   -0.000000   0.000000  -0.000000   0.000000  -0.000000
-    6  O  2  S   -0.702964   0.703091  -0.000059  -0.148986   0.161732
-    7  O  2  S   -0.019839   0.017828  -0.004492   0.522292  -0.547417
-    8  O  2  X    0.005039  -0.003771   0.000611  -0.138644   0.110911
-    9  O  2  Y   -0.000000   0.000000  -0.000000   0.000000  -0.000000
-   10  O  2  Z   -0.000000   0.000000  -0.000000   0.000000  -0.000000
-   11  O  3  S    0.702964   0.703091  -0.000059  -0.148986  -0.161732
-   12  O  3  S    0.019839   0.017828  -0.004492   0.522292   0.547417
-   13  O  3  X    0.005039   0.003771  -0.000611   0.138644   0.110911
-   14  O  3  Y   -0.000000   0.000000  -0.000000   0.000000  -0.000000
-   15  O  3  Z   -0.000000   0.000000  -0.000000   0.000000  -0.000000
+    1  C  1  S    0.000000   0.000580   0.993353  -0.160511  -0.000000
+    2  C  1  S    0.000000  -0.009478   0.027360   0.351917  -0.000000
+    3  C  1  X   -0.011006   0.000000  -0.000000   0.000000  -0.302920
+    4  C  1  Y    0.000000   0.000000  -0.000000   0.000000  -0.000000
+    5  C  1  Z    0.000000   0.000000  -0.000000   0.000000  -0.000000
+    6  O  2  S    0.702964   0.703091  -0.000059  -0.148986   0.161732
+    7  O  2  S    0.019839   0.017828  -0.004492   0.522292  -0.547417
+    8  O  2  X   -0.005039  -0.003771   0.000611  -0.138644   0.110911
+    9  O  2  Y    0.000000   0.000000  -0.000000   0.000000  -0.000000
+   10  O  2  Z    0.000000   0.000000  -0.000000   0.000000  -0.000000
+   11  O  3  S   -0.702964   0.703091  -0.000059  -0.148986  -0.161732
+   12  O  3  S   -0.019839   0.017828  -0.004492   0.522292   0.547417
+   13  O  3  X   -0.005039   0.003771  -0.000611   0.138644   0.110911
+   14  O  3  Y    0.000000   0.000000  -0.000000   0.000000  -0.000000
+   15  O  3  Z    0.000000   0.000000  -0.000000   0.000000  -0.000000
 
                       6          7          8          9         10
                    -0.6812    -0.6147    -0.6147    -0.5805    -0.3857
                      A          A          A          A          A   
-    1  C  1  S   -0.164886   0.000000   0.000000  -0.000000   0.000000
-    2  C  1  S    0.565216   0.000000   0.000000  -0.000000   0.000000
-    3  C  1  X   -0.000000   0.000000   0.000000  -0.452630   0.000000
-    4  C  1  Y   -0.000000   0.015631   0.556003  -0.000000   0.000000
-    5  C  1  Z   -0.000000   0.556003  -0.015631  -0.000000   0.000000
-    6  O  2  S    0.108931   0.000000   0.000000  -0.081778   0.000000
-    7  O  2  S   -0.521974   0.000000   0.000000   0.447597   0.000000
-    8  O  2  X   -0.401335   0.000000   0.000000   0.495953   0.000000
-    9  O  2  Y   -0.000000   0.013441   0.478102  -0.000000  -0.448787
-   10  O  2  Z   -0.000000   0.478102  -0.013441  -0.000000  -0.548301
-   11  O  3  S    0.108931   0.000000   0.000000   0.081778   0.000000
-   12  O  3  S   -0.521974   0.000000   0.000000  -0.447597   0.000000
-   13  O  3  X    0.401335   0.000000   0.000000   0.495953   0.000000
-   14  O  3  Y   -0.000000   0.013441   0.478102  -0.000000   0.448787
-   15  O  3  Z   -0.000000   0.478102  -0.013441  -0.000000   0.548301
+    1  C  1  S   -0.164886   0.000000  -0.000000  -0.000000   0.000000
+    2  C  1  S    0.565216   0.000000  -0.000000  -0.000000   0.000000
+    3  C  1  X   -0.000000   0.000000  -0.000000  -0.452630   0.000000
+    4  C  1  Y   -0.000000   0.458264   0.315242  -0.000000   0.000000
+    5  C  1  Z   -0.000000  -0.315242   0.458264  -0.000000   0.000000
+    6  O  2  S    0.108931   0.000000  -0.000000  -0.081778   0.000000
+    7  O  2  S   -0.521974   0.000000  -0.000000   0.447597   0.000000
+    8  O  2  X   -0.401335   0.000000  -0.000000   0.495953   0.000000
+    9  O  2  Y   -0.000000   0.394057   0.271074  -0.000000  -0.693682
+   10  O  2  Z   -0.000000  -0.271074   0.394057  -0.000000  -0.144395
+   11  O  3  S    0.108931   0.000000  -0.000000   0.081778   0.000000
+   12  O  3  S   -0.521974   0.000000  -0.000000  -0.447597   0.000000
+   13  O  3  X    0.401335   0.000000  -0.000000   0.495953   0.000000
+   14  O  3  Y   -0.000000   0.394057   0.271074  -0.000000   0.693682
+   15  O  3  Z   -0.000000  -0.271074   0.394057  -0.000000   0.144395
 
                      11         12         13         14         15
                    -0.3857     0.3047     0.3047     0.5283     1.2834
                      A          A          A          A          A   
-    1  C  1  S    0.000000   0.000000  -0.000000  -0.197218   0.000000
-    2  C  1  S    0.000000   0.000000  -0.000000   1.262445   0.000000
-    3  C  1  X    0.000000   0.000000  -0.000000   0.000000   1.547547
-    4  C  1  Y    0.000000   0.300069   0.839277   0.000000   0.000000
-    5  C  1  Z    0.000000   0.839277  -0.300069   0.000000   0.000000
-    6  O  2  S    0.000000   0.000000  -0.000000   0.076784   0.095349
-    7  O  2  S    0.000000   0.000000  -0.000000  -0.503815  -0.798635
-    8  O  2  X    0.000000   0.000000  -0.000000   0.699845   0.746386
-    9  O  2  Y   -0.548301  -0.190714  -0.533417   0.000000   0.000000
-   10  O  2  Z    0.448787  -0.533417   0.190714   0.000000   0.000000
-   11  O  3  S    0.000000   0.000000  -0.000000   0.076784  -0.095349
-   12  O  3  S    0.000000   0.000000  -0.000000  -0.503815   0.798635
-   13  O  3  X    0.000000   0.000000  -0.000000  -0.699845   0.746386
-   14  O  3  Y    0.548301  -0.190714  -0.533417   0.000000   0.000000
-   15  O  3  Z   -0.448787  -0.533417   0.190714   0.000000   0.000000
+    1  C  1  S   -0.000000  -0.000000   0.000000  -0.197218   0.000000
+    2  C  1  S   -0.000000  -0.000000   0.000000   1.262445   0.000000
+    3  C  1  X   -0.000000  -0.000000   0.000000   0.000000   1.547547
+    4  C  1  Y   -0.000000   0.728719  -0.513221   0.000000   0.000000
+    5  C  1  Z   -0.000000   0.513221   0.728719   0.000000   0.000000
+    6  O  2  S   -0.000000  -0.000000   0.000000   0.076784   0.095349
+    7  O  2  S   -0.000000  -0.000000   0.000000  -0.503815  -0.798635
+    8  O  2  X   -0.000000  -0.000000   0.000000   0.699845   0.746386
+    9  O  2  Y   -0.144395  -0.463150   0.326186   0.000000   0.000000
+   10  O  2  Z    0.693682  -0.326186  -0.463150   0.000000   0.000000
+   11  O  3  S   -0.000000  -0.000000   0.000000   0.076784  -0.095349
+   12  O  3  S   -0.000000  -0.000000   0.000000  -0.503815   0.798635
+   13  O  3  X   -0.000000  -0.000000   0.000000  -0.699845   0.746386
+   14  O  3  Y    0.144395  -0.463150   0.326186   0.000000   0.000000
+   15  O  3  Z   -0.693682  -0.326186  -0.463150   0.000000   0.000000
  ...... END OF RHF CALCULATION ......
- STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
  TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS   100.01%
 
      ----------------------------------------------------------------
@@ -648,7 +648,7 @@ MS-MPI will run 1 compute process(es) and 1 data server(s).
                (K,V1,2)=    166.0761242820   -448.8182122937     85.3511902404
            PI PART(1+2)=    -44.2641743195
                (K,V1,2)=     17.0651140901   -101.5918343934     40.2625459838
-  SIGMA SKELETON, ERROR=   -140.8038569169     -0.0000000000
+  SIGMA SKELETON, ERROR=   -140.8038569169      0.0000000000
              MIXED PART= 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
  ...... END OF PI ENERGY ANALYSIS ......
 
@@ -726,38 +726,38 @@ MS-MPI will run 1 compute process(es) and 1 data server(s).
                        TOTAL       BONDED        FREE
       ATOM            VALENCE     VALENCE     VALENCE
     1 C                 3.931       3.931       0.000
-    2 O                 2.348       2.348      -0.000
-    3 O                 2.348       2.348       0.000
+    2 O                 2.348       2.348       0.000
+    3 O                 2.348       2.348      -0.000
 
           ---------------------
           ELECTROSTATIC MOMENTS
           ---------------------
 
  POINT   1           X           Y           Z (BOHR)    CHARGE
-                 2.262002    0.000000    0.000000       -0.00 (A.U.)
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
          DX          DY          DZ         /D/  (DEBYE)
-    -0.000000    0.000000    0.000000    0.000000
+     0.000000    0.000000    0.000000    0.000000
  ...... END OF PROPERTY EVALUATION ......
  STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.0 (      0.0 MIN)
- TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS   100.00%
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS   100.01%
                    580000  WORDS OF DYNAMIC MEMORY USED
- EXECUTION OF GAMESS TERMINATED NORMALLY Mon Apr 22 01:49:37 2019
+ EXECUTION OF GAMESS TERMINATED NORMALLY Wed Apr 24 12:31:47 2019
  DDI: 263640 bytes (0.3 MB / 0 MWords) used by master data server.
 
  ----------------------------------------
  CPU timing information for all processes
  ========================================
- 0: 0.015625 + 0.031250 = 0.046875
- 1: 0.015625 + 0.015625 = 0.031250
+ 0: 0.031250 + 0.000000 = 0.031250
+ 1: 0.000000 + 0.015625 = 0.015625
  ----------------------------------------
            Disk usage (in bytes)
  ========================================
-04/22/2019  01:47 AM               317 co2.F05
-04/22/2019  01:49 AM           180,016 co2.F08
-04/22/2019  01:49 AM         1,537,840 co2.F10
-04/22/2019  01:49 AM            16,192 co2.GMS.ENV
-04/22/2019  01:49 AM               118 co2.processes.mpd
+04/24/2019  12:31 PM               317 co2-2.F05
+04/24/2019  12:31 PM           180,016 co2-2.F08
+04/24/2019  12:31 PM         1,537,840 co2-2.F10
+04/24/2019  12:31 PM            16,682 co2-2.GMS.ENV
+04/24/2019  12:31 PM               120 co2-2.processes.mpd
  ----------------------------------------
             Local date and time
  ========================================
-Mon 04/22/2019 -  1:49:43.28
+Wed 04/24/2019 - 12:31:53.96
