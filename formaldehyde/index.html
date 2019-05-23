@@ -15,6 +15,10 @@
       j2sPath: "../../jsmol/j2s",
       script: "load formaldehyde.log; spacefill 20%; select @1, @2; bondorder 2; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;" +
         'select @1, @2; isosurface piBonds CUTOFF 0.1 COLOR TRANSLUCENT 128 [xff0000] mo 7; select *;' +
+        `isosurface id lp1 color translucent 0.8 GREEN center @2 lobe { .518, 0, 1.11, 0.6}; ` +
+        `isosurface id lp2 color translucent 0.8 GREEN center @2 lobe { .518, 0, -1.11, 0.6}; ` +
+        `draw ID e_geo1 LINE [@2, @3, @4, @2] DIAMETER 20 COLOR yellow; ` +
+        `draw ID e_geo2 LINE [@1, {1.743, 0, 1.11}, {1.743, 0, -1.11}, @1] DIAMETER 20 COLOR yellow;` +
         'isosurface OFF;',
       debug: false
     };

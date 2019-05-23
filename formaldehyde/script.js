@@ -18,6 +18,20 @@ lesson.addInstruction(
 );
 
 lesson.addInstruction(
+  `Before we examine the atomic orbitals, let's first consider the geometries of the carbon and the oxygen. The carbon is sp<sup>2</sup> hybridized and bound to 3 separate atoms. 
+  This gives the carbon trigonal planar electron and molecular geometries.`,
+  `draw e_geo1 on;` +
+  `moveto 1.0 { 998 49 -27 76.45} 115.0 6.8 0.6 {0.31848997 0 0} 2.60614 {0 0 0} 0 0 0 3.0 0.0 0.0;`
+)
+
+lesson.addInstruction(
+  `Likewise, the oxygen atom is also sp<sup>2</sup> hybridized with trigonal planar geometry. Because it is only directly bonded to the carbon atom, its two lone pairs of electrons 
+  are what make the oxygen trigonal planar.` ,
+  `isosurface lp1 on; isosurface lp2 on; draw e_geo2 on;` +
+  `moveto /* time, axisAngle */ 1.0 { 998 49 -27 76.45} /* zoom, translation */  145.25 -28.14 3.19  /* center, rotationRadius */ {0.31848997 0 0} 2.60614 /* navigation center, translation, depth */ {0 0 0} 0 0 0 /* cameraDepth, cameraX, cameraY */  3.0 0.0 0.0;`
+)
+
+lesson.addInstruction(
   'The hydrogen atoms each contribute one s orbital.',
   'select @3, @4; lcaoCartoon COLOR TRANSLUCENT blue; lcaoCartoon SCALE 0.7; lcaoCartoon CREATE s;' +
   'moveto 1.0 { 999 -3 42 77.56} 139.19 20.53 3.07 {0.31848997 0.0 0.0} 2.60614 {0 0 0} 0 0 0 3.0 0.0 0.0;'  
