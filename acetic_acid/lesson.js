@@ -30,7 +30,7 @@ class Lesson
         resetScript += '!quit;'
       }
       // TODO: Change your resetScript to only reset the options that your instructions adjust
-      resetScript += 'select *; draw * off; measure off; isosurface off; lcaoCartoon off; mo off; set spinX 0; set spinY 20; set spinZ 0;';
+      resetScript += 'select *; color translucent 0; draw * off; measure off; isosurface off; lcaoCartoon off; mo off; set spinX 0; set spinY 20; set spinZ 0;';
 
       // Adjust the buttons and HTML elements
       this.backButton.disabled = (this.instruction === 0);
@@ -52,8 +52,5 @@ class Lesson
     {
       Jmol.script(main, command);
     }
-
-    // TODO: If there are any shapes to draw for this lesson, draw them here.
-    this.shapeString = ``;
   }
 }
