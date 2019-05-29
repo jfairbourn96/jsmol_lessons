@@ -106,6 +106,24 @@ lesson.addInstruction(
   `moveto  1.0 { -50 999 -7 51.24} 132.25 0.0 0.0  {0.9036099 0.44890496 -0.23449996} 3.6789606 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 )
 
+lesson.addInstruction(
+  `The carbon atom in the methyl group of acetic acid also forms a sigma bond with the carbonyl carbon to which it is bonded. The sigma bond between these atoms is shown here with
+  the sigma bonds of the methyl group.`,
+  `select @1; lcaoCartoon SCALE 1.0; lcaoCartoon COLOR TRANSLUCENT BLUE; lcaoCartoon CREATE sp3a; lcaoCartoon CREATE sp3b; lcaoCartoon CREATE sp3c; lcaoCartoon CREATE sp3d;` +
+  `select @3, @4, @5; lcaoCartoon COLOR TRANSLUCENT RED; lcaoCartoon CREATE s;` +
+  `select @2; lcaoCartoon CREATE sp2a; ` +
+  `moveto 1.0 {0 0 1 0} 132.25 0.0 0.0  {0.9036099 0.44890496 -0.23449996} 3.6789606 {0 0 0} 0 0 0 3.0 0.0 0.0;`
+)
+
+lesson.addInstruction(
+  `The oxygen atom in the hydroxyl group (the hydroxyl oxygen) is surrounded by four electron domains (AX<sub>2</sub>E<sub>2</sub>), so the orbital hybridization is sp<sup>3</sup>. 
+  This oxygen atom forms sigma bonds with the carbonyl carbon and the H atom to which it is bonded.`,
+  `select @6; lcaoCartoon SCALE 1.0; lcaoCartoon COLOR TRANSLUCENT BLUE; lcaoCartoon CREATE sp3a; lcaoCartoon CREATE sp3b;` +
+  `select @2; lcaoCartoon COLOR TRANSLUCENT RED; lcaoCartoon CREATE sp2b;` +
+  `select @7; lcaoCartoon CREATE s;` +
+  `moveto 1.0 {0 0 1 0} 132.25 -18.9 9.02  {0.9036099 0.44890496 -0.23449996} 3.6789606 {0 0 0} 0 0 0 3.0 0.0 0.0;`
+)
+
 // oxygen 1 lobe 1 point: {2.755, 1.575, 0.475}
 // oxygen 1 lobe 2 point: {2.755, 1.05, -1.275}
 // oxygen 2 lobe 1 point: {1.66, -2, 0.51}
