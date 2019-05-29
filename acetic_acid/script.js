@@ -124,6 +124,47 @@ lesson.addInstruction(
   `moveto 1.0 {0 0 1 0} 132.25 -18.9 9.02  {0.9036099 0.44890496 -0.23449996} 3.6789606 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 )
 
+lesson.addInstruction(
+  `The carbon in the carboxyl functional group (carbonyl carbon) is surrounded by three electron domains (AX<sub>3</sub>), so the orbital hybridization is sp<sup>2</sup>. This 
+  carbon atom forms sigma bonds with the methyl carbon, the carbonyl oxygen, and the hydroxyl oxygen as shown.`,
+  `select @2; lcaoCartoon COLOR TRANSLUCENT BLUE; lcaoCartoon SCALE 1.0; lcaocartoon create sp2a; lcaocartoon create sp2b; lcaocartoon create sp2c; ` +
+  `select @8; lcaoCartoon COLOR TRANSLUCENT RED; lcaoCartoon create sp2a; ` +
+  `select @1; lcaoCartoon create sp3a; ` +
+  `select @6; lcaoCartoon create sp3a;` +
+  `moveto 1.0 {0 0 1 0} 132.25 -12.2 -3.48  {0.9036099 0.44890496 -0.23449996} 3.6789606 {0 0 0} 0 0 0 3.0 0.0 0.0;`
+)
+
+lesson.addInstruction(
+  `The carbonyl oxygen is surrounded by three electron domains (AXE<sub>2</sub>), so the orbital hybridization is sp<sup>2</sup>. This oxygen atom forms a single sigma bond with 
+  the carbonyl C (shown above).`,
+  `select @8; lcaoCartoon COLOR TRANSLUCENT BLUE; lcaoCartoon create sp2a;` +
+  `select @2; lcaoCartoon COLOR TRANSLUCENT RED; lcaoCartoon create sp2c;` +
+  `moveto 1.0 {0 0 1 0} 132.25 -19.51 -19.88  {0.9036099 0.44890496 -0.23449996} 3.6789606 {0 0 0} 0 0 0 3.0 0.0 0.0;`
+)
+
+lesson.addInstruction(
+  `Since the carbonyl C and O atoms are sp<sup>2</sup> hybridized, they each contain a non-hybridized p orbital with a single electron in each orbital. `,
+  `select @2, @8; lcaoCartoon COLOR TRANSLUCENT BLUE; lcaoCartoon create pz; ` +
+  `moveto 1.0 { -966 234 114 66.18}   152.09 -25.0 -2.87  {0.9036099 0.44890496 -0.23449996} 3.6789606 {0 0 0} 0 0 0 3.0 0.0 0.0;`
+  )
+  
+lesson.addInstruction(
+  `The overlap of the electrons in the p orbitals provides the pi bond between the carbonyl C and O atoms. `,
+  `isosurface piBond on;` +
+  `moveto 1.0 { -966 234 114 66.18}   152.09 -25.0 -2.87  {0.9036099 0.44890496 -0.23449996} 3.6789606 {0 0 0} 0 0 0 3.0 0.0 0.0;`
+)
+
+lesson.addInstruction(
+  `There are a total of 7 sigma bonds (blue) and one pi bond (green) in acetic acid as shown here.`,
+  `isosurface piBond on;` +
+  `select @3, @4, @5, @7; lcaoCartoon COLOR TRANSLUCENT BLUE; lcaoCartoon CREATE s;` +
+  `select @1; lcaoCartoon CREATE sp3a; lcaoCartoon CREATE sp3b; lcaoCartoon CREATE sp3c; lcaoCartoon CREATE sp3d;` +
+  `select @2; lcaoCartoon CREATE sp2a; lcaoCartoon CREATE sp2b; lcaoCartoon CREATE sp2c; ` +
+  `select @6; lcaoCartoon CREATE sp3a; lcaoCartoon CREATE sp3b; ` +
+  `select @8; lcaoCartoon CREATE sp2a;` +
+  `moveto 1.0 { -997 -72 -10 31.44}   100.0 0.0 0.0  {0.9036099 0.44890496 -0.23449996} 3.6789606 {0 0 0} 0 0 0 3.0 0.0 0.0; spin on; ` 
+)
+
 // oxygen 1 lobe 1 point: {2.755, 1.575, 0.475}
 // oxygen 1 lobe 2 point: {2.755, 1.05, -1.275}
 // oxygen 2 lobe 1 point: {1.66, -2, 0.51}
