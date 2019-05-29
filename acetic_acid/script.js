@@ -84,7 +84,31 @@ lesson.addInstruction(
   `moveto 1.0 { 1000 0 0 0.74}  132.25 -10.16 -6.35 {0.9036099 0.44890496 -0.23449996} 3.6789606 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 )
 
+lesson.addInstruction(
+  `The O atom in the carboxyl group that is double-bonded to carbon has two lone pairs, so it has a trigonal planar electron domain geometry (AXE<sub>2</sub>). The trigonal 
+  planar unit surrounding the electron domains of O is highlighted here.`,
+  `select @8; lcaoCartoon scale 1.2; lcaoCartoon COLOR TRANSLUCENT GREEN; lcaoCartoon CREATE sp2b; lcaoCartoon CREATE sp2c;` +
+  `select *; color translucent 0.5; draw e_geo4 on;` +
+  `moveto 1.0 {0 0 1 0} 174.9 -31.71 -34.22 {0.9036099 0.44890496 -0.23449996} 3.6789606 {0 0 0} 0 0 0 3.0 0.0 0.0;`
+)
+
+lesson.addInstruction(
+  `Now that we have covered the geometries about the atoms present in acetic acid, we will explore the types of chemical bonds and orbital hybridizations responsible for 
+  these geometries.`,
+  `moveto  1.0 {0 0 1 0} 100.0 0.0 0.0  {0.9036099 0.44890496 -0.23449996} 3.6789606 {0 0 0} 0 0 0 3.0 0.0 0.0;`
+)
+
+lesson.addInstruction(
+  `The carbon atom in the methyl group of acetic acid is surrounded by four electron domains (AX<sub>4</sub>), so the orbital hybridization is sp<sup>3</sup>. This carbon 
+  atom forms sigma bonds to the terminal H atoms by overlapping the sp<sup>3</sup> hybrid orbitals (in blue) with the 1s atomic orbitals of the H atoms (in red) as shown here.`,
+  `select @1; lcaoCartoon SCALE 1.0; lcaoCartoon COLOR TRANSLUCENT BLUE; lcaoCartoon CREATE sp3b; lcaoCartoon CREATE sp3c; lcaoCartoon CREATE sp3d;` +
+  `select @3, @4, @5; lcaoCartoon COLOR TRANSLUCENT RED; lcaoCartoon CREATE s;` +
+  `moveto  1.0 { -50 999 -7 51.24} 132.25 0.0 0.0  {0.9036099 0.44890496 -0.23449996} 3.6789606 {0 0 0} 0 0 0 3.0 0.0 0.0;`
+)
+
 // oxygen 1 lobe 1 point: {2.755, 1.575, 0.475}
 // oxygen 1 lobe 2 point: {2.755, 1.05, -1.275}
+// oxygen 2 lobe 1 point: {1.66, -2, 0.51}
+// oxygen 2 lobe 2 point: {3.37, -0.86, 0.21}
 
 lesson.execute(0);
