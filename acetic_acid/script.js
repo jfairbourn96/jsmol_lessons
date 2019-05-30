@@ -52,7 +52,7 @@ lesson.addInstruction(
 
 lesson.addInstruction(
   `The bond angles in a molecule with geometry AX<sub>4</sub> are all 109.5 degrees.`,
-  `measure (@3) (@1) (@4); measure (@3) (@1) (@5); measure (@4) (@1) (@5); measure (@3) (@1) (@2);` +
+  `set measurementNumbers OFF; measure (@3) (@1) (@4); measure (@3) (@1) (@5); measure (@4) (@1) (@5); measure (@3) (@1) (@2);` +
   `moveto  1.0 { 0 1000 0 45.0} 100.0 0.0 0.0  {1.117675 0.21383995 0.01184997} 3.5866518 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 )
 

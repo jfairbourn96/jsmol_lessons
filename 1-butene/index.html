@@ -5,7 +5,7 @@
 <!--	Created at Utah State University with support from the Chemistry department. -->
 <!--  Copy this directory and complete the TODO's to make a lesson for a single molecule/set of molecules. -->
 	<meta charset="utf-8">
-	<title>Acetic Acid Lesson</title>
+	<title>Template Lesson</title>
 	<link href="lesson_page.css" rel="stylesheet" type="text/css">
   <script src="../../jsmol/JSmol.min.js"></script>
   <script>
@@ -14,12 +14,8 @@
       height: 500,      
       width: 500,
       j2sPath: "../../jsmol/j2s",
-      script: "load acetic_acid.log; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true; select @2, @8; bondorder 2;" +
-        "draw ID e_geo1 LINE [@3, @4, @5, @3, @2, @4, @5, @2, @4] DIAMETER 20 COLOR yellow; " +
-        "draw ID e_geo2 LINE [@7, {2.755, 1.575, 0.475}, {2.755, 1.05, -1.275}, @7, @2, {2.755, 1.575, 0.475}, {2.755, 1.05, -1.275}, @2] DIAMETER 20 COLOR yellow; " +
-        "draw ID e_geo3 LINE [@1, @6, @8, @1] DIAMETER 20 COLOR yellow; " +
-        "draw ID e_geo4 LINE [@2, {1.66, -2, 0.51}, {3.37, -0.86, 0.21}, @2] DIAMETER 20 COLOR yellow;" +
-        "select @8, @2; isosurface piBond CUTOFF 0.075 COLOR TRANSLUCENT 128 [x00ff00] mo 15;",
+      // TODO: Modify the initial script to load the appropriate molecule.
+      script: "load h2o.pdb; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;",
       debug: false
     };
   </script>
@@ -29,7 +25,7 @@
 	<header>
     <button id="restartButton"></button>
 		<div id="name" class="app">
-			Acetic Acid Lesson
+			Template Lesson
     </div>
     <button id="refreshButton"></button>
 	</header>

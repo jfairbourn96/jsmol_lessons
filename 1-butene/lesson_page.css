@@ -38,10 +38,6 @@ sup {
 	height: 500px;
 	width: 500px;
 }
-#description {
-	max-height: 275px;
-	overflow: scroll;
-}
 .consoleDiv {
 	width: 100%;
 }

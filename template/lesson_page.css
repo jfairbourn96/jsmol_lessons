@@ -28,6 +28,10 @@ sup {
 	vertical-align: top;
 	font-size: 0.6em;
 }
+#description {
+	max-height: 275px;
+	overflow: scroll;
+}
 #name {
   width: 90%;
   font-size: 40px;
