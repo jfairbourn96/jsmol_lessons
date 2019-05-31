@@ -10,34 +10,33 @@ document.getElementById('scriptButton').onclick = () => lesson.runCommand(docume
 
 // TODO: Alter the instructions and add as many as necessary.
 lesson.addInstruction(
-  `1-butene, or but-1-ene, is a linear alkene and one of four isomers of butene with the chemical formula C<sub>4</sub>H<sub>8</sub>.`,
-  `reset; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true; select @1, @2; bondorder 2;` 
+  `1-butene, or but-1-ene, is a linear alkene and one of four isomers of butene with the chemical formula C<sub>4</sub>H<sub>8</sub>. The location of the double bond 
+  is what distinguishes this molecule from other isomers of butene.`,
+  `reset; spacefill 20%; wireframe 0.15; spin on; frank on; background=white; antialiasDisplay=true; select @1, @2; bondorder 2;` 
 );
-
+  
 lesson.addInstruction(
   `For 1-butene, the double bond lies between carbon atoms 1 and 2.`,
-  // Ball and stick model of 1-butene w/ numbers next to atoms.
-  `spin on;`
-);
-
-lesson.addInstruction(
-  `The location of the double bond is what distinguishes this molecule from other isomers of butene.`,
   // Ball and stick model of 1-butene w/ closeup and highlight on double bond
-  `set spinX 20; set spinY 20; set spinZ 0; spin on;`
+  `select BONDS ({0}); color bonds lightgreen;` +
+  `select @1, @2, @5, @7; label display;` +
+  `moveto 1.0 { 454 -274 -848 60.79} 132.25 3.2 -0.1 {-2.7437047443579967 0.039529996165809544 -0.27230997481152475} 3.9548974844821956 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 );
 
 lesson.addInstruction(
   `Carbon atom 1 (C<sub>1</sub>) has trigonal planar electron domain and molecular geometries, giving 120 degree bond angles for the H-C<sub>1</sub>-H angle 
   and the two H-C<sub>1</sub>-C<sub>2</sub> angles.`,
   // Ball and stick model of 1-butene with trigonal plane of C1 highlighted and 120 degree bond angles shown
-  ``
-);
-
+  `measure (@3) (@1) (@2); measure (@4) (@1) (@2); measure (@3) (@1) (@4); measure "3:120"; draw geo1 on; select *; color translucent 0.5;` +
+  `moveto 1.0 { 454 -274 -848 60.79}   174.9 40.19 7.07   {-2.7437048 0.039529998 -0.27231} 3.9548974 {0 0 0} 0 0 0   3.0 0.0 0.0;`
+  );
+  
 lesson.addInstruction(
   `Like carbon 1, carbon atom 2 (C<sub>2</sub>) has trigonal planar electron domain and molecular geometries, giving 120 degree bond angles for the
   C<sub>1</sub>-C<sub>2</sub>-C<sub>3</sub>, C<sub>1</sub>-C<sub>2</sub>-H, and C<sub>3</sub>-C<sub>2</sub>-H angles.`,
   // Ball and stick model of 1-butene with trigonal plane of C2 highlighted and 120 degree gond angles shown
-  ``
+  `measure (@6) (@2) (@5); measure (@5) (@2) (@1); measure (@6) (@2) (@1); measure "3:120"; draw geo2 on; select *; color translucent 0.5;` +
+  `moveto 1.0 { 454 -274 -848 60.79}   174.9 9.3 10.35   {-2.7437048 0.039529998 -0.27231} 3.9548974 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 );
 
 lesson.addInstruction(

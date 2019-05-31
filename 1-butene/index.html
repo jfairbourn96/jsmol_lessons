@@ -5,7 +5,7 @@
 <!--	Created at Utah State University with support from the Chemistry department. -->
 <!--  Copy this directory and complete the TODO's to make a lesson for a single molecule/set of molecules. -->
 	<meta charset="utf-8">
-	<title>1-Butene (but-1-ene) Lesson</title>
+	<title>1-Butene Lesson</title>
 	<link href="lesson_page.css" rel="stylesheet" type="text/css">
   <script src="../../jsmol/JSmol.min.js"></script>
   <script>
@@ -15,8 +15,15 @@
       width: 500,
       j2sPath: "../../jsmol/j2s",
       // TODO: Modify the initial script to load the appropriate molecule.
-      script: "load 1-butene.log; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;" +
-        "select @1, @2; bondorder 2;",
+      script: "load 1-butene.log; spacefill 20%; wireframe 0.15; spin on; frank on; background=white; antialiasDisplay=true;" +
+        "select @1, @2; bondorder 2;" +
+        "draw ID geo1 LINE [@3, @4, @2, @3] DIAMETER 20 COLOR YELLOW;" +
+        "draw ID geo2 LINE [@1, @5, @6, @1] DIAMETER 20 COLOR YELLOW;" +
+        "select @1; label \"C1\"; font label 24; color label red;" +
+        "select @2; label \"C2\"; font label 24; color label red;" +
+        "select @5; label \"C3\"; font label 24; color label red;" +
+        "select @7; label \"C4\"; font label 24; color label red;" +
+        "select @1, @2, @5, @7; label hide; ",
       debug: false
     };
   </script>
