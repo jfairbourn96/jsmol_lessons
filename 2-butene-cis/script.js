@@ -9,7 +9,7 @@ document.getElementById('nextButton').onclick = () => { lesson.execute(1); }
 document.getElementById('scriptButton').onclick = () => lesson.runCommand(document.getElementById('console').value);
 
 // TODO: Alter the instructions and add as many as necessary.
-//Ball and stick models of cis and trans 2-butene shown together here. JUSTIN- ON THE SCANNED STATE DRAWINGS, I PUT THE METHYL GROUPS BEHIND. BUT MAYBE IT WOULD LOOK BETTER TO HAVE THEM IN FRONT FOR THE MODELS. IN WHICH CASE JUST SWITCH THE POSITIONS OF THE METHYLS AND HYDROGENS ON THE MODELS I DREW OUT.
+//Ball and stick models of cis and trans 2-butene shown together here. 
 lesson.addInstruction(
   `2-butene is a linear alkene containing 4 carbon atoms and where the double bond lies between 
     carbon atoms 2 and 3. 2-butene exists in the form of two geometric isomers named cis-2-butene 
@@ -23,7 +23,7 @@ lesson.addInstruction(
 
 // Ball and stick model of cis butene with the methyl groups highlighted in green
 lesson.addInstruction(
-  `Shown here is cis-2-butene. The two atoms containing the double bond (C<sub>2</sub> and 
+  `Shown here is <em>cis</em>-2-butene. The two atoms containing the double bond (C<sub>2</sub> and 
     C<sub>3</sub>) are each bonded to a H atom and a methyl group (CH3). The methyl groups (in green) 
     on C<sub>2</sub> and C<sub>3</sub> are on the same side of the molecule, with respect to the 
     double bond, for cis-2-butene. The prefix cis comes from the Latin term meaning “this side 
