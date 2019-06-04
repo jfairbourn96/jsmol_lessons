@@ -33,7 +33,7 @@ class Lesson
       resetScript += 'select *; draw * off; measure off; isosurface off; lcaoCartoon off; mo off; set spinX 0; set spinY 20; set spinZ 0;';
       resetScript += 'select @13, @14, @15, @16, @17, @18, @19, @20, @21, @22, @23, @24; hide selected;'
       resetScript += 'select @1, @2, @6, @8; label hide;';
-      resetScript += 'select *; color translucent 1;'
+      resetScript += 'select *; color translucent 0;'
 
       // Adjust the buttons and HTML elements
       this.backButton.disabled = (this.instruction === 0);
