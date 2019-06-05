@@ -54,15 +54,15 @@ lesson.addInstruction(
 
 // Ball and stick model of cis butene with the trigonal planar unit formed at C<sub>2</sub> highlighted
 lesson.addInstruction(
-  `Both carbon atoms 2 and 3 are sp<sup>2<sup>-hybridized and have trigonal planar electron domain and 
-    molecular geometries (AXsub>3</sub>E<sub>0</sub>). The trigonal plane formed around C<sub>2</sub> is shown here.`,
+  `Both carbon atoms 2 and 3 are sp<sup>2</sup>-hybridized and have trigonal planar electron domain and 
+    molecular geometries (AX<sub>3</sub>E<sub>0</sub>). The trigonal plane formed around C<sub>2</sub> is shown here.`,
   `select *; color translucent 0.5; draw geo3 on;` +
   `moveto 1.0 { -404 738 -540 15.18}   226.32 55.43 -21.52  {-4.7871995 0.270445 -0.03143996} 6.693161 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 );
 
 // Ball and stick model of cis butene with the trigonal planar unit formed at C<sub>3</sub> highlighted
 lesson.addInstruction(
-  `Both carbon atoms 2 and 3 are sp<sup>2<sup>-hybridized and have trigonal planar electron domain and 
+  `Both carbon atoms 2 and 3 are sp<sup>2</sup>-hybridized and have trigonal planar electron domain and 
     molecular geometries (AX<sub>3</sub>E<sub>0</sub>). The trigonal plane formed around C<sub>3</sub> is shown here.`,
   `select *; color translucent 0.5; draw geo4 on;` +
   `moveto 1.0 { -404 738 -540 15.18}   226.32 36.03 -21.92   {-4.7871995 0.270445 -0.03143996} 6.693161 {0 0 0} 0 0 0 3.0 0.0 0.0;`

@@ -129,7 +129,7 @@ lesson.addInstruction(
 lesson.addInstruction(
   `The methyl groups are constrained to opposite sides of the double bond in <em>trans</em>-2-butene
   due to the presence of the pi bond which prevents rotation about C<sub>2</sub> and C<sub>3</sub>.`,
-  `isosurface piBond on; draw p1 on; draw p2 on;` +
+  `isosurface piBond on; draw p1 on; draw p2 on; draw arr1 on; draw arr2 on;` +
   `select @13, @15, @16, @17, @20, @22, @23, @24; lcaoCartoon color translucent green; lcaoCartoon create s;`  +
   `moveto 1.0 { -921 390 14 49.58} 231.31 -29.8 7.4 {-4.787199554327145 0.2704449749676541 -0.03143999704594197} 6.6931617841719175 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 )
