@@ -13,20 +13,20 @@ document.getElementById('scriptButton').onclick = () => lesson.runCommand(docume
 lesson.addInstruction(
   `2-butene is a linear alkene containing 4 carbon atoms and where the double bond lies between 
     carbon atoms 2 and 3. 2-butene exists in the form of two geometric isomers named cis-2-butene 
-    and trans-2-butene. For organic molecules, geometric isomers are isomers where functional 
-    groups are either on the same side (cis-) or opposite sides (trans-) of the molecule. For 
+    and <em>trans</em>-2-butene. For organic molecules, geometric isomers are isomers where functional 
+    groups are either on the same side (<em>cis</em>-) or opposite sides (<em>trans</em>-) of the molecule. For 
     alkenes, the “sides” of the molecule are relative to the double bond. 2-butene is the 
-    simplest alkene for which cis- and trans- isomers exist. In this tutorial we will examine 
-    the structural features of the cis isomer.`,
+    simplest alkene for which <em>cis</em>- and <em>trans</em>- isomers exist. In this tutorial we will examine 
+    the structural features of the <em>cis</em> isomer.`,
   `reset; select *; display {*}; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;` + lesson.shapeString
 );
 
-// Ball and stick model of cis butene with the methyl groups highlighted in green
+// Ball and stick model of <em>cis</em> butene with the methyl groups highlighted in green
 lesson.addInstruction(
   `Shown here is <em>cis</em>-2-butene. The two atoms containing the double bond (C<sub>2</sub> and 
     C<sub>3</sub>) are each bonded to a H atom and a methyl group (CH3). The methyl groups (in green) 
     on C<sub>2</sub> and C<sub>3</sub> are on the same side of the molecule, with respect to the 
-    double bond, for cis-2-butene. The prefix cis comes from the Latin term meaning “this side 
+    double bond, for <em>cis</em>-2-butene. The prefix <em>cis</em> comes from the Latin term meaning “this side 
     of”; in other words, the same side of the molecule.`,
   `select @1, @3, @4, @5, @8, @10, @11, @12; lcaoCartoon color translucent green; lcaoCartoon create s;` +
   `select @1, @2, @6, @8; label display;` +
@@ -54,7 +54,7 @@ lesson.addInstruction(
 
 // Ball and stick model of cis butene with the trigonal planar unit formed at C<sub>2</sub> highlighted
 lesson.addInstruction(
-  `Both carbon atoms 2 and 3 are sp2-hybridized and have trigonal planar electron domain and 
+  `Both carbon atoms 2 and 3 are sp<sup>2<sup>-hybridized and have trigonal planar electron domain and 
     molecular geometries (AXsub>3</sub>E<sub>0</sub>). The trigonal plane formed around C<sub>2</sub> is shown here.`,
   `select *; color translucent 0.5; draw geo3 on;` +
   `moveto 1.0 { -404 738 -540 15.18}   226.32 55.43 -21.52  {-4.7871995 0.270445 -0.03143996} 6.693161 {0 0 0} 0 0 0 3.0 0.0 0.0;`
@@ -62,7 +62,7 @@ lesson.addInstruction(
 
 // Ball and stick model of cis butene with the trigonal planar unit formed at C<sub>3</sub> highlighted
 lesson.addInstruction(
-  `Both carbon atoms 2 and 3 are sp2-hybridized and have trigonal planar electron domain and 
+  `Both carbon atoms 2 and 3 are sp<sup>2<sup>-hybridized and have trigonal planar electron domain and 
     molecular geometries (AX<sub>3</sub>E<sub>0</sub>). The trigonal plane formed around C<sub>3</sub> is shown here.`,
   `select *; color translucent 0.5; draw geo4 on;` +
   `moveto 1.0 { -404 738 -540 15.18}   226.32 36.03 -21.92   {-4.7871995 0.270445 -0.03143996} 6.693161 {0 0 0} 0 0 0 3.0 0.0 0.0;`
@@ -129,7 +129,7 @@ lesson.addInstruction(
 lesson.addInstruction(
   `The methyl groups are constrained to the same side of the double bond due to the presence 
     of the pi bond which prevents rotation about C<sub>2</sub> and C<sub>3</sub>.`,
-  `isosurface piBond on; draw p1 on; draw p2 on;` +
+  `isosurface piBond on; draw p1 on; draw p2 on; draw arr1 on; draw arr2 on;` +
   `select @1, @3, @4, @5, @8, @10, @11, @12; lcaoCartoon color translucent green; lcaoCartoon create s;` +  
   `moveto 1.0 { -995 36 -95 60.06}   217.98 41.75 -8.57 {-4.787199502245146 0.2704449989655046 -0.03143996153097369} 6.693161045234497 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 )

@@ -31,8 +31,8 @@ class Lesson
       }
       // TODO: Change your resetScript to only reset the options that your instructions adjust
       resetScript += 'select *; draw * off; measure off; isosurface off; lcaoCartoon off; mo off; set spinX 0; set spinY 20; set spinZ 0;';
-      resetScript += 'select @13, @14, @15, @16, @17, @18, @19, @20, @21, @22, @23, @24; hide selected;'
-      resetScript += 'select @1, @2, @6, @8; label hide;';
+      resetScript += 'select @1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12; hide selected;'
+      resetScript += 'select @13, @14, @18, @20; label hide;';
       resetScript += 'select *; color translucent 0;'
 
       // Adjust the buttons and HTML elements
