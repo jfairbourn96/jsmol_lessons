@@ -129,9 +129,9 @@ lesson.addInstruction(
 lesson.addInstruction(
   `The methyl groups are constrained to the same side of the double bond due to the presence 
     of the pi bond which prevents rotation about C<sub>2</sub> and C<sub>3</sub>.`,
-  `isosurface piBond on; draw p1 on; draw p2 on; draw arr1 on; draw arr2 on;` +
+  `isosurface piBond on; draw p1 on; draw p2 on; draw axisLine on;` +
   `select @1, @3, @4, @5, @8, @10, @11, @12; lcaoCartoon color translucent green; lcaoCartoon create s;` +  
-  `moveto 1.0 { -995 36 -95 60.06}   217.98 41.75 -8.57 {-4.787199502245146 0.2704449989655046 -0.03143996153097369} 6.693161045234497 {0 0 0} 0 0 0 3.0 0.0 0.0;`
+  `moveto 1.0 { -481 -371 -794 10.46} 217.98 44.05 -18.87 {-4.787199502245146 0.2704449989655046 -0.03143996153097369} 6.693161045234497 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 )
 
 lesson.execute(0);
