@@ -15,7 +15,15 @@
       width: 500,
       j2sPath: "../../jsmol/j2s",
       // TODO: Modify the initial script to load the appropriate molecule.
-      script: "load benzene.log; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;",
+      script: "load benzene.log; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;" +
+        "draw ID geo1 LINE [@2, @6, @5, @2] DIAMETER 25 COLOR YELLOW;" +
+        "select @1, @2, @3, @5, @7, @9; isosurface piBond CUTOFF 0.08 COLOR TRANSLUCENT 128 [xffff00] mo 17;" +
+        "select @1; label \"C1\"; font label 24; color label blue;" +
+        "select @2; label \"C2\"; font label 24; color label blue;" +
+        "select @3; label \"C3\"; font label 24; color label blue;" +
+        "select @5; label \"C4\"; font label 24; color label blue;" +
+        "select @7; label \"C5\"; font label 24; color label blue;" +
+        "select @9; label \"C6\"; font label 24; color label blue;",
       debug: false
     };
   </script>
@@ -45,9 +53,8 @@
   <footer id="description" class="app">
   </footer>
 
-  <div id="consoleDiv" hidden="true">
-    <input type="text" id="console" size="80">
-    <button id="scriptButton">run</button>
+  <div id="consoleDiv">
+    <button id="scriptButton" onclick="Jmol.script(main, 'console;');">Right clicking is hard, show the console.</button>
   </div>
 
   <script src="instruction.js"></script>

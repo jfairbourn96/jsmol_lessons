@@ -29,8 +29,15 @@ class Lesson
       {
         resetScript += '!quit;'
       }
-      // TODO: Change your resetScript to only reset the options that your instructions adjust
+
+      // Turn off all drawings and surfaces and set the spin to default
       resetScript += 'select *; draw * off; measure off; isosurface off; lcaoCartoon off; mo off; set spinX 0; set spinY 20; set spinZ 0;';
+      // reset all the drawn bonds to single
+      resetScript += 'connect;';
+      // hide the Carbon labels by default
+      resetScript += 'select @1, @2, @3, @5, @7, @9; label hide;';
+      // set the atoms to be opaque
+      resetScript += 'select *; color translucent 0;'
 
       // Adjust the buttons and HTML elements
       this.backButton.disabled = (this.instruction === 0);
