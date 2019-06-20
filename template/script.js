@@ -10,6 +10,14 @@ document.getElementById('scriptButton').onclick = () => lesson.runCommand(docume
 
 // TODO: Alter the instructions and add as many as necessary.
 lesson.addInstruction(
+  `This tutorial consists of a sequence of interactive molecular models, with explanations below them. This set of molecules illustrates the _____________. Use your mouse or touch screen ` +
+  `to rotate, zoom, and move the model on any of the states in this tutorial. Use the large arrow key to the right of the window to advance to the next model. Use the large arrow key to the ` +
+  `left of the model to go to the previous model. Use the "reset page" button in the upper right to return to the default model view, if desired. Use the “reset tutorial” button (upper left) ` +
+  `to return to the start of the tutorial at this instruction. Click the “advance” arrow to get started!`,
+  ``
+);
+
+lesson.addInstruction(
   `This is a single water molecule.`,
   `reset; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;` + lesson.shapeString
 );
