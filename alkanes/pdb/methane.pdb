@@ -1,0 +1,13 @@
+HEADER
+REMARK Spartan exported Mon Jun 14 10:19:59 1999
+HETATM    1  H   UNK  0001       0.000   0.000  -1.096
+HETATM    2  C   UNK  0001       0.000   0.000   0.000
+HETATM    3  H   UNK  0001       1.033   0.000   0.365
+HETATM    4  H   UNK  0001      -0.517  -0.895   0.365
+HETATM    5  H   UNK  0001      -0.517   0.895   0.365
+CONECT    1    2
+CONECT    2    1    3    4    5
+CONECT    3    2
+CONECT    4    2
+CONECT    5    2
+END
