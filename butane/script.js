@@ -8,13 +8,13 @@ document.getElementById('backButton').onclick = () => { lesson.execute(-1); }
 document.getElementById('nextButton').onclick = () => { lesson.execute(1); }
 document.getElementById('scriptButton').onclick = () => lesson.runCommand(document.getElementById('console').value);
 
-// TODO: Alter the instructions and add as many as necessary.
 lesson.addInstruction(
-  `This tutorial consists of a sequence of interactive molecular models, with explanations below them. This set of molecules illustrates the _____________. Use your mouse or touch screen ` +
+  `This tutorial consists of a sequence of interactive molecular models, with explanations below them. This set of molecules illustrates the conformational positions of butane. Use your mouse or touch screen ` +
   `to rotate, zoom, and move the model on any of the states in this tutorial. Use the large arrow key to the right of the window to advance to the next model. Use the large arrow key to the ` +
   `left of the model to go to the previous model. Use the "reset page" button in the upper right to return to the default model view, if desired. Use the “reset tutorial” button (upper left) ` +
   `to return to the start of the tutorial at this instruction. Click the “advance” arrow to get started!`,
-  ``
+  `reset; frame 1; spacefill 20%; wireframe 0.15; spin on; frank on; background=black; antialiasDisplay=true;` + lesson.shapeString +
+  `moveto 1.0 {0 0 1 0} 100.0 0.0 0.0 {0.7530000000000001 -0.011099999999999888 0.0037999999999998035} 4.022871158944382 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 );
 
 //Show butane as frame 19 (anti)  in following orientation with spin on. Disregard the colors in this figure. 
@@ -22,16 +22,14 @@ lesson.addInstruction(
 lesson.addInstruction(
   `n-Butane is the linear alkane containing four carbon atoms. All of the carbon atoms are connected by single 
   bonds, are sp<sup>3</sup>-hybridized, and have tetrahedral molecular geometries.`,
-  `reset; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;` + lesson.shapeString
+  `frame 19; select @1, @2, @3, @6; label display; spin on;` +
+  `moveto 0.0 {0 0 1 0} 100.0 0.0 0.0 {0.7530000000000001 -0.011099999999999888 0.0037999999999998035} 4.022871158944382 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 );
 
 // Show butane in this orientation with C2 colored red and C3 colored green, spin off (still frame 19 and keep 
 // C atom labels on), draw a curved arrow around the C2-C3 bond to highlight that this is the bond we will be 
 // focusing on. You may have already figured this out, but to specify a carbon atom in a particular state, use
 //  this command: 
-// select C1/19 #1; color green; select C2/19 #2; color red. 
-// To change the color for ALL the C atoms over all states, use this command:
-// select @2; color green; select @1; color red; Here we want to change the colors for all states.
 // It is important we have the right C atoms colored red and green to get the dihedral angles correct. So the 
 // atom labelled C2 is going the be the front C in the newman projection, and the C labelled C1 is going to be 
 // the rear one. This is correct:
@@ -43,7 +41,11 @@ lesson.addInstruction(
   with different orientations for the hydrogen atoms and methyl groups. In this lesson we will illustrate this 
   by focusing on rotation about the C2-C3 bond. For reference, we will color C2 in red and C3 in green to keep 
   track of them.`,
-  `spin on;`
+  `frame 19;` +
+  `select @1; color green; select @2; color red;` +
+  `select @1, @2, @3, @6; label display;` +
+  `draw ID bondArrow ARROW ARC {0 0 0} {1.514 0 0} {0 0 2} {0 340 0.5} DIAMETER 5 COLOR YELLOW SCALE 250;` +
+  `moveto 1.0 { 208 -975 -73 129.04} 100.0 0.0 0.0 {0.7530000000000001 -0.011099999999999888 0.0037999999999998035} 4.022871158944382 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 );
 
 // Starting with orientation of state 1, turn animation on and loop it continuously while displaying this 
@@ -52,7 +54,7 @@ lesson.addInstruction(
 lesson.addInstruction(
   `Rotation about the C2-C3 bond (as well as about C1-C2 and C3-C4) can occur very rapidly, with the rate of 
   rotation increasing at higher temperatures. `,
-  `set spinX 20; set spinY 20; set spinZ 0; spin on;`
+  `frame 1; anim mode loop 0; anim on;`
 );
 
 // Continue the loop animation in state 3, and then use a time delay (3 seconds?/move to reorient the 
@@ -60,7 +62,9 @@ lesson.addInstruction(
 // state.
 lesson.addInstruction(
   `Here we are looking at the rotation about the C2-C3 bond while looking down the C2-C3 bond .`,
-  `set spinX 20; set spinY -10; set spinZ -10; spin on; isosurface vdw; isosurface translucent;`
+  `select @1, @2, @3, @6; label display;` +
+  `moveto 1.0 { 26 -1000 -9 89.86} 100.0 0.0 0.0 {0.7530000000000001 -0.011099999999999888 0.0037999999999998035} 4.022871158944382 {0 0 0} 0 0 0 3.0 0.0 0.0; ` +
+  `frame 1; anim mode loop 0; anim on;` 
 );
 
 // Reset to frame 19, looking down the axis of C2-C3 in newman. By convention the methyl group should be UP 
@@ -70,17 +74,21 @@ lesson.addInstruction(
   `The molecule shown in this orientation is in the form of a Newman projection. A newman projection shows 
   the orientation of two atoms, in this case C1 and C4, relative to each other while looking down the axis of 
   the bond those atoms are connected to (in this case the C2-C3 bond). `,
-  ``
+  `frame 19;` +  
+  `select @1; color green; select @2; color red;` +
+  `moveto 1.0 { 26 -1000 -9 89.86} 100.0 0.0 0.0 {0.7530000000000001 -0.011099999999999888 0.0037999999999998035} 4.022871158944382 {0 0 0} 0 0 0 3.0 0.0 0.0; `
 );
 
 // Change sizes of the atoms C2 and C3, and reduce the wireframe to 10%. 
 // select *; wireframe 10%; select C2 #2; spacefill 10%; select C1 #1; spacefill 35%
 lesson.addInstruction(
-  `When drawing Newman projections on paper, the back C is represented by a solid circle (red here), while the 
-  front C is represented by a dot (green here). In this figure the sizes of C2 and C3 have been changed to 
+  `When drawing Newman projections on paper, the back C is represented by a solid circle (green here), while the 
+  front C is represented by a dot (red here). In this figure the sizes of C2 and C3 have been changed to 
   mimic the Newman projection. The wireframe connections have also been reduced in size to mimic the Newman 
   projection.`,
-  ``
+  `frame 19;` +
+  `select @1; color green; spacefill 45%; select @2; color red; spacefill 10%; select * wireframe 0.07;` +
+  `moveto 1.0 { 26 -1000 -9 89.86} 100.0 0.0 0.0 {0.7530000000000001 -0.011099999999999888 0.0037999999999998035} 4.022871158944382 {0 0 0} 0 0 0 3.0 0.0 0.0; `  
 );
 
 // Start with previous state (newman looking down C2-C3, then rotate to side on over 2 seconds, pause 2 seconds, 
@@ -91,7 +99,14 @@ lesson.addInstruction(
 lesson.addInstruction(
   `Note how the Newman projection is set up to view the orientation of the C1 carbon (in front) relative to 
   the C4 carbon (in back) while sighting down the axis of the C2-C3 bond.`,
-  ``
+  `frame 19;` +
+  `select @1; color green; spacefill 45%; select @2; color red; spacefill 10%; select *; wireframe 0.07;` +
+  `moveto 0.0 { 26 -1000 -9 89.86} 100.0 0.0 0.0 {0.7530000000000001 -0.011099999999999888 0.0037999999999998035} 4.022871158944382 {0 0 0} 0 0 0 3.0 0.0 0.0; delay 2;` +
+  `moveto 2.0 { 18 -999 -47 11.65}  115.0 0.2 3.55  {0.753 -0.011099935 0.0038000345} 4.022871 {0 0 0} 0 0 0  3.0 0.0 0.0; delay 2;` +
+  `moveto 2.0 { 22 1000 17 87.89} 115.0 0.2 3.55   {0.753 -0.011099935 0.0038000345} 4.022871 {0 0 0} 0 0 0 3.0 0.0 0.0;`  +
+  `select @1; spacefill 10%; select @2; spacefill 45%;  delay 2;` +
+  `moveto 2.0 { 1 -1000 9 89.75} 115.0 0.2 3.55  {0.753 -0.011099935 0.0038000345} 4.022871 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+  `select @1; spacefill 45%; select @2; spacefill 10%;`
 );
 
 // Add dihedral angle and its value (180 degrees) to the newman projection for frame 17, retaining the 
@@ -109,7 +124,9 @@ lesson.addInstruction(
   angle being 180 degrees. This particular conformation is referred to as a <strong>staggered</strong> 
   conformation, and more specifically, as the <strong>anti</strong> conformation, where the two methyl groups 
   (C1 and C4) are spatially as far away from each as possible.`,
-  ``
+  `font measure 20; measure ALL (@3) (@2) (@1) (@6); frame 19;` +
+  `select @1; color green; spacefill 45%; select @2; color red; spacefill 10%; select *; wireframe 0.07;` +
+  `moveto 0.0 { 26 -1000 -9 89.86} 100.0 0.0 0.0 {0.7530000000000001 -0.011099999999999888 0.0037999999999998035} 4.022871158944382 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 );
 
 //Add an animation to rotate from anti to eclipsed in the newman projection.
@@ -117,7 +134,8 @@ lesson.addInstruction(
   `In this animation, butane is being rotated about the C2-C3 bond to the point where the torsion angle for 
   C1 and C4 has a value of 0 degrees. In this conformation, the C1 and C4 atoms are said to be <strong>eclipsed
   </strong>, as they are as spatially close to one another as possible. `,
-  ``
+  `select @1; color green; spacefill 45%; select @2; color red; spacefill 10%; select *; wireframe 0.07;` + 
+  `animation DIRECTION -1; animation FRAMES [1 -19]; animation MODE LOOP 1 1; animation on;`
 );
 
 // Go back to default view of butane (normal wireframe and ball and stick). Then add the “dots” for the methyl 
@@ -129,7 +147,9 @@ lesson.addInstruction(
   steric hindrance imposed by having the methyl groups so close together. In this state the electron densities 
   of the methyl groups are shown superimposed on the ball and stick model to highlight the steric hindrance 
   imposed by having the groups so close together.`,
-  ``
+  `frame 1;` +
+  `select *; color cpk; spacefill 20%; wireframe 0.15; select @6, @9, @10, @11; color red; dots; select @3, @12, @13, @14; color green; dots; spin y;` +
+  `moveto 1.0 {0 0 1 0} 100.0 0.0 0.0 {0.7530000000000001 -0.011099999999999888 0.0037999999999998035} 4.022871158944382 {0 0 0} 0 0 0 3.0 0.0 0.0;` 
 );
 
 // Set state 10 to frame 19
@@ -137,7 +157,9 @@ lesson.addInstruction(
   `The anti conformation of butane is the lowest energy and most thermodynamically favorable state. Rotate 
   the molecule using your mouse or fingers to view the electron surfaces on the C1 and C4 methyl groups using 
   different views.`,
-  ``
+  `frame 19;` +  
+  `select *; color cpk; spacefill 20%; wireframe 0.15; select @6, @9, @10, @11; color red; dots; select @3, @12, @13, @14; color green; dots;` +
+  `moveto 0.0 {0 0 1 0} 100.0 0.0 0.0 {0.7530000000000001 -0.011099999999999888 0.0037999999999998035} 4.022871158944382 {0 0 0} 0 0 0 3.0 0.0 0.0;` 
 );
 
 // Animate to frame 7 and add dihedral angle. Leave the dots on so the surface can be seen.  If set up properly,
@@ -148,7 +170,12 @@ lesson.addInstruction(
   will have energies intermediate between the lowest and highest energy anti and eclipsed states. Shown here 
   is the Gauche conformation where the dihedral angle is 60 degrees. Note how in this conformation C4 is 
   staggered with respect to the C1 C and one of the H atoms on C2.`,
-  ``
+  `frame 1;` +
+  `font measure 20; measure ALL (@3) (@2) (@1) (@6);` +
+  `select *; color cpk; spacefill 20%; wireframe 0.15; select @6, @9, @10, @11; color green; dots; select @3, @12, @13, @14; color red; dots;` +
+  `select @1; color green; spacefill 45%; select @2; color red; spacefill 10%; select *; wireframe 0.07;` +   
+  `moveto 1.0 { 26 -1000 -9 89.86} 100.0 0.0 0.0 {0.7530000000000001 -0.011099999999999888 0.0037999999999998035} 4.022871158944382 {0 0 0} 0 0 0 3.0 0.0 0.0;`  +
+  `delay 1; animation MODE ONCE; animation FRAMES [1 -7];  animation ON;`
 );
 
 // Animate to frame 13 and add dihedral angle. turn on the dots for the H that clashes with the red methyl.  
@@ -157,7 +184,12 @@ lesson.addInstruction(
   `Rotation about the C2-C34 bond to a torsion angle of 120 degrees gives an eclipsed conformation where C4 
   sterically clashes with one of the H atoms on C2. Use your mouse or fingers to rotate the model to different 
   orientations to view the steric hindrance.`,
-  ``
+  `frame 7;` +
+  `font measure 20; measure ALL (@3) (@2) (@1) (@6); ` +
+  `select *; color cpk; spacefill 20%; wireframe 0.15; select @6, @9, @10, @11; color green; dots; select @8; color yellow; dots;` +
+  `select @1; color green; spacefill 45%; select @2; color red; spacefill 10%; select *; wireframe 0.07;` +   
+  `moveto 0.0 { 26 -1000 -9 89.86} 100.0 0.0 0.0 {0.7530000000000001 -0.011099999999999888 0.0037999999999998035} 4.022871158944382 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+  `delay 1; animation MODE ONCE; animation FRAMES [7 -13]; animation ON;`
 );
 
 // Animate to frame 25 and add dihedral angle. turn on the dots for the H that clashes with the red methyl at 
@@ -166,15 +198,24 @@ lesson.addInstruction(
   `Further rotating about C2-C3 in the clockwise direction, we will pass through the thermodynamically favored 
   anti conformation, then encounter another eclipsed state (with respect to an H atom) when the dihedral angle 
   is 240 degrees.`,
-  ``
+  `frame 13;` +
+  `font measure 20; measure ALL (@3) (@2) (@1) (@6);` +
+  `select *; color cpk; spacefill 20%; wireframe 0.15; select @6, @9, @10, @11; color green; dots; select @7; color yellow; dots;` +
+  `select @1; color green; spacefill 45%; select @2; color red; spacefill 10%; select *; wireframe 0.07;` +   
+  `moveto 0.0 { 26 -1000 -9 89.86} 100.0 0.0 0.0 {0.7530000000000001 -0.011099999999999888 0.0037999999999998035} 4.022871158944382 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+  `delay 1; animation MODE ONCE; animation FRAMES [13 -25]; animation ON;`
 );
 
-// Animate to frame 31 and add dihedral angle. turn on the dots for the H that clashes with the red methyl at 
-// that position.  Color the dots purple. 
+// Animate to frame 31 and add dihedral angle. 
 lesson.addInstruction(
   `Further rotating about C2-C3 in the clockwise direction, we will encounter another Gauche when the dihedral 
   angle is 300 degrees.`,
-  ``
+  `frame 25;` +
+  `font measure 20; measure ALL (@3) (@2) (@1) (@6);` +
+  `select *; color cpk; spacefill 20%; wireframe 0.15; select @6, @9, @10, @11; color green; dots; select @7; color yellow; dots;  select @3, @12, @13, @14; color red; dots;` +
+  `select @1; color green; spacefill 45%; select @2; color red; spacefill 10%; select *; wireframe 0.07;` +   
+  `moveto 0.0 { 26 -1000 -9 89.86} 100.0 0.0 0.0 {0.7530000000000001 -0.011099999999999888 0.0037999999999998035} 4.022871158944382 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+  `delay 1; animation MODE ONCE; animation FRAMES [25 -31]; animation ON;`
 );
 
 // Turn on continuous looping animation with translucent isosurface present. Set spin to two axes directions 
@@ -186,7 +227,8 @@ lesson.addInstruction(
 lesson.addInstruction(
   `In this view, the isosurface is superimposed on the ball and stick model. Watch how the regions of electron 
   density overlap change as the torsion angle about C2-C3 cycles from 0 to 360 degrees.`,
-  ``
+  `moveto 0.0 { 26 -1000 -9 89.86} 100.0 0.0 0.0 {0.7530000000000001 -0.011099999999999888 0.0037999999999998035} 4.022871158944382 {0 0 0} 0 0 0 3.0 0.0 0.0;` +  
+  `frame 1; select *; set dotDensity 3; dots VANDERWAALS; animation mode loop 0; animation ON;`
 );
 
 lesson.execute(0);

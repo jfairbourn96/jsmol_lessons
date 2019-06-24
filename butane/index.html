@@ -15,7 +15,12 @@
       width: 500,
       j2sPath: "../../jsmol/j2s",
       // TODO: Modify the initial script to load the appropriate molecule.
-      script: "load butane.xyz; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;",
+      script: "load butane.xyz; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;" +
+        "select @3; label \"1\"; font label 36; color label blue;" +
+        "select @2; label \"2\"; font label 36; color label blue;" +
+        "select @1; label \"3\"; font label 36; color label blue;" +
+        "select @6; label \"4\"; font label 36; color label blue;" +
+        "draw ID bondArrow ARROW ARC {0 0 0} {1.514 0 0} {0 0 2} {0 340 0.5} DIAMETER 5 COLOR YELLOW SCALE 250;" ,
       debug: false
     };
   </script>
@@ -45,7 +50,7 @@
   <footer id="description" class="app">
   </footer>
 
-  <div id="consoleDiv" hidden="true">
+  <div id="consoleDiv" >
     <input type="text" id="console" size="80">
     <button id="scriptButton">run</button>
   </div>
