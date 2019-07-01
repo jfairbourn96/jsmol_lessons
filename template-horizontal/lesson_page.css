@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+/* Authors: Justin Fairbourn and Scott Ensign */
+/* Created at Utah State University with support from the Chemistry department.*/
+body {
+	font-family: Arial;
+	background-color: darkgray;
+	display: flex;
+	flex-direction: column;
+  	justify-content: center;
+  	align-items: center;
+}
+header {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-content: center;
+	max-width: 1000px;
+	min-width: 750px;
+}
+main {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: center;
+}
+main > aside {
+	min-width: 250px;
+	max-width: 500px;
+	height: 517px;
+	padding: 10px;
+	font-size: 20px;
+	text-align: center;
+	overflow: scroll;
+}
+main > section {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-items: center;
+}
+sup {
+	vertical-align: top;
+	font-size: 0.6em;
+}
+#name {
+	width: 100%;
+	font-size: 40px;
+	font-weight: bold;
+}
+#window {
+	/* Re-size this to match the dimensions of the info variable in jsmol html pages */
+	height: 500px;
+	width: 500px;
+}
+.app {
+	align-self: center;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 7px 7px 5px black;
+	margin: 5px;
+	padding: 6px;
+}
+
+
+/* credit goes to clker.com for the arrow images */
+#nextButton {
+	background: url(../images/arrow.svg.med.png);
+	background-size: 100% 100%;
+	height: 522px;
+	width: 60px;
+}
+
+#backButton {
+	background: url(../images/arrowleft.svg.med.png);
+	background-size: 100% 100%;
+	height: 522px;
+	width: 60px;
+}
+
+#restartButton {
+	background: url(../images/restart.png);
+	background-size: 100% 100%;
+	height: 65px;
+	width: 65px;
+}
+
+#refreshButton {
+	background: url(../images/refresh.png);
+	background-size: 100% 100%;
+	height: 65px;
+	width: 65px;
+}
