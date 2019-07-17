@@ -8,12 +8,23 @@ document.getElementById('backButton').onclick = () => { lesson.execute(-1); }
 document.getElementById('nextButton').onclick = () => { lesson.execute(1); }
 document.getElementById('scriptButton').onclick = () => lesson.runCommand(document.getElementById('console').value);
 
+let methane = "WITHIN(MOLECULE, {@1})";
+let ethane = "WITHIN(MOLECULE, {@6})";
+let propane = "WITHIN(MOLECULE, {@14})";
+let butane = "WITHIN(MOLECULE, {@25})";
+let pentane = "WITHIN(MOLECULE, {@39})";
+let hexane = "WITHIN(MOLECULE, {@56})";
+let heptane = "WITHIN(MOLECULE, {@76})";
+let octane = "WITHIN(MOLECULE, {@99})";
+let nonane = "WITHIN(MOLECULE, {@125})";
+let decane = "WITHIN(MOLECULE, {@154})";
+
 lesson.addInstruction(
   `This tutorial consists of a sequence of interactive molecular models, with explanations below them. This set of molecules illustrates the . Use your mouse or touch screen ` +
   `to rotate, zoom, and move the model on any of the states in this tutorial. Use the large arrow key to the right of the window to advance to the next model. Use the large arrow key to the ` +
   `left of the model to go to the previous model. Use the "reset page" button in the upper right to return to the default model view, if desired. Use the “reset tutorial” button (upper left) ` +
   `to return to the start of the tutorial at this instruction. Click the “advance” arrow to get started!`,
-  `load pdb/decane.pdb; spacefill 20%; wireframe 0.15; spin on; frank on; background=white; antialiasDisplay=true; display *;` + lesson.shapeString
+  `load alkanes.log; spacefill 20%; wireframe 0.15; frank on; background=white; antialiasDisplay=true; display ${decane}; center ${decane}; zoom 0;`
 );
 
 // Ball and stick model of n-decane where it is rotating, such that it rotates through the view looking down the chain
@@ -24,7 +35,7 @@ lesson.addInstruction(
   connected together with terminal hydrogen atoms present on the carbon atoms in the chain. In this tutorial, 
   we will look at the structures of the linear alkanes where n, the number of carbon atoms, varies from 1 to 
   10.`,
-  `load pdb/decane.pdb; spin on;`
+  `display ${decane}; center ${decane}; zoom 0; spin on;`
 );
 
 // Ball and stick model of methane

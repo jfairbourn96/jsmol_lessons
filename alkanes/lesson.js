@@ -29,7 +29,7 @@ class Lesson
       {
         resetScript += '!quit;'
       }
-      // TODO: Change your resetScript to only reset the options that your instructions adjust
+      // TODO: Add hide all to resetscript, gonna display selectively in each instruction.
       resetScript += 'select *; draw * off; measure off; isosurface off; lcaoCartoon off; mo off; set spinX 0; set spinY 20; set spinZ 0;';
 
       // Adjust the buttons and HTML elements
