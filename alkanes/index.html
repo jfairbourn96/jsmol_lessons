@@ -15,7 +15,11 @@
       width: 500,
       j2sPath: "../../jsmol/j2s",
       // TODO: Modify the initial script to load the appropriate molecule.
-      script: "load alkanes.log; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;",
+      script: "load alkanes.log; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;" +
+        "draw ID methane_geo LINE [@2, @3, @4, @2, @5, @3, @2, @5, @4, @2] DIAMETER 30 COLOR YELLOW;" + // methane electronic geometry
+        "draw ID ethane_geo_1 LINE [@8, @10, @7, @8, @9, @10, @8, @9, @7, @8] DIAMETER 30 COLOR YELLOW;" +
+        "draw ID ethane_geo_2 LINE [@12, @13, @6, @12, @11, @13, @12, @11, @6, @12] DIAMETER 30 COLOR YELLOW;" +
+        "draw ID propane_geo LINE [@14, @19, @20, @14, @21, @19, @14, @21, @20, @14] DIAMETER 30 COLOR YELLOW;",
       debug: false
     };
   </script>

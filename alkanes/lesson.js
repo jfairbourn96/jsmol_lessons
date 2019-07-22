@@ -29,8 +29,8 @@ class Lesson
       {
         resetScript += '!quit;'
       }
-      // TODO: Add hide all to resetscript, gonna display selectively in each instruction.
-      resetScript += 'select *; draw * off; measure off; isosurface off; lcaoCartoon off; mo off; set spinX 0; set spinY 20; set spinZ 0;';
+      resetScript += 'select *; draw * OFF; measure OFF; isosurface OFF; lcaoCartoon OFF; mo OFF; set spinX 0; set spinY 20; set spinZ 0;';
+      resetScript += 'dipole DELETE;'
 
       // Adjust the buttons and HTML elements
       this.backButton.disabled = (this.instruction === 0);
