@@ -15,7 +15,6 @@
       height: 500,
       width: 500,
       j2sPath: "../../jsmol/j2s",
-      // TODO: Modify the initial script to load the appropriate molecule.
       script: "load h2o.pdb; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;",
       debug: false
     };
@@ -23,28 +22,28 @@
 </head>
 
 <body>
-  <header>
-    <button id="restartButton"></button>
-    <div id="name" class="app">
-      Horizontal Template Lesson
-    </div>
-    <button id="refreshButton"></button>
+  <header id="name" class="app">
+    Horizontal Template Lesson
   </header>
-
+  
   <main>
-    <aside id="description" class="app">
+    
+    <aside>
+      <div id="description" class="app"></div>
+      <div id="buttons" class="app">
+        <button id="restartButton"></button>
+        <button id="refreshButton"></button>
+        <button id="backButton" disabled></button>
+        <button id="nextButton"></button>
+      </div>
     </aside>
 
     <section class="molecule">
-      <button id="backButton" disabled></button>
-
       <div id="window" class="app">
         <script type="text/javascript">
           Jmol.getApplet("main", info);
         </script>
       </div>
-
-      <button id="nextButton"></button>
     </section>
   </main>
 
