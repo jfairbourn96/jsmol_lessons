@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<!--	Authors: Justin Fairbourn and Scott Ensign -->
+<!--	Created at Utah State University with support from the Chemistry department. -->
+<!--  Copy this directory and complete the TODO's to make a lesson for a single molecule/set of molecules. -->
+	<meta charset="utf-8">
+	<title>Template Lesson</title>
+	<link href="lesson_page.css" rel="stylesheet" type="text/css">
+  <script src="../../jsmol/JSmol.min.js"></script>
+  <script>
+    let info = {
+      color: "#FFFFFF", 
+      height: 500,      
+      width: 500,
+      j2sPath: "../../jsmol/j2s",
+      // TODO: Modify the initial script to load the appropriate molecule.
+      script: "load alkanes_branched.log; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;" +
+      "select @65; label \"isopentane\"; font label 24; color label blue;" +
+      "select @24; label \"n-butane\"; font label 24; color label blue;" +
+      "select @12; label \"C1\"; font label 19; color label blue;" +
+      "select @13; label \"C2\"; font label 19; color label blue;" +
+      "select @17; label \"C3\"; font label 19; color label blue;" +
+      "select @20; label \"C4\"; font label 19; color label blue;" +
+      "select @33; label \"isobutane\"; font label 24; color label blue;" +
+      "select @26; label \"C1\"; font label 19; color label blue;" +
+      "select @27; label \"C2\"; font label 19; color label blue;" +
+      "select @31; label \"C3\"; font label 19; color label blue;" +
+      "select @88; label \"neopentane\"; font label 24; color label blue;" +
+      "select @83; label \"C1\"; font label 19; color label blue;" +
+      "select @75; label \"C2\"; font label 19; color label blue;" +
+      "select @87; label \"C3\"; font label 19; color label blue;" +
+      "select @74; label \"C3\"; font label 19; color label blue;" +
+      "select @43; label \"n-pentane\"; font label 24; color label blue;" +
+      "select @51; label \"C1\"; font label 19; color label blue;" +
+      "select @48; label \"C2\"; font label 19; color label blue;" +
+      "select @45; label \"C3\"; font label 19; color label blue;" +
+      "select @41; label \"C4\"; font label 19; color label blue;" +
+      "select @40; label \"C5\"; font label 19; color label blue;",
+      debug: false
+    };
+  </script>
+</head>
+
+<body>
+	<header>
+    <button id="restartButton"></button>
+		<div id="name" class="app">
+			Template Lesson
+    </div>
+    <button id="refreshButton"></button>
+	</header>
+		
+	<section class="molecule">
+    <button id="backButton" disabled></button>
+
+    <div id="window" class="app">
+      <script type="text/javascript">
+        Jmol.getApplet("main", info);
+      </script>
+    </div>
+
+    <button id="nextButton"></button>
+  </section>
+
+  <footer id="description" class="app">
+  </footer>
+
+  <div id="consoleDiv" hidden="true">
+    <input type="text" id="console" size="80">
+    <button id="scriptButton">run</button>
+  </div>
+
+  <script src="instruction.js"></script>
+  <script src="lesson.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
