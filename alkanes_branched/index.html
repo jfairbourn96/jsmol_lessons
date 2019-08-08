@@ -16,27 +16,68 @@
       j2sPath: "../../jsmol/j2s",
       // TODO: Modify the initial script to load the appropriate molecule.
       script: "load alkanes_branched.log; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;" +
-      "select @65; label \"isopentane\"; font label 24; color label blue;" +
-      "select @24; label \"n-butane\"; font label 24; color label blue;" +
-      "select @12; label \"C1\"; font label 19; color label blue;" +
-      "select @13; label \"C2\"; font label 19; color label blue;" +
-      "select @17; label \"C3\"; font label 19; color label blue;" +
-      "select @20; label \"C4\"; font label 19; color label blue;" +
-      "select @33; label \"isobutane\"; font label 24; color label blue;" +
-      "select @26; label \"C1\"; font label 19; color label blue;" +
-      "select @27; label \"C2\"; font label 19; color label blue;" +
-      "select @31; label \"C3\"; font label 19; color label blue;" +
-      "select @88; label \"neopentane\"; font label 24; color label blue;" +
-      "select @83; label \"C1\"; font label 19; color label blue;" +
-      "select @75; label \"C2\"; font label 19; color label blue;" +
-      "select @87; label \"C3\"; font label 19; color label blue;" +
-      "select @74; label \"C3\"; font label 19; color label blue;" +
-      "select @43; label \"n-pentane\"; font label 24; color label blue;" +
-      "select @51; label \"C1\"; font label 19; color label blue;" +
-      "select @48; label \"C2\"; font label 19; color label blue;" +
-      "select @45; label \"C3\"; font label 19; color label blue;" +
-      "select @41; label \"C4\"; font label 19; color label blue;" +
-      "select @40; label \"C5\"; font label 19; color label blue;",
+        "select @65, @61; label \"isopentane\"; font label 24; color label blue;" +
+        "select @57; label \"C1\"; font label 19; color label blue;" +
+        "select @58; label \"C2\"; font label 19; color label blue;" +
+        "select @62; label \"C3\"; font label 19; color label blue;" +
+        "select @63; label \"C4\"; font label 19; color label blue;" +
+        "select @24; label \"n-butane\"; font label 24; color label blue;" +
+        "select @12; label \"C1\"; font label 19; color label blue;" +
+        "select @13; label \"C2\"; font label 19; color label blue;" +
+        "select @17; label \"C3\"; font label 19; color label blue;" +
+        "select @20; label \"C4\"; font label 19; color label blue;" +
+        "select @33; label \"isobutane\"; font label 24; color label blue;" +
+        "select @26; label \"C1\"; font label 19; color label blue;" +
+        "select @27; label \"C2\"; font label 19; color label blue;" +
+        "select @31; label \"C3\"; font label 19; color label blue;" +
+        "select @88, @85; label \"neopentane\"; font label 24; color label blue;" +
+        "select @83; label \"C1\"; font label 19; color label blue;" +
+        "select @79; label \"C1\"; font label 19; color label blue;" +
+        "select @75; label \"C2\"; font label 19; color label blue;" +
+        "select @87; label \"C3\"; font label 19; color label blue;" +
+        "select @74; label \"C3\"; font label 19; color label blue;" +
+        "select @43, @56; label \"n-pentane\"; font label 24; color label blue;" +
+        "select @51; label \"C1\"; font label 19; color label blue;" +
+        "select @48; label \"C2\"; font label 19; color label blue;" +
+        "select @45; label \"C3\"; font label 19; color label blue;" +
+        "select @41; label \"C4\"; font label 19; color label blue;" +
+        "select @40; label \"C5\"; font label 19; color label blue;" +
+        "select @93; label \"n-hexane\"; font label 19; color label blue;" +
+        "select @91; label \"C1\"; font label 19; color label blue;" +
+        "select @92; label \"C2\"; font label 19; color label blue;" +
+        "select @96; label \"C3\"; font label 19; color label blue;" +
+        "select @99; label \"C4\"; font label 19; color label blue;" +
+        "select @102; label \"C5\"; font label 19; color label blue;" +     
+        "select @105; label \"C6\"; font label 19; color label blue;" +
+        "select @118; label \"2-methylpentane\"; font label 19; color label blue;" +
+        "select @111; label \"C1\"; font label 19; color label blue;" +
+        "select @112; label \"C2\"; font label 19; color label blue;" +
+        "select @116; label \"C3\"; font label 19; color label blue;" +
+        "select @117; label \"C4\"; font label 19; color label blue;" +
+        "select @120; label \"C5\"; font label 19; color label blue;" +
+        "select @137; label \"3-methylpentane\"; font label 19; color label blue;" +
+        "select @131; label \"C1\"; font label 19; color label blue;" +
+        "select @132; label \"C2\"; font label 19; color label blue;" +
+        "select @136; label \"C3\"; font label 19; color label blue;" +
+        "select @139; label \"C4\"; font label 19; color label blue;" +
+        "select @140; label \"C5\"; font label 19; color label blue;" +
+        "select @160; label \"2,3-dimethylbutane\"; font label 19; color label blue;" +
+        "select @157; label \"C1\"; font label 19; color label blue;" +
+        "select @156; label \"C2\"; font label 19; color label blue;" +
+        "select @152; label \"C3\"; font label 19; color label blue;" +
+        "select @151; label \"C4\"; font label 19; color label blue;" +
+        "select @188; label \"2,2-dimethylbutane\"; font label 19; color label blue;" +
+        "select @183; label \"C1\"; font label 19; color label blue;" +
+        "select @172; label \"C2\"; font label 19; color label blue;" +
+        "select @176; label \"C3\"; font label 19; color label blue;" +
+        "select @177; label \"C4\"; font label 19; color label blue;" +
+        "select @204; label \"3-ethylpentane\"; font label 23; color label blue;" +
+        "select @191; label \"C1\"; font label 19; color label blue;" +
+        "select @192; label \"C2\"; font label 19; color label blue;" +
+        "select @196; label \"C3\"; font label 19; color label blue;" +
+        "select @206; label \"C4\"; font label 19; color label blue;" +
+        "select @208; label \"C5\"; font label 19; color label blue;" +
+        "select @205; label \"ethyl\"; font label 18; color label purple;",               
       debug: false
     };
   </script>
