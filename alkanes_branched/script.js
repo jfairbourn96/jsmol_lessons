@@ -224,7 +224,6 @@ lesson.addInstruction(
   `lcaoCartoon COLOR TRANSLUCENT YELLOW; lcaoCartoon SCALE 1.2;` +
   `delay 1.0; select @199, @201, @202, @200, @203, @205, @204; lcaoCartoon CREATE S;` +
   `select @205; label DISPLAY;`
-  // Show 3-ethylpentane with chain and numbering, highlight ethyl group. 
 );
 
 lesson.execute(0);
