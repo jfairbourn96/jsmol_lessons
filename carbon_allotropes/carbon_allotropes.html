@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<!--	Authors: Justin Fairbourn and Scott Ensign -->
+<!--	Created at Utah State University with support from the Chemistry department and Center for Innovative Design and Instruction. -->
+	<meta charset="utf-8">
+	<title>Carbon Allotropes</title>
+	<link href="../styles/molecule-page.css" rel="stylesheet" type="text/css">
+	<script src="../jsmol/JSmol.min.js"></script>
+	<script src="carbon_molecules.js"></script>
+	<script src="carbon_functions.js"></script>
+</head>
+
+<body>
+	<header>
+		<div id="name" class="app"></div>
+	</header>
+	
+	<main>
+		<aside id="description" class="notes app">
+		</aside>
+		
+		<section class="molecule">
+			<div id="window" class="app">
+				<script type="text/javascript">
+					Jmol.getApplet("main", info);
+				</script>
+			</div>
+
+			<div id="controls" class="app">
+				<div id="control_state" class="option">
+					<strong>State:</strong>
+					
+					<select name="state" id="configuration" onChange="loadNew(this.value);"></select>
+				</div>
+
+				<div id="control_bg" class="option">
+					<strong>Background Color:</strong>
+					
+					<input type="radio" name="bg_color" id="bg_white" onclick="changeColor('white');" checked="checked">
+					<label for="bg_white">White</label>
+
+					<input type="radio" name="bg_color" id="bg_black" onclick="changeColor('black');">
+					<label for="bg_black">Black</label>
+
+					<input type="radio" name="bg_color" id="bg_grey" onclick="changeColor('grey');">
+					<label for="bg_grey">Grey</label>
+				</div>
+
+				<div id="control_model_type" class="option">
+					<strong>Model Type:</strong>
+					
+					<input type="radio" name="model_type" id="mt_ballstick" onclick="ballAndStick();" checked="checked">
+					<label for="mt_ballstick">Ball and Stick</label>
+
+					<input type="radio" name="model_type" id="mt_spacefill" onclick="spacefill();">
+					<label for="mt_spacefill">Spacefill</label>
+
+					<input type="radio" name="model_type" id="mt_stick" onclick="stick();">
+					<label for="mt_stick">Stick Only</label>
+				</div>
+
+				<div id="control_other" class="option">
+					<strong>Show Other:</strong>
+					
+					<input type="checkbox" name="co_spin" id="co_spin" onClick="toggleSpin();">
+					<label for="co_spin">Spin</label>
+					
+					<input type="checkbox" name="co_isosurface" id="co_isosurface" onClick="toggleIsosurface();">
+					<label for="co_isosurface">Isosurface</label>
+				</div>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

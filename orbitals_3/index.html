@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<!--	Authors: Justin Fairbourn and Scott Ensign -->
+<!--	Created at Utah State University with support from the Chemistry department. -->
+<!--  Copy this directory and complete the TODO's to make a lesson for a single molecule/set of molecules. -->
+	<meta charset="utf-8">
+	<title>Template Lesson</title>
+	<link href="lesson_page.css" rel="stylesheet" type="text/css">
+  <script src="../../jsmol/JSmol.min.js"></script>
+  <script>
+    // TODO: Set the seed here to a constant number to see the exact same set of dots each time.
+    let seed = Math.floor(Math.random() * 10000) - 5000;
+    // TODO: Change the density here to change the density in all dot drawings.
+    let density = 3000;
+    // TODO: Modify the resolution to test performances of slower/different browsers or operating systems
+    let resolution = 4.0;
+    let colors = ["xff0000", "x0000ff"];
+    let opacity = 0.5;
+    let scale = 2.0;
+
+    let info = {
+      color: "#FFFFFF", 
+      height: 500,      
+      width: 500,
+      j2sPath: "../../jsmol/j2s",
+      script: `axes on;` +
+        `isosurface ID dots3s select ({})  resolution ${resolution} cutoff 0.0026 phase "_orb" color [${colors[0]}] [${colors[1]}] atomicOrbital 2 0 0 1.0 points ${density} 0.0 ${seed};` +
+        `isosurface ID dots3px select ({})  resolution ${resolution} cutoff 0.0026 phase "_orb" color [${colors[0]}] [${colors[1]}] atomicOrbital 3 1 -1 1.0 points ${density} 0.0 ${seed};` +
+        `isosurface ID dots3py select ({})  resolution ${resolution} cutoff 0.0026 phase "_orb" color [${colors[0]}] [${colors[1]}] atomicOrbital 3 1 0 1.0 points ${density} 0.0 ${seed};` +
+        `isosurface ID dots3pz select ({})  resolution ${resolution} cutoff 0.0026 phase "_orb" color [${colors[0]}] [${colors[1]}] atomicOrbital 3 1 1 1.0 points ${density} 0.0 ${seed};` +
+        `isosurface ID dots3dxy select ({})  resolution ${resolution} cutoff 0.0026 phase "_orb" color [${colors[0]}] [${colors[1]}] atomicOrbital 3 2 -2 1.0 points ${density} 0.0 ${seed};` +
+        `isosurface ID dots3dyz select ({})  resolution ${resolution} cutoff 0.0026 phase "_orb" color [${colors[0]}] [${colors[1]}] atomicOrbital 3 2 -1 1.0 points ${density} 0.0 ${seed};` +
+        `isosurface ID dots3dxz select ({})  resolution ${resolution} cutoff 0.0026 phase "_orb" color [${colors[0]}] [${colors[1]}] atomicOrbital 3 2 0 1.0 points ${density} 0.0 ${seed};` +
+        `isosurface ID dots3dx2y2 select ({})  resolution ${resolution} cutoff 0.0026 phase "_orb" color [${colors[0]}] [${colors[1]}] atomicOrbital 3 2 1 1.0 points ${density} 0.0 ${seed};` +
+        `isosurface ID dots3dz2 select ({})  resolution ${resolution} cutoff 0.0026 phase "_orb" color [${colors[0]}] [${colors[1]}] atomicOrbital 3 2 2 1.0 points ${density} 0.0 ${seed};` +
+        `isosurface ID contour3s SCALE ${scale} PHASE ATOMICORBITAL 3 0 0 COLOR TRANSLUCENT ${1 - opacity};` +
+        `isosurface ID contour3px SCALE ${scale} PHASE ATOMICORBITAL 3 1 -1 COLOR TRANSLUCENT ${1 - opacity};` +
+        `isosurface ID contour3py SCALE ${scale} PHASE ATOMICORBITAL 3 1 0 COLOR TRANSLUCENT ${1 - opacity};` +
+        `isosurface ID contour3pz SCALE ${scale} PHASE ATOMICORBITAL 3 1 1 COLOR TRANSLUCENT ${1 - opacity};` +
+        `isosurface ID contour3dxy SCALE ${scale} PHASE ATOMICORBITAL 3 2 -2 COLOR TRANSLUCENT ${1 - opacity};` +
+        `isosurface ID contour3dyz SCALE ${scale} PHASE ATOMICORBITAL 3 2 -1 COLOR TRANSLUCENT ${1 - opacity};` +
+        `isosurface ID contour3dxz SCALE ${scale} PHASE ATOMICORBITAL 3 2 0 COLOR TRANSLUCENT ${1 - opacity};` +
+        `isosurface ID contour3dx2y2 SCALE ${scale} PHASE ATOMICORBITAL 3 2 1 COLOR TRANSLUCENT ${1 - opacity};` +
+        `isosurface ID contour3dz2 SCALE ${scale} PHASE ATOMICORBITAL 3 2 2 COLOR TRANSLUCENT ${1 - opacity};` +
+        `select *; isosurface OFF;`,
+      debug: false
+    };
+  </script>
+</head>
+
+<body>
+	<header>
+    <button id="restartButton"></button>
+		<div id="name" class="app">
+			Template Lesson
+    </div>
+    <button id="refreshButton"></button>
+	</header>
+		
+	<section class="molecule">
+    <button id="backButton" disabled></button>
+
+    <div id="window" class="app">
+      <script type="text/javascript">
+        Jmol.getApplet("main", info);
+      </script>
+    </div>
+
+    <button id="nextButton"></button>
+  </section>
+
+  <footer id="description" class="app">
+  </footer>
+
+  <div id="consoleDiv" hidden="true">
+    <input type="text" id="console" size="80">
+    <button id="scriptButton">run</button>
+  </div>
+
+  <script src="instruction.js"></script>
+  <script src="lesson.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
