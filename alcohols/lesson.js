@@ -30,7 +30,7 @@ class Lesson
         resetScript += '!quit;'
       }
       // TODO: Change your resetScript to only reset the options that your instructions adjust
-      resetScript += 'select *; label hide; draw * off; set echo off; measure off; isosurface off; lcaoCartoon off; mo off; set spinX 0; set spinY 20; set spinZ 0;';
+      resetScript += 'select *; color atom cpk; spacefill reset; label hide; draw * off; set echo off; measure off; isosurface off; lcaoCartoon off; mo off; set spinX 0; set spinY 20; set spinZ 0;';
 
       // Adjust the buttons and HTML elements
       this.backButton.disabled = (this.instruction === 0);

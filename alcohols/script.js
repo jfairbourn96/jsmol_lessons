@@ -177,19 +177,24 @@ lesson.addInstruction(
   `Alcohols that have the same chemical formulas, but where the positions of the hydroxyl 
     groups differ, are structural isomers. 1-propanol and 2-propanol are structural isomers 
     of one another.`,
-  `display ${propanol_1}, ${propanol_2}; zoom 0;`
+  `display ${propanol_1}, ${propanol_2}; moveto 0.0 { 440 -70 -895 171.88} 221.15 0.0 0.0 {-1.1293469782300587 1.4506606981378187 -0.05593291155563572} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+  `select @48, @55; lcaoCartoon COLOR TRANSLUCENT GREEN; lcaoCartoon CREATE S;`
 );
 
 // Same drill…
 lesson.addInstruction(
   `Adding a hydroxyl group to C1 of butane gives the alcohol 1-butanol.`,
-  ``
+  `display ${butanol_1}, ${butanol_2}; moveto 0.0 { 166 -736 -657 137.93} 225.84 0.0 0.0 {-2.3796044451890395 -3.0842363794745564 0.20056931460504365} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+  `hide ADD @96; select @88; color atom white; spacefill 15%;` +
+  `select @81, @67; lcaoCartoon COLOR TRANSLUCENT GREEN; lcaoCartoon CREATE S;`
 );
 
 // Same drill….
 lesson.addInstruction(
   `Adding a hydroxyl group to C2 of butane gives 2-butanol.`,
-  ``
+  `display ${butanol_1}, ${butanol_2}; moveto 0.0 { 853 241 463 96.12} 225.84 0.0 0.0 {-2.3796044451890395 -3.0842363794745564 0.20056931460504365} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+  `hide ADD @95; select @71; color atom white; spacefill 15%;` +
+  `select @82, @68; lcaoCartoon COLOR TRANSLUCENT GREEN; lcaoCartoon CREATE S;`
 );
 
 // Same drill, but change numbering from 1-2-3-4 when adding OH to C3 so it becomes 4-3-2-1 to 
@@ -198,7 +203,15 @@ lesson.addInstruction(
   `Adding a hydroxyl group to C3 of butane also gives 2-butanol. This is because the numbering 
     of the chain will change once the hydroxyl group is added. The chain is always numbered 
     starting with the C atom closest to where the hydroxyl group will first be encountered.`,
-  ``
+  `display ${butanol_2}; moveto 0.0 { 60 174 983 167.9} 343.47 46.3 7.4 {-2.3796044451890395 -3.0842363794745564 0.20056931460504365} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+    `hide ADD @96; select @88; color atom white; spacefill 15%;` +
+    `set echo off; set echo "butane"; echo "butane"; color echo black; font echo 36;` +
+    `select @89; label \"C1\"; font label 19; color label black;` + `select @86; label \"C2\"; font label 19; color label black;` + `select @82; label \"C3\"; font label 19; color label black;` + `select @81; label \"C4\"; font label 19; color label black;` +  
+    `delay 2; select @82; lcaoCartoon COLOR GREEN TRANSLUCENT; lcaoCartoon CREATE S;` +
+    `delay 2; display ${butanol_2}; select *; color atom cpk; spacefill reset;` +
+    `select @89; label \"C4\"; font label 24; color label black;` + `select @86; label \"C3\"; font label 24; color label black;` + `select @82; label \"C2\"; font label 24; color label black;` + `select @81; label \"C1\"; font label 24; color label black;` +
+    `set echo off; set echo "2-butanol"; echo "2-butanol"; color echo black; font echo 36;` +    
+    `delay 5; loop 0;`
 );
 
 // Show structure of 2-methylpropane with numbering changing to 2-methyl-1-propanol with numbering.
@@ -210,7 +223,15 @@ lesson.addInstruction(
     changed in the same fashion as for a linear alkane, and the resulting alcohol numbered so 
     that lowest number is given to the C atom closest to where the -OH group is first 
     encountered in the longest continual chain.`,
-  ``
+  `display ${methyl_2_propanol_1}; zoom 0; moveto 0.0 { 256 -224 -940 45.96} 311.44 0.0 0.0 {3.897242970477919 -8.581534534633512 -0.029938663889120882} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+    `hide ADD @129; select @122; color atom white; spacefill 15%;` +
+    `select @115; label \"C1\"; font label 19; color label black;` + `select @116; label \"C2\"; font label 19; color label black;` + `select @124; label \"C3\"; font label 19; color label black;` + 
+    `set echo off; set echo "2-methylpropane"; echo "2-methylpropane"; color echo black; font echo 36;` +
+    `delay 2; select @120; lcaoCartoon COLOR GREEN TRANSLUCENT; lcaoCartoon CREATE S;` +
+    `delay 2; display ${methyl_2_propanol_1}; select *; color atom cpk; spacefill reset; select @115; label HIDE;` +
+    `select @120; label \"C1\"; font label 19; color label black;` + `select @116; label \"C2\"; font label 19; color label black;` + `select @124; label \"C3\"; font label 19; color label black;` + 
+    `set echo off; set echo "2-methyl-1-propanol"; echo "2-methyl-1-propanol"; color echo black; font echo 36;` +    
+    `delay 4; loop 0;`
 );
 
 // Show 2-methyl-2-propanol.
@@ -218,13 +239,22 @@ lesson.addInstruction(
   `There is one additional alcohol that will have the chemical formula C<sub>4</sub>H<sub>9
     </sub>OH. This alcohol, shown at right,  has the systematic name 2-methyl-2-propanol. This 
     alcohol is commonly referred to by its trivial name, tert-butanol, or tert-butyl alcohol.`,
-  ``
+  `display ${methyl_2_propanol_2}; zoom 0; moveto 0.0 { -547 -757 -357 89.53} 310.23 0.0 0.0 {8.608653865388872 -3.69344898941017 0.10684932340646636} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+    `hide ADD @144; select @140; color atom white; spacefill 15%;` +
+    `select @135; label \"C1\"; font label 19; color label black;` + `select @131; label \"C2\"; font label 19; color label black;` + `select @139; label \"C3\"; font label 19; color label black;` + 
+    `set echo off; set echo "2-methylpropane"; echo "2-methylpropane"; color echo black; font echo 36;` +
+    `delay 2; select @131; lcaoCartoon COLOR GREEN TRANSLUCENT; lcaoCartoon CREATE S;` +
+    `delay 2; display ${methyl_2_propanol_2}; select *; color atom cpk; spacefill reset;` +
+    `set echo off; set echo "2-methyl-2-propanol"; echo "2-methyl-2-propanol"; color echo black; font echo 36;` +    
+    `delay 4; loop 0;`
 );
 
 // Show 1-butanol, 2-butanol, 2-methyl-1-propanol, and 2-methyl-2-propanol.
 lesson.addInstruction(
   `All four isomers of “butanol” are shown here`,
-  ``
+  `display ${butanol_1}, ${butanol_2}, ${methyl_2_propanol_1}, ${methyl_2_propanol_2};` +
+  `moveto 1.0 { -134 -138 -981 40.24} 139.79 -3.2 4.1 {1.9366719863721782 -4.610864070748199 0.11951232218185817} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+  `set echo off; set echo "butanol isomers"; echo "butanol isomers"; color echo black; font echo 36;`
 );
 
 // Show methanol, then switch out the methyl group for a large sphere labeled R, as for frame 
@@ -235,7 +265,8 @@ lesson.addInstruction(
     alcohols derived from alkanes. In doing so we will focus on the properties of the hydroxyl 
     functional group. The alkyl group attached to the hydroxyl group can be represented by “R” 
     where the group “R” is the alkyl substituent to which the hydroxyl group is attached.`,
-  ``
+  `display ${methanol}; moveto 0.0 { -522 -762 -382 87.01} 859.11 -50.55 41.81 {7.496656885552758 -3.8463515029665087 0.10895982320236501} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+  `hide ADD @10, @11, @13; select @9; spacefill 40%; color atoms green; label \"R\"; font label 19; color label black;`
 );
 
 // Display generic R-OH alcohol, add sp3 orbitals to show tetrahedral electron domain 
@@ -249,7 +280,10 @@ lesson.addInstruction(
     the AXE designation for the O is AX<sub>2</sub>E<sub>2</sub>. With four total electron 
     domains, the electron domain geometry surrounding the O atom is tetrahedral, as shown 
     here.`,
-  ``
+  `display ${methanol}; moveto 0.0 { -262 -803 -535 103.74} 1727.98 -202.85 117.21 {7.496656885552758 -3.8463515029665087 0.10895982320236501} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+    `hide ADD @10, @11, @13; select @9; spacefill 40%; color atoms green; label \"R\"; font label 19; color label black;` +
+    `select @12; lcaoCartoon COLOR TRANSLUCENT PURPLE; lcaoCartoon CREATE sp3a; lcaoCartoon CREATE sp3b; lcaoCartoon CREATE sp3c; lcaoCartoon CREATE sp3d;` +
+    `draw roh_geo on;`
 );
 
 // Highlight bent geometry, still showing the lone pair lobes. The bonded lobes can probably 
@@ -257,7 +291,11 @@ lesson.addInstruction(
 lesson.addInstruction(
   `With two bonded and two nonbonded electron domains, the molecular geometry about the O 
     atom will be bent.`,
-  ``
+  `display ${methanol}; moveto 0.0 { -250 -858 -448 115.91} 1727.98 -266.65 94.81 {7.496656885552758 -3.8463515029665087 0.10895982320236501} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+    `hide ADD @10, @11, @13; select @9; spacefill 40%; color atoms green; label \"R\"; font label 19; color label black;` +
+    `draw roh_m_geo on;` +
+    `select @12; lcaoCartoon COLOR TRANSLUCENT RED; lcaoCartoon CREATE sp3c; lcaoCartoon CREATE sp3d;` +
+    `select @9, @12, @31; color translucent 0.5;`
 );
 
 // I got a bond angle of 107 degrees for an optimized methanol molecule in Avogadro. I think 
@@ -269,7 +307,10 @@ lesson.addInstruction(
    domains are bonded to terminal atoms, will be exactly 109.5 degrees. For the O in alcohols, 
    the lone pairs of electrons spread out more in space than the bonded pairs of electrons, 
    resulting in a slight compression of the bond angle.`,
-  ``
+  `display ${methanol}; moveto 0.0 { -250 -858 -448 115.91} 1727.98 -266.65 94.81 {7.496656885552758 -3.8463515029665087 0.10895982320236501} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+   `hide ADD @10, @11, @13; select @9; spacefill 40%; color atoms green; label \"R\"; font label 19; color label black;` +
+   `select @12; lcaoCartoon COLOR TRANSLUCENT RED; lcaoCartoon CREATE sp3c; lcaoCartoon CREATE sp3d;` +
+   `measure ({30}) ({11}) ({8});`
 );
 
 // Show methanol, label O with delta minus and C and H with delta plus as for frame 15 in the 
@@ -281,7 +322,8 @@ lesson.addInstruction(
     much more electronegative than either H or C. Due to the differences in electronegativity, 
     the O in an alcohol has a partial negative charge while the H and C atoms to which it is 
     bonded have partial positive charges. This is highlighted here for methanol.`,
-  ``
+  `display ${methanol}; moveto 0.0 { -250 -858 -448 115.91} 1727.98 -266.65 94.81 {7.496656885552758 -3.8463515029665087 0.10895982320236501} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+  `select @12; label δ-; font label 32; color label black; set labeloffset 0 0; select @9; label δ+; font label 32; color label black; set labeloffset 0 0; select @31; label δ+; font label 32; color label black; set labeloffset 0 0;`
 );
 
 // Continue using methanol. Show bond dipoles per frame 16 of VSEPR NH3 lesson. I like putting 
@@ -294,7 +336,11 @@ lesson.addInstruction(
     electronegative atoms. The length of the vector is proportional to the differences in 
     electronegativity of the two atoms present in the bond. Shown here are the bond dipoles 
     for the C-O and H-O bonds.`,
-  ``
+  `display ${methanol}; moveto 0.0 { -250 -858 -448 115.91} 1727.98 -266.65 94.81 {7.496656885552758 -3.8463515029665087 0.10895982320236501} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+  `select *; color translucent 0.5;` +
+  `dipole bond1 (@31, @12); dipole bond1 width 0.05; color dipole red; dipole bond1 offsetSide 0.0; dipole bond1 offset 0.2;` +
+  `dipole bond2 (@9, @12); dipole bond2 width 0.05; color dipole red; dipole bond2 offsetSide 0.0; dipole bond2 offset 0.2;`
+
 );
 
 // Reproduce frame 17 of the NH3 VSEPR lesson for methanol. Include echo text like frame 17. 
@@ -324,7 +370,8 @@ lesson.addInstruction(
     represent net electrically neutral regions. The electrostastic potential map for methanol 
     shown here emphasizes how the electronegative O pulls electron density away from the the 
     C and H atoms it is bonded to.`,
-  ``
+  `display ${methanol}; moveto 0.0 { -250 -858 -448 115.91} 1727.98 -266.65 94.81 {7.496656885552758 -3.8463515029665087 0.10895982320236501} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+  `select *; if ({atomno < 10}.partialcharge == 0){calculate partialcharge}; select ${methanol}; isosurface vdw map mep; isosurface translucent;`
 );
 
 // This would be cool. Add an H2O moleculeto the log file, where they it is oriented so that a hydrogen bond can be displayed on this 
