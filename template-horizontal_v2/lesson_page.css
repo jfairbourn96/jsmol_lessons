@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* CSS Document */
+/* Authors: Justin Fairbourn and Scott Ensign */
+/* Created at Utah State University with support from the Chemistry department.*/
+body {
+	font-family: Arial;
+	background-color: darkgray;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+/* TODO: Move the buttons to under the description. Make the description a little skinnier. Test on mobile devices. 16:9  */
+header {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-content: center;
+	width: 900px;
+	font-size: 40px;
+	font-weight: bold;
+}
+main {
+	display: flex;
+	flex-direction: row;
+	width: 900px;
+	justify-content: center;
+}
+aside {
+	width: 370px;
+	padding: 2.5px;
+	font-size: 17.5px;
+	text-align: center;
+}
+main > section {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-items: center;
+}
+button {
+	height: 65px;
+	width: 65px;
+}
+sup {
+	vertical-align: top;
+	font-size: 0.6em;
+}
+#buttons {
+	display: flex;
+	align-content: space-between;
+	justify-content: space-between;
+}
+#description {
+	height: 420px;
+	overflow: scroll;
+}
+#window {
+	/* Re-size this to match the dimensions of the info variable in jsmol html pages */
+	height: 500px;
+	width: 500px;
+}
+.app {
+	align-self: center;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 7px 7px 5px black;
+	margin: 5px;
+	padding: 6px;
+}
+
+
+/* credit goes to clker.com for the arrow images */
+#nextButton {
+	background: url(../images/arrow.svg.med.png);
+	background-color: darkgray;
+	background-size: 100% 100%;
+}
+
+#backButton {
+	background: url(../images/arrowleft.svg.med.png);
+	background-color: darkgray;
+	background-size: 100% 100%;
+}
+
+#restartButton {
+	background: url(../images/restart.png);
+	background-color: darkgray;
+	background-size: 100% 100%;
+}
+
+#refreshButton {
+	background: url(../images/refresh.png);
+	background-color: darkgray;
+	background-size: 100% 100%;
+}

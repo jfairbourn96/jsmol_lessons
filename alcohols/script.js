@@ -165,7 +165,7 @@ lesson.addInstruction(
     C atom to which the -OH group is attached. The condensed structural formulas for methanol, 
     ethanol, and 1-propanol are CH<sub>3</sub>OH, CH<sub>3</sub>CH<sub>2</sub>OH, and CH<sub>3
     </sub>CH<sub>2</sub>CH<sub>2</sub>OH, respectively.`,
-  `display ${methanol}, ${ethanol}, ${propanol_1}; reset;` +
+  `display ${methanol}, ${ethanol}, ${propanol_1}; reset; center [${methanol}, ${ethanol}, ${propanol_1}];` +
   `moveto 0.0 { 290 104 -951 74.16} 201.14 -29.3 6.6 {1.0967998980308318 -1.2474398841246677 0.03303999685453962} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
   `set echo ID methanol {-1.9, 4.0, -1.21}; font echo 20; set echo methanol "methanol\nCH<sub>3</sub>OH";` +
   `set echo ID ethanol {-0.11, 3.16, 0.60}; font echo 20; set echo ethanol "ethanol\nCH<sub>3</sub>CH<sub>2</sub>OH";` +
