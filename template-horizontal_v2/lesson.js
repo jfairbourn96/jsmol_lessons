@@ -82,8 +82,8 @@ class Lesson
     }
   }
 
-  static label(atomno, text, font = 25, color = "black") {
-    return `select @${atomno}; label "${text}"; font label ${font}; color label ${color};`;
+  static label(atomno, text, font = 25, color = "black", offset = "") {
+    return `select @${atomno}; label "${text}"; font label ${font}; color label ${color}; ${offset === "" ? "" : `set labeloffset ${offset};`}`;
   }
 
   static echoAtAtom(atomno, text, id, echoOptions = ""){
@@ -96,6 +96,18 @@ class Lesson
 
   static drawOrbital(atomno, color, type){
     return `select @${atomno}; lcaoCartoon COLOR ${color}; lcaoCartoon CREATE ${type}; `
+  }
+
+  static drawOrbitals(atomno, color, types=[]){
+    return `select @${atomno}; lcaoCartoon COLOR ${color}; ${types.reduce((str = "", val) => str + `lcaoCartoon CREATE ${val}; `, "")}`;
+  }
+
+  static drawTetrahedron(points=[], diameter, color, id){
+    return `draw ID ${id} LINE [${points[0]}, ${points[1]}, ${points[2]}, ${points[0]}, ${points[3]}, ${points[2]}, ${points[1]}, ${points[3]}] DIAMETER ${diameter} COLOR ${color}; `
+  }
+
+  static drawNetDipole(id, direction, point1, point2, width, color, offset, offsetSide){
+    return `dipole ${id} ${direction} ${point1} ${point2}; dipole ${id} width ${width}; color dipole ${color}; dipole ${id} offset ${offset}; dipole ${id} offsetSide ${offsetSide};`
   }
 }
 

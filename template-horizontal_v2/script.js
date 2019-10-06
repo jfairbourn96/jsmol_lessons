@@ -21,6 +21,9 @@ let butanol_2 = "WITHIN(MOLECULE, {@82})";
 let methyl_2_propanol_1 = "WITHIN(MOLECULE, {@116})";
 let methyl_2_propanol_2 = "WITHIN(MOLECULE, {@131})";
 let pentanol_1 = "WITHIN(MOLECULE, {@102})";
+let methanol_e = "WITHIN(MOLECULE, {@146})";
+let ethanol_e = "WITHIN(MOLECULE, {@154})";
+let propanol_e = "WITHIN(MOLECULE, {@165})";
 
 let defaultEchoOptions = "font echo 18; color echo black; set echo OFFSET { 0 1.4 0 }; ";
 
@@ -31,13 +34,25 @@ lesson.appendToInitializeScript(
   Lesson.echoAtAtom(83, "2-butanol", "butanol_2", defaultEchoOptions) +
   Lesson.echoAtAtom(10, "methanol\nCH<sub>3</sub>OH", "methanol_label", defaultEchoOptions) +
   Lesson.echoAtAtom(24, "ethanol\nCH<sub>3</sub>CH<sub>2</sub>OH", "ethanol_label", defaultEchoOptions) +
-  Lesson.echoAtAtom(47, "1-propanol\nCH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>OH", "propanol_label", defaultEchoOptions)
+  Lesson.echoAtAtom(47, "1-propanol\nCH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>OH", "propanol_label", defaultEchoOptions) +
+  Lesson.drawTetrahedron(["{-3.2390959488399425 1.6821255184672737 -2.2861656272575708}", "{-1.979412745578614 2.3273524428270953 -2.5771292056886708}", "@9", "@31"], 20, "YELLOW", "roh_geo") +
+  `draw ID "roh_m_geo" LINE {-3.0022951944686245 4.112766334783039 -1.1072201776124508} {-2.5811797598273105 2.1917297960224307 -1.9090898218827421} {-1.814473200154283 1.2571666979700984 -0.5774068262009999} DIAMETER 20 COLOR LIGHTBLUE;` +
+  Lesson.drawNetDipole('mBond1', -1.5, "{-2.5811797598273105 2.1917297960224307 -1.9090898218827421}", "(atomno=31)", 0.05, "orange", 0.0, 0.0) +
+  Lesson.drawNetDipole('mBond2', -1.5, "{-2.5811797598273105 2.1917297960224307 -1.9090898218827421}","(atomno=9)", 0.05, "orange", 0.0, 0.0) +
+  Lesson.drawNetDipole('mBond3', 1.5, "{-2.380012762216265 2.3397851900885036 -1.0685102127732815}", "{-2.8350527071865903 2.0665382403379997 -2.85505489362865}", 0.05, "red", 0.0, 0.0) +
+  `select ${methanol_e}; if ({${methanol_e}}.partialcharge == 0){calculate partialcharge};` +
+  `select ${ethanol_e}; if ({${ethanol_e}}.partialcharge == 0){calculate partialcharge};` +
+  `select ${propanol_e}; if ({${propanol_e}}.partialcharge == 0){calculate partialcharge};` +
+  `select ${pentanol_1}; if ({${pentanol_1}}.partialcharge == 0){calculate partialcharge};`
 );
 
+"draw ID roh_geo LINE [{-3.2390959488399425 1.6821255184672737 -2.2861656272575708}, {-1.979412745578614 2.3273524428270953 -2.5771292056886708}, @31, {-3.2390959488399425 1.6821255184672737 -2.2861656272575708}, @9, @31, {-1.979412745578614 2.3273524428270953 -2.5771292056886708}, @9] DIAMETER 20 COLOR YELLOW;"
 // Add necessary commands to the reset script.
 lesson.appendToResetScript("select *; ");
 lesson.appendToResetScript("color atom cpk; ");
 lesson.appendToResetScript("spacefill reset; ");
+lesson.appendToResetScript("dipole * off; ");
+lesson.appendToResetScript("hbonds off;");
 
 lesson.addInstruction(
   `This tutorial consists of a sequence of interactive molecular models, with explanations, illustrating details of alcohols. Use your mouse or touch screen to rotate, zoom, and move the model on any of the states in this tutorial. Use the right arrow key to advance to the next model and accompanying explanation. Use the left arrow key to go to the previous model. Use the "reset page" button to return to the default model view, if desired, for the current model. Use the “reset tutorial” button to return to the start of the tutorial at this instruction. Click the “advance” arrow to get started!`,
@@ -124,5 +139,73 @@ lesson.addInstruction(
   `All four isomers of “butanol” are shown here`,
   `display ${butanol_1}, ${butanol_2}, ${methyl_2_propanol_1}, ${methyl_2_propanol_2};` +`moveto 1.0 { -134 -138 -981 40.24} 139.79 -3.2 4.1 {1.9366719863721782 -4.610864070748199 0.11951232218185817} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("butanol isomers")
 );
+
+lesson.addInstruction(
+  `We will now examine some general structural and electronic properties that apply to alcohols derived from alkanes. In doing so we will focus on the properties of the hydroxyl functional group. The alkyl group attached to the hydroxyl group can be represented by “R” where the group “R” is the alkyl substituent to which the hydroxyl group is attached.`,
+  `display ${methanol};` +`hide ADD @10, @11, @13; select @9; spacefill 30%; color atoms green;` + Lesson.label(9, "R", 19) + `moveto 1.0 { -515 -767 -384 87.82} 1306.6 0.0 0.0 {-2.5305897643859367 2.452606438278538 -1.4933698607149735} 27.924051942189607 {0 0 0} 0 0 0 3.0 0.0 0.0;`
+);
+
+lesson.addInstruction(
+  `The O atom of a hydroxyl group is bonded to two atoms (H, and the C of the R group) and contains two lone pairs of electrons. With two bonded and two nonbonded electron domains, the AXE designation for the O is AX<sub>2</sub>E<sub>2</sub>. With four total electron domains, the electron domain geometry surrounding the O atom is tetrahedral, as shown here.`,
+  `display ${methanol}; moveto 0.0 { -264 -802 -536 104.79} 1727.98 -3.2 -8.4 {-2.5305897643859367 2.452606438278538 -1.4933698607149735} 27.924051942189607 {0 0 0} 0 0 0 3.0 0.0 0.0;` +`hide ADD @10, @11, @13; select @9; spacefill 20%;` + Lesson.label(9, "R", 19) + Lesson.drawOrbitals(12, "TRANSLUCENT PURPLE", ["sp3a", "sp3b", "sp3c", "sp3d"]) +`draw roh_geo on;`
+);
+
+lesson.addInstruction(
+  `With two bonded and two nonbonded electron domains, the molecular geometry about the O atom will be bent.`,
+  `display ${methanol}; moveto 0.0 { -401 -826 -396 94.72} 1502.59 0.0 0.0 {-2.5305897643859367 2.452606438278538 -1.4933698607149735} 27.924051942189607 {0 0 0} 0 0 0 3.0 0.0 0.0;` + `hide ADD @10, @11, @13; select @9; spacefill 30%; color atoms green; ` + Lesson.label(9, "R", 19, "black") + `draw roh_m_geo on;` + Lesson.drawOrbitals(12, "TRANSLUCENT RED", ["sp3c", "sp3d"]) + `select @9, @12, @31; color translucent 0.5;`
+);
+
+lesson.addInstruction(
+  `The bond angles in a molecule with four electron domains, and in which all the electron domains are bonded to terminal atoms, will be exactly 109.5 degrees. For the O in alcohols, the lone pairs of electrons spread out more in space than the bonded pairs of electrons, resulting in a slight compression of the bond angle.`,
+  `display ${methanol}; moveto 0.0 { -433 -835 -339 95.52} 1727.98 0.0 0.0 {-2.5305897643859367 2.452606438278538 -1.4933698607149735} 27.924051942189607 {0 0 0} 0 0 0 3.0 0.0 0.0;` + `hide ADD @10, @11, @13; select @9; spacefill 30%; color atoms green;` + Lesson.label(9, "R", 19, "black") + Lesson.drawOrbitals(12, "TRANSLUCENT RED", ["sp3c", "sp3d"]) + `measure ({30}) ({11}) ({8});`
+);
+
+lesson.addInstruction(
+  `Now that we have established the molecular geometry about the O atom in an alcohol, we will look at the polarity of alcohols. Carbon and hydrogen have fairly similar electronegativity values, so each C-H bond in the alkyl portion of an alcohol is only weakly polar. O is much more electronegative than either H or C. Due to the differences in electronegativity, the O in an alcohol has a partial negative charge while the H and C atoms to which it is bonded have partial positive charges. This is highlighted here for methanol.`,
+  `display ${methanol}; moveto 0.0 { -483 -850 -211 107.37} 1727.98 5.3 -10.2 {-2.7234880796880887 3.1336547081195993 -1.3782715381674753} 28.597253612810317 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.label(12, "δ-", 32, "black", "0 0") + Lesson.label(9, "δ+", 32, "black", "0 0") + Lesson.label(31, "δ+", 32, "black", "0 0")
+);
+
+lesson.addInstruction(
+  `The differences in electronegativity make the C-O and H-O bonds polar. The bond dipole moments are represented by vector where the arrows point in the directions of the more electronegative atoms. The length of the vector is proportional t the differences in electronegativity of the two atoms present in the bond. Shown here are the bond dipoles for the C-O an H-O bonds.`,
+  `display ${methanol}; moveto 0.0 { -535 -780 -324 106.52} 1637.33 2.1 -14.2 {-2.7234880796880887 3.1336547081195993 -1.3782715381674753} 28.597253612810317 {0 0 0} 0 0 0 3.0 0.0 0.0;` + `select *; color translucent 0.5; dipole mBond1 on; dipole mBond2 on;`
+);
+
+lesson.addInstruction(
+  `The directions and magnitudes of bond dipoles dictate whether, and to what an extent, a molecule is polar. In the case of an alcohol, the individual dipoles for the C-O and H-O bonds reinforce each other in a “vertical” direction, while they cancel one another in the “horizontal” directions. The net dipole moment due to the hydroxyl functional group, obtained by adding the individual dipole vectors, is shown, alternating with the bond dipoles. Since C and H have similar electronegativities, the C-H bonds in methanol are only slightly polar, and they are therefore disregarded here.`,
+  `display ${methanol}; moveto 0.0 { -535 -780 -324 106.52} 1637.33 2.1 -14.2 {-2.7234880796880887 3.1336547081195993 -1.3782715381674753} 28.597253612810317 {0 0 0} 0 0 0 3.0 0.0 0.0;` + `select *; color translucent 0.5; dipole mBond1 on; dipole mBond2 on;` + Lesson.label(12, "δ-", 20, "black", "0 0") + Lesson.label(9, "δ+", 20, "black", "0 0") + Lesson.label(31, "δ+", 20, "black", "0 0") + Lesson.echoAtWindow("Bond Dipoles") + `spin on; delay 6; dipole * off; dipole mBond3 on;` + Lesson.echoAtWindow("Overall Dipole") + `delay 6; loop 0;`
+);
+
+lesson.addInstruction(
+  `This rendering shows the electrostatic potential map for methanol. The electrostatic potential map is an isosurface which allows the visualization of partial charges within molecules due to electronegativity differences of bonded atoms. As discussed on the previous slides, since O is more electronegative than C and H, it has a partial negative charge, and there is a net dipole moment in the molecule. The colors in the electrostatic potential map allow the regions of higher and lower electron density due to bond and molecule polarity to be visualized. Red colors represent regions where electron density is being pulled towards more electronegative atom(s), while blue colors represent regions where electron density is being pulled away from electropositive atom(s). Green colors represent net electrically neutral regions. The electrostastic potential map for methanol shown here emphasizes how the electronegative O pulls electron density away from the the C and H atoms it is bonded to.`,
+  `display ${methanol_e}; moveto 0.0 { -592 -783 -188 106.59} 1431.41 0.0 0.0 {-7.507129301351488 -19.452288189590725 -1.2554165495400038} 32.42721528239544 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+  `select ${methanol_e}; isosurface vdw map mep; isosurface translucent; spin on;`
+);
+
+lesson.addInstruction(
+  `The polarity of the O-H bond in methanol allows methanol to form favorable hydrogen bonds with other methanol molecules, as well as other molecules capable of forming hydrogen bonds, like water. Methanol is miscible (soluble in all proportions) in water due to the hydrogen bonding capability.`,
+  `display ${methanol}, ${ethanol}; moveto 0.0 { -812 397 428 105.13} 818.41 -8.1 -1.3 {-1.257812549475854 2.2070297943806665 0.03130399709440277} 27.01386675436036 {0 0 0} 0 0 0 3.0 0.0 0.0; hide ADD @10, @11, @13, @24, @25, @26; select @9, @22; color atom white; spacefill 15%;` + Lesson.label(12, "δ-", 20, "black", "0 0") + Lesson.label(27, "δ-", 20, "black", "0 0") + Lesson.label(30, "δ+", 20, "black", "0 0") + Lesson.label(31, "δ+", 20, "black", "0 0") + `select @31, @27; hbonds CALCULATE; spin on;`
+);
+
+lesson.addInstruction(
+  `The C-O and H-O bonds in other alcohols will be polar as well. Shown here is the  electrostatic 
+    potential map for ethanol, which, like methanol, is miscible in water.`,
+  `display ${ethanol_e}; moveto 0.0 { -844 -499 -195 83.68} 1082.35 0.0 0.0 {1.9080042667163077 -19.827849265885227 1.0083199060312253} 29.407753664373434 {0 0 0} 0 0 0 3.0 0.0 0.0; select ${ethanol_e}; isosurface vdw map mep; isosurface translucent; spin on;`
+);
+
+lesson.addInstruction(
+  `Shown here is the electrostatic potential map for 1-propanol`,
+  `display ${propanol_e}; moveto 0.0 { 27 444 -896 81.91} 711.66 0.0 0.0 {10.285977376013413 -17.83815833999463 -0.4051082955448102} 29.99132562184005 {0 0 0} 0 0 0 3.0 0.0 0.0; select ${propanol_e}; isosurface vdw map mep; isosurface translucent; spin on;`
+);
+
+lesson.addInstruction(
+  `Due to the similarities in electronegativities of C and H, and symmetrical arrangement of atoms in alkyl groups, the alkyl portions of alcohols are largely nonpolar. As the alkyl groups of alcohols become larger, and longer in length, more London dispersion forces are formed with other alcohol molecules in the liquid and solid states of these substances. Alcohols become increasingly more nonpolar in character as the alkyl chain length attached to the hydroxyl functional group increases in length. While the OH group will always be polar, more C and H atoms in the alkyl portion will cause London dispersion forces to become increasingly more important than hydrogen bonding as an intermolecular attractive force. For this reason, the solubilities of alcohols in water decrease as the length of the alkyl chain increases. Methanol, ethanol and 1-propanol are all miscible in water, while butanol exhibits an upper solubility limit of  0.11 mol/100 g H<sub>2</sub>O. The next linear alcohol, 1-pentanol, shown here, has a solubility of only 0.030 mol/100 g H<sub>2</sub>O.`,
+  `display ${pentanol_1}; moveto 0.0 { 56 -216 -975 152.38} 467.93 0.0 0.0 {-3.269789139978053 -7.670598730450664 -0.09966665728469014} 20.640053228631185 {0 0 0} 0 0 0 3.0 0.0 0.0; select ${pentanol_1}; isosurface vdw map mep; isosurface translucent; spin on;`
+);
+
+lesson.addInstruction(
+  `This concludes the lesson for alcohols. <a href="http://ensignchemistry.com/jsmol%20models/lessons/index.html">Click here to return to the main lessons page</a>.`,
+  `display ${propanol_2}, ${methanol}, ${ethanol}, ${butanol_2}, ${propanol_1}, ${butanol_1}; moveto 0.0 { -30 -219 -975 138.11} 307.67 0.0 0.0 {-1.700864479352614 -0.35660561903216004 0.07455434082945064} 25.06626901739457 {0 0 0} 0 0 0 3.0 0.0 0.0; spin on;`
+);
+
 
 lesson.start();
