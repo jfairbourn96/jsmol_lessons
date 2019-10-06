@@ -26,27 +26,27 @@ let ethanol_e = "WITHIN(MOLECULE, {@154})";
 let propanol_e = "WITHIN(MOLECULE, {@165})";
 
 let defaultEchoOptions = "font echo 18; color echo black; set echo OFFSET { 0 1.4 0 }; ";
+let initializeScript = "";
 
-lesson.appendToInitializeScript(
-  Lesson.echoAtAtom(13, "methanol", "methanol", defaultEchoOptions) +
-  Lesson.echoAtAtom(25, "ethanol", "ethanol", defaultEchoOptions) +
-  Lesson.echoAtAtom(53, "1-propanol", "propanol_1", defaultEchoOptions) +
-  Lesson.echoAtAtom(83, "2-butanol", "butanol_2", defaultEchoOptions) +
-  Lesson.echoAtAtom(10, "methanol\nCH<sub>3</sub>OH", "methanol_label", defaultEchoOptions) +
-  Lesson.echoAtAtom(24, "ethanol\nCH<sub>3</sub>CH<sub>2</sub>OH", "ethanol_label", defaultEchoOptions) +
-  Lesson.echoAtAtom(47, "1-propanol\nCH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>OH", "propanol_label", defaultEchoOptions) +
-  Lesson.drawTetrahedron(["{-3.2390959488399425 1.6821255184672737 -2.2861656272575708}", "{-1.979412745578614 2.3273524428270953 -2.5771292056886708}", "@9", "@31"], 20, "YELLOW", "roh_geo") +
-  `draw ID "roh_m_geo" LINE {-3.0022951944686245 4.112766334783039 -1.1072201776124508} {-2.5811797598273105 2.1917297960224307 -1.9090898218827421} {-1.814473200154283 1.2571666979700984 -0.5774068262009999} DIAMETER 20 COLOR LIGHTBLUE;` +
-  Lesson.drawNetDipole('mBond1', -1.5, "{-2.5811797598273105 2.1917297960224307 -1.9090898218827421}", "(atomno=31)", 0.05, "orange", 0.0, 0.0) +
-  Lesson.drawNetDipole('mBond2', -1.5, "{-2.5811797598273105 2.1917297960224307 -1.9090898218827421}","(atomno=9)", 0.05, "orange", 0.0, 0.0) +
-  Lesson.drawNetDipole('mBond3', 1.5, "{-2.380012762216265 2.3397851900885036 -1.0685102127732815}", "{-2.8350527071865903 2.0665382403379997 -2.85505489362865}", 0.05, "red", 0.0, 0.0) +
-  `select ${methanol_e}; if ({${methanol_e}}.partialcharge == 0){calculate partialcharge};` +
-  `select ${ethanol_e}; if ({${ethanol_e}}.partialcharge == 0){calculate partialcharge};` +
-  `select ${propanol_e}; if ({${propanol_e}}.partialcharge == 0){calculate partialcharge};` +
-  `select ${pentanol_1}; if ({${pentanol_1}}.partialcharge == 0){calculate partialcharge};`
-);
+initializeScript += Lesson.echoAtAtom(13, "methanol", "methanol", defaultEchoOptions);
+initializeScript += Lesson.echoAtAtom(25, "ethanol", "ethanol", defaultEchoOptions);
+initializeScript += Lesson.echoAtAtom(53, "1-propanol", "propanol_1", defaultEchoOptions);
+initializeScript += Lesson.echoAtAtom(83, "2-butanol", "butanol_2", defaultEchoOptions);
+initializeScript += Lesson.echoAtAtom(10, "methanol\nCH<sub>3</sub>OH", "methanol_label", defaultEchoOptions);
+initializeScript += Lesson.echoAtAtom(24, "ethanol\nCH<sub>3</sub>CH<sub>2</sub>OH", "ethanol_label", defaultEchoOptions);
+initializeScript += Lesson.echoAtAtom(47, "1-propanol\nCH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>OH", "propanol_label", defaultEchoOptions);
+initializeScript += Lesson.drawTetrahedron(["{-3.2390959488399425 1.6821255184672737 -2.2861656272575708}", "{-1.979412745578614 2.3273524428270953 -2.5771292056886708}", "@9", "@31"], 20, "YELLOW", "roh_geo");
+initializeScript += `draw ID "roh_m_geo" LINE {-3.0022951944686245 4.112766334783039 -1.1072201776124508} {-2.5811797598273105 2.1917297960224307 -1.9090898218827421} {-1.814473200154283 1.2571666979700984 -0.5774068262009999} DIAMETER 20 COLOR LIGHTBLUE;`;
+initializeScript += Lesson.drawNetDipole('mBond1', -1.5, "{-2.5811797598273105 2.1917297960224307 -1.9090898218827421}", "(atomno=31)", 0.05, "orange", 0.0, 0.0);
+initializeScript += Lesson.drawNetDipole('mBond2', -1.5, "{-2.5811797598273105 2.1917297960224307 -1.9090898218827421}","(atomno=9)", 0.05, "orange", 0.0, 0.0);
+initializeScript += Lesson.drawNetDipole('mBond3', 1.5, "{-2.380012762216265 2.3397851900885036 -1.0685102127732815}", "{-2.8350527071865903 2.0665382403379997 -2.85505489362865}", 0.05, "red", 0.0, 0.0);
+initializeScript += `select ${methanol_e}; if ({${methanol_e}}.partialcharge == 0){calculate partialcharge};`;
+initializeScript += `select ${ethanol_e}; if ({${ethanol_e}}.partialcharge == 0){calculate partialcharge};`;
+initializeScript += `select ${propanol_e}; if ({${propanol_e}}.partialcharge == 0){calculate partialcharge};`;
+initializeScript += `select ${pentanol_1}; if ({${pentanol_1}}.partialcharge == 0){calculate partialcharge};`;
 
-"draw ID roh_geo LINE [{-3.2390959488399425 1.6821255184672737 -2.2861656272575708}, {-1.979412745578614 2.3273524428270953 -2.5771292056886708}, @31, {-3.2390959488399425 1.6821255184672737 -2.2861656272575708}, @9, @31, {-1.979412745578614 2.3273524428270953 -2.5771292056886708}, @9] DIAMETER 20 COLOR YELLOW;"
+lesson.appendToInitializeScript(initializeScript);
+
 // Add necessary commands to the reset script.
 lesson.appendToResetScript("select *; ");
 lesson.appendToResetScript("color atom cpk; ");
@@ -63,7 +63,7 @@ lesson.addInstruction(
 
 lesson.addInstruction(
   `Alcohols are organic compounds containing one or more hydroxyl functional groups (-OH) bonded to carbon. The simplest alcohols are those formed by substituting a single H atom on an alkane with a hydroxyl group. With a single hydroxyl group present, an alcohol is a <strong>monoalcohol</strong>. <strong>Polyalcohols</strong>, with more than one hydroxyl group, can be formed by substituting more than one H atom on an alkane with hydroxyl groups. In this lesson we will be focusing on the structures of representative monoalcohols, which we will refer to as “alcohols” throughout.<br/>The simplest alcohol, methanol, will be formed by taking the simplest alkane, methane, and replacing one H atom with a hydroxyl group. This replacement is illustrated here.`,
-  `select ${methane}; display selected; center selected; moveto 1.0 { 814 295 -500 27.88} 1636.69 -8.6 -4.5 {-0.6459019397286032 6.726701373941719 -0.4332319595222314} 30.771977867220333 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("methane") +
+  `select ${methane}; display selected; center selected; moveto 0.0 { 814 295 -500 27.88} 1636.69 -8.6 -4.5 {-0.6459019397286032 6.726701373941719 -0.4332319595222314} 30.771977867220333 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("methane") +
   `delay 2;` + Lesson.drawOrbital(5, "GREEN TRANSLUCENT", "S") +
   `delay 2; display ${methanol}; moveto 0.0 { 791 98 604 42.29} 1423.19 -4.2 -3.4 {-2.7234880796880887 3.1336547081195993 -1.3782715381674753} 28.597253612810317 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("methanol") +
   `delay 2; loop 0;`
@@ -71,11 +71,11 @@ lesson.addInstruction(
 
 lesson.addInstruction(
   `Alcohols are named by taking the name of the alkane from which it was derived, dropping the last letter in the name (“e”) and replacing it with “ol”.`,
-  `display ${methane}; moveto 1.0 { 413 -496 -764 16.17} 1423.21 0.0 0.0 {-0.6459019397286032 6.726701373941719 -0.4332319595222314} 30.771977867220333 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("Alkane name is methane") +
+  `display ${methane}; moveto 0.0 { 413 -496 -764 16.17} 1423.21 0.0 0.0 {-0.6459019397286032 6.726701373941719 -0.4332319595222314} 30.771977867220333 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("Alkane name is methane") +
   `delay 2; select @5; lcaoCartoon COLOR GREEN TRANSLUCENT; lcaoCartoon CREATE S;` +
   `delay 2; display ${methanol}; moveto 0.0 { 423 43 905 39.56} 1237.56 0.0 0.0 {-2.7234880796880887 3.1336547081195993 -1.3782715381674753} 28.597253612810317 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("Alkane name is methanol") +
   `delay 3.5;` +
-  `display ${ethane}; moveto 1.0 { -593 722 356 63.98} 1076.14 -11.6 -13.9 {3.206785951439305 6.838458113368992 0.22251372916254092} 30.98163116248421 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("Alkane name is ethane") +
+  `display ${ethane}; moveto 0.0 { -593 722 356 63.98} 1076.14 -11.6 -13.9 {3.206785951439305 6.838458113368992 0.22251372916254092} 30.98163116248421 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("Alkane name is ethane") +
   `delay 2; select @19; lcaoCartoon COLOR GREEN TRANSLUCENT; lcaoCartoon CREATE S;` +
   `delay 2; display ${ethanol}; moveto 0.0 { -113 -747 656 97.38} 935.77 -8.8 -15.1 {-0.28069552933436426 1.5892798518880449 0.9710210206023215} 26.015156809862827 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("Alkane name is ethanol") +
   `delay 2; loop 0;`
@@ -83,7 +83,7 @@ lesson.addInstruction(
 
 lesson.addInstruction(
   `The position of the hydroxyl group must be indicated for alcohols formed from alkanes with chains longer than two C atoms in length. This is illustrated here with propane. If a H atom attached to a terminal C atom (at C<sub>1</sub>) is replaced by a hydroxyl group, the alcohol is named 1-propanol. The “1-“ indicates the position of the hydroxyl group in the longest continual chain, which has the root name “prop”.`,
-  `display ${propane}; moveto 1.0 { 243 255 -936 128.61} 1076.15 -8.3 -10.5 {7.317454773416418 5.608465841532068 0.039535450828173176} 31.617278791937533 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
+  `display ${propane}; moveto 0.0 { 243 255 -936 128.61} 1076.15 -8.3 -10.5 {7.317454773416418 5.608465841532068 0.039535450828173176} 31.617278791937533 {0 0 0} 0 0 0 3.0 0.0 0.0;` +
   Lesson.echoAtWindow("propane") + Lesson.label(32, "C1") + Lesson.label(33, "C2") + Lesson.label(37, "C3") +
   `delay 2; select @36; lcaoCartoon COLOR GREEN TRANSLUCENT; lcaoCartoon CREATE S; ` + Lesson.drawOrbital(36, "GREEN TRANSLUCENT", "S") +
   `delay 2; display ${propanol_1}; moveto 0.0 { 958 67 277 37.35} 935.77 -4.9 -7.2 {4.325167097322197 1.1814923898599492 -0.3909799636653978} 26.278749772367902 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("1-propanol") + Lesson.label(48, "C1") + Lesson.label(44, "C2") + Lesson.label(43, "C3") +  
@@ -92,22 +92,22 @@ lesson.addInstruction(
 
 lesson.addInstruction(
   `In this rendering, a H atom on carbon atom 2 of propane is being replaced with a hydroxyl group to form the alcohol named 2-propanol. The “2-“ indicates the position where the hydroxyl group is present on the chain of C atoms. This alcohol is often referred to by the trivial name “isopropyl alcohol”, or “rubbing alcohol”.`,
-  `display ${propane}; moveto 1.0 { 504 188 -843 128.11} 1076.15 -8.3 -10.5 {7.317454773416418 5.608465841532068 0.039535450828173176} 31.617278791937533 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("propane") + Lesson.label(32, "C1") + Lesson.label(33, "C2") + Lesson.label(37, "C3") + `delay 2;` + Lesson.drawOrbital(38, "GREEN TRANSLUCENT", "S") + `delay 2; display ${propanol_2}; moveto 0.0 { 564 -758 327 40.4} 1076.16 -6.4 -9.9 {-6.583861053782314 1.7198290064156874 0.2791141405541262} 29.65991887870761 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("2-propanol") + Lesson.label(59, "C1") + Lesson.label(55, "C2") + Lesson.label(54, "C3") + `delay 5; loop 0;`
+  `display ${propane}; moveto 0.0 { 504 188 -843 128.11} 1076.15 -8.3 -10.5 {7.317454773416418 5.608465841532068 0.039535450828173176} 31.617278791937533 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("propane") + Lesson.label(32, "C1") + Lesson.label(33, "C2") + Lesson.label(37, "C3") + `delay 2;` + Lesson.drawOrbital(38, "GREEN TRANSLUCENT", "S") + `delay 2; display ${propanol_2}; moveto 0.0 { 564 -758 327 40.4} 1076.16 -6.4 -9.9 {-6.583861053782314 1.7198290064156874 0.2791141405541262} 29.65991887870761 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("2-propanol") + Lesson.label(59, "C1") + Lesson.label(55, "C2") + Lesson.label(54, "C3") + `delay 5; loop 0;`
 );
 
 lesson.addInstruction(
   `Imagine we had added the hydroxyl group to carbon atom number 3 in the propane chain. The resulting alcohol would be 1-propanol, not 3-propanol. When numbering the chain of C atoms in an alcohol, always start at the end of the chain closest to where the hydroxyl group is present. Therefore, if a hydroxyl group were added to C<sub>3</sub> of propane, the resulting alcohol is renumbered starting with “1” on the atom originally assigned as “3”.`,
-  `display ${propane}; moveto 1.0 { 399 357 -845 131.74} 1076.16 7.2 -4.1 {7.317454773416418 5.608465841532068 0.039535450828173176} 31.617278791937533 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("propane") + Lesson.label(32, "C1") + Lesson.label(33, "C2") + Lesson.label(37, "C3") + `delay 2; ` + Lesson.drawOrbital(41, "TRANSLUCENT GREEN", "S") + `delay 2; display ${propanol_1}; moveto 0.0 { -544 -667 -510 150.57} 813.71 3.2 -7.5 {4.325167097322197 1.1814923898599492 -0.3909799636653978} 26.278749772367902 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("") + Lesson.label(43, "C1", 25, "red") + Lesson.label(44, "C2", 25, "black") + Lesson.label(48, "C3", 25, "red") + `delay 2; moveto 1.0 { 743 -576 341 155.54} 813.71 3.2 -7.5 {4.325167097322197 1.1814923898599492 -0.3909799636653978} 26.278749772367902 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.label(48, "C1", 25, "green") + Lesson.label(44, "C2", 25, "black") + Lesson.label(43, "C3", 25, "green") + Lesson.echoAtWindow("1-propanol") + `delay 5; loop 0;`
+  `display ${propane}; moveto 0.0 { 399 357 -845 131.74} 1076.16 7.2 -4.1 {7.317454773416418 5.608465841532068 0.039535450828173176} 31.617278791937533 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("propane") + Lesson.label(32, "C1") + Lesson.label(33, "C2") + Lesson.label(37, "C3") + `delay 2; ` + Lesson.drawOrbital(41, "TRANSLUCENT GREEN", "S") + `delay 2; display ${propanol_1}; moveto 0.0 { -544 -667 -510 150.57} 813.71 3.2 -7.5 {4.325167097322197 1.1814923898599492 -0.3909799636653978} 26.278749772367902 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("") + Lesson.label(43, "C1", 25, "red") + Lesson.label(44, "C2", 25, "black") + Lesson.label(48, "C3", 25, "red") + `delay 2; moveto 0.0 { 743 -576 341 155.54} 813.71 3.2 -7.5 {4.325167097322197 1.1814923898599492 -0.3909799636653978} 26.278749772367902 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.label(48, "C1", 25, "green") + Lesson.label(44, "C2", 25, "black") + Lesson.label(43, "C3", 25, "green") + Lesson.echoAtWindow("1-propanol") + `delay 5; loop 0;`
 );
 
 lesson.addInstruction(
   `Recall that the general formula for alkanes is C<sub>n</sub>H<sub>2n+2</sub>. Since monoalcohols have one H replaced by -OH, their general formula is C<sub>n</sub>H<sub>2n+2</sub>O. The chemical formulas for methanol, ethanol, and 1-propanol are CH<sub>4</sub>O, C<sub>2</sub>H<sub>6</sub>O, and C<sub>3</sub>H<sub>8</sub>O, respectively. The chemical formulas are often written by separating the H atom bonded to O in the hydroxyl group so it is present after the H, in the following fashion for the previous three examples: CH<sub>3</sub>OH, C<sub>2</sub>H<sub>5</sub>OH, C<sub>3</sub>H<sub>7</sub>OH. To provide even more information about structure, the formulas for alcohols are often written in the form of condensed structural formulas, where the C atoms are written in the order they are connected in a molecule, with the substituent atoms present on the C atoms written after them. By convention, the C atom to which the OH group is attached, if terminal, is usually written last in the condensed structural formula, even though the numbering starts with the C atom to which the -OH group is attached. The condensed structural formulas for methanol, ethanol, and 1-propanol are CH<sub>3</sub>OH, CH<sub>3</sub>CH<sub>2</sub>OH, and CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>OH, respectively.`,
-  `display ${methanol}, ${ethanol}, ${propanol_1};` + `moveto 1.0 { 440 649 621 23.15} 404.56 1.2 0.0 {1.2235117379899465 1.751235392371459 -0.15637776324328634} 25.50836158339149 {0 0 0} 0 0 0 3.0 0.0 0.0;` + `display $methanol_label; display $ethanol_label; display $propanol_label;`
+  `display ${methanol}, ${ethanol}, ${propanol_1};` + `moveto 0.0 { 440 649 621 23.15} 404.56 1.2 0.0 {1.2235117379899465 1.751235392371459 -0.15637776324328634} 25.50836158339149 {0 0 0} 0 0 0 3.0 0.0 0.0;` + `display $methanol_label; display $ethanol_label; display $propanol_label;`
 );
 
 lesson.addInstruction(
   `Alcohols that have the same chemical formulas, but where the positions of the hydroxyl groups differ, are structural isomers. 1-propanol and 2-propanol are structural isomers of one another.`,
-  `display ${propanol_1}, ${propanol_2}; moveto 1.0 { -246 -132 -960 36.88} 352.85 0.0 0.0 {-1.1293469782300587 1.4506606981378187 -0.05593291155563572} 26.29511339639351 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.drawOrbital(48, "TRANSLUCENT GREEN", "S") + Lesson.drawOrbital(55, "TRANSLUCENT GREEN", "S")
+  `display ${propanol_1}, ${propanol_2}; moveto 0.0 { -246 -132 -960 36.88} 352.85 0.0 0.0 {-1.1293469782300587 1.4506606981378187 -0.05593291155563572} 26.29511339639351 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.drawOrbital(48, "TRANSLUCENT GREEN", "S") + Lesson.drawOrbital(55, "TRANSLUCENT GREEN", "S")
 );
 
 lesson.addInstruction(
@@ -137,12 +137,12 @@ lesson.addInstruction(
 
 lesson.addInstruction(
   `All four isomers of “butanol” are shown here`,
-  `display ${butanol_1}, ${butanol_2}, ${methyl_2_propanol_1}, ${methyl_2_propanol_2};` +`moveto 1.0 { -134 -138 -981 40.24} 139.79 -3.2 4.1 {1.9366719863721782 -4.610864070748199 0.11951232218185817} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("butanol isomers")
+  `display ${butanol_1}, ${butanol_2}, ${methyl_2_propanol_1}, ${methyl_2_propanol_2};` +`moveto 0.0 { -134 -138 -981 40.24} 139.79 -3.2 4.1 {1.9366719863721782 -4.610864070748199 0.11951232218185817} 12.408430709530037 {0 0 0} 0 0 0 3.0 0.0 0.0;` + Lesson.echoAtWindow("butanol isomers")
 );
 
 lesson.addInstruction(
   `We will now examine some general structural and electronic properties that apply to alcohols derived from alkanes. In doing so we will focus on the properties of the hydroxyl functional group. The alkyl group attached to the hydroxyl group can be represented by “R” where the group “R” is the alkyl substituent to which the hydroxyl group is attached.`,
-  `display ${methanol};` +`hide ADD @10, @11, @13; select @9; spacefill 30%; color atoms green;` + Lesson.label(9, "R", 19) + `moveto 1.0 { -515 -767 -384 87.82} 1306.6 0.0 0.0 {-2.5305897643859367 2.452606438278538 -1.4933698607149735} 27.924051942189607 {0 0 0} 0 0 0 3.0 0.0 0.0;`
+  `display ${methanol};` +`hide ADD @10, @11, @13; select @9; spacefill 30%; color atoms green;` + Lesson.label(9, "R", 19) + `moveto 0.0 { -515 -767 -384 87.82} 1306.6 0.0 0.0 {-2.5305897643859367 2.452606438278538 -1.4933698607149735} 27.924051942189607 {0 0 0} 0 0 0 3.0 0.0 0.0;`
 );
 
 lesson.addInstruction(
