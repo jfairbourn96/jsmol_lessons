@@ -15,7 +15,7 @@
       height: 500,
       width: 500,
       j2sPath: "../../jsmol/j2s",
-      script: "load alcohols.log; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;",
+      script: "load methane.pdb; spacefill 20%; wireframe 0.15; spin off; frank on; background=white; antialiasDisplay=true;",
       debug: false
     };
   </script>
@@ -30,12 +30,6 @@
     
     <aside>
       <div id="description" class="app"></div>
-      <div id="buttons" class="app">
-        <button id="restartButton"></button>
-        <button id="refreshButton"></button>
-        <button id="backButton" disabled></button>
-        <button id="nextButton"></button>
-      </div>
     </aside>
 
     <section class="molecule">
@@ -46,6 +40,16 @@
       </div>
     </section>
   </main>
+
+  <footer>
+    <div id="buttons" class="app">
+      <button id="restartButton"></button>
+      <button id="refreshButton"></button>
+      <button id="backButton" disabled></button>
+      <button id="pauseButton"></button>
+      <button id="nextButton"></button>
+    </div>
+  </footer>
 
   <script src="lesson.js"></script>
   <script src="script.js"></script>

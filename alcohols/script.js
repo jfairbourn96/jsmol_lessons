@@ -4,6 +4,7 @@ let lesson = new Lesson();
 
 document.getElementById('restartButton').onclick = lesson.restart;
 document.getElementById('refreshButton').onclick = () => { lesson.execute(0); }
+document.getElementById('pauseButton').onClick = () => { lesson.runCommand("!quit;"); }
 document.getElementById('backButton').onclick = () => { lesson.execute(-1); }
 document.getElementById('nextButton').onclick = () => { lesson.execute(1); }
 

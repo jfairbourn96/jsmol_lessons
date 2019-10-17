@@ -38,9 +38,11 @@ main > section {
 	flex-direction: row;
 	justify-items: center;
 }
+
 button {
 	height: 65px;
 	width: 65px;
+	margin: 5px;
 }
 sup {
 	vertical-align: top;
@@ -52,8 +54,10 @@ sup {
 	justify-content: space-between;
 }
 #description {
-	height: 420px;
-	overflow: scroll;
+	height: 96%;
+	overflow-y: scroll;
+	max-width: 100%;
+	overflow-x: hidden;
 }
 #window {
 	/* Re-size this to match the dimensions of the info variable in jsmol html pages */
@@ -74,23 +78,37 @@ sup {
 #nextButton {
 	background: url(../images/arrow.svg.med.png);
 	background-color: darkgray;
-	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 95% 95%;
 }
 
 #backButton {
 	background: url(../images/arrowleft.svg.med.png);
+	background-position: center;
+	background-repeat: no-repeat;
 	background-color: darkgray;
-	background-size: 100% 100%;
+	background-size: 95% 95%;
+}
+
+#pauseButton {
+	background: url(../images/pause.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: darkgray;
+	background-size: 95% 95%;
 }
 
 #restartButton {
 	background: url(../images/restart.png);
+	background-position: center;
+	background-repeat: no-repeat;
 	background-color: darkgray;
-	background-size: 100% 100%;
+	background-size: 95% 95%;
 }
 
 #refreshButton {
 	background: url(../images/refresh.png);
 	background-color: darkgray;
-	background-size: 100% 100%;
+	background-size: 95% 95%;
 }
